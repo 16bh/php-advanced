@@ -1,0 +1,10 @@
+<!-- # page.html -->
+<section class="fullWidth">
+<article>
+    <h1><span><?php $page->getDateAdded(); ?></span><?php $page->getTitle(); ?></h1>
+    <?php echo $page->getContent(); ?>
+    <?php if($user && $user->canEditPage($page)){
+        echo '<p><a href="edit_page.php?id='.$page->getId().'"</a>EDIT</p>';
+    } ?>
+</article>
+</section>
