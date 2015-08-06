@@ -10,7 +10,7 @@ session_start();
 $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : null;
 
 try{
-    $pdo = new PDO('mysql:dbname=cms;host=localhost', 'root', '');
+    $pdo = new PDO('mysql:dbname=cms;host=localhost', 'root', '123456');
 }catch(Exception $e){
     $pageTitle = 'Error!';
     include('includes/header.inc.php');
