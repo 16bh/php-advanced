@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>demo</title>
+	<meta charset='utf-8'>
+</head>
+<body>
+<span id='second'>5</span>秒后跳转。
+<script src='http://cdn.houxue.com/libs/jquery/1.8.3/jquery.min.js'></script>
+<script type='text/javascript'>
+	var seconds = 5;
+        function CountDown(){
+            $('#second').text(seconds);
+            if(seconds <= 0){
+                window.location.href='http://www.baidu.com';
+            }
+            seconds--;
+        }
+    setInterval(CountDown, 1000);
+</script>
+</body>
+</html>

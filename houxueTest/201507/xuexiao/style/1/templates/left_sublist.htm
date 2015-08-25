@@ -1,0 +1,13 @@
+
+	  {# if $sublist.0.Id > 0 #}
+		<div class="left_box2">
+			<h2 class="left_title">{# $school.ShortName #}分校</h2>
+			<ul class="box_con">
+			  {# foreach key=rownum item=row from=$sublist #}
+			  <div>
+				<p>分校{# $rownum+1 #}:<a href="fenxiao-{# $row.Id #}.htm" title="{# $school.ShortName #}-{# $row.SubName #}">{# $row.SubName #}</a></p>
+			  </div>
+			  {# /foreach #}
+			</ul>
+		</div>
+	  {# /if #}

@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $course.Name #}</title>
+{# if $course.SeoNoindex == 'yes' #}
+<meta name="robots" content="noindex,nofollow" />
+{# /if #}
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.houxue.com/kecheng/{# $course.Id #}/">
+<link href="http://www.houxue.com/css/common_base.css" type="text/css" rel="stylesheet" />
+<link href="http://www.houxue.com/kecheng/row/style/3/css/layout.css"  rel="stylesheet" type="text/css" />
+{# include file="css.htm" #}
+
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+
+      <div class="right_box1">
+		<!--轻支付 begin-->
+		<div class="back_ground">
+		<div class="course w980 auto fix">
+<!--左边开始-->
+	<div class="course_left">
+    	<!--大图片开始-->
+		<div class="course_quan">
+        	<div id="course_quan_big_background" class="course_quan_300" href="#">
+            	<div class="school_name">{# $school.Name #}</div>
+                <div class="course_name">{#$course.Name#}</div>
+                <div class="course_num ">
+                	<p class="course_tips"><a target="_blank" href="http://www.houxue.com/draw/list-0.htm"><span class="white">购买代金券，即可参加赢"iphone6" 抽奖活动</span></a></p>
+                    <p id="course_quan_big" class="course_code">
+						<span>￥</span><label class ="cost_price SFaceValue"></label>
+					</p>
+                </div>
+            </div>
+        </div>
+		<!--小图片开始-->                                                                                                                              <!--为小图添加id-->
+          <div class="course_small_img">
+        	<ul class="mt10">
+			<li id="slider-prev" class="prev fl"></li>
+            <li class="fl mybxslider1" style="width:343px;height: 55px;overflow: hidden;"><ul class="bxslider1 ml10" id="course_small_box"></ul></li>
+			<li id="slider-next" class="next poi fl" style="margin-right:0px;"></li>
+            </ul>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+<!--右边begin-->
+    <div class="course_right">
+    	<!--课程名称-->
+		<div class="course_r_title">
+			<div class="c3 fw f18 b"><p class="l course_r_title_div">【团购】</p><h1 class="f18 l">{# $course.Name #}</h1><span class="SFaceValue ml5 "></span>元代金券</div>
+			<p class="mt5 c6 fw f14">仅售 <span class="SPrice b"></span> 元！价值 <span class="SFaceValue b"></span> 元的{# $school.Name #}代金券，到校可抵用<span class="SFaceValue"></span>元学费。</p>
+        </div>
+        <!--课程价格-->
+        <div class="course_price_box fix">
+        	<div id="price01" class="course_price l mr10 fw b"><span class="f20">￥</span><span class="SPrice"></span></div>
+            <div class="cell">
+            	<p><img src="http://www.houxue.com/kecheng/row/style/3/images//Special_price.png" /></p>
+                <p>课程原价：￥{# $course.Price|round #}，购买该券到校只需支付&nbsp;￥<span class="need_pay"></span>&nbsp;即可！</p>
+            </div>
+        </div>
+        <!--课程服务-->
+        <div class="course_service ">
+        	<div id='sale_info' class="fix"><p class="l w50 mr10 ">优惠信息</p><p class="cell "><a target="_blank" href="http://www.houxue.com/draw/list-0.htm"><span class="red">在线预定即可参加抽奖活动，赢“iphone6”大礼</span></a></p></div>
+        	<div class="mt5 fix "><p class="l w50 mr10 ">有效期</p><p class="cell SExpireDtt"></p></div>
+            <div class="mt5 fix rel">
+			<p class="l w50 mr10 ">服务</p>
+			<p class="cell"><span class="vm mr5"><img src="http://www.houxue.com/kecheng/row/style/3/images/anytime_back-.png" /></span><span class="vm mr30">随时退款</span><span class="vm mr5"><img  src="http://www.houxue.com/kecheng/row/style/3/images/expiring_back.png" /></span><span class="vm">过期退款</span></p>
+			<p class="wx_code_30" id="weixinpic" style="display:none"></span>
+			</p>
+			</div>
+        </div>
+        <!--选择面额-->
+        <div class="course_vouchers_sele fix">
+        	<p class="l w50 mr10 pt5 ">选择面额</p><p id="check_price" class="cell"></p>
+        </div>
+        <div class="course_vouchers_sele fix cl pt5">
+  <p class="l w50 mr10 ">咨询热线</p><p><em class="f18 n red b">{# $school.Workphone #}</em></p>
+        </div>
+        <!--数量-->
+        <!-- <div class="course_vouchers_num fix">
+        	<p  class="l w50 mr10 pt5">选择数量</p>
+            <p><span class="num_box">-</span><span class="num_box num_box1">1</span><span class="num_box">+</span></p>
+        </div> -->
+        <!--按钮-->
+        <div class="mt15 class_btn" >
+        <input id="payButton" class="mr10 btn btn_red w280 lh24 f20 b fw payButton" style="width:190px;height:50px; name="" value="立即抢购" type="button"/><input id="online_message" value="留言咨询" class="fw btn btn_gray w200 lh24 f20 b" type="button"  onclick="openAddMessageDialog();"/>
+        </div>
+    </div>
+<!--右边end-->
+		</div>
+		<!--轻支付 end-->
+        <div class="title_bg mt10"><h2 class="title1" >课程详情</h2></div>
+        <div class="bd r_con3" >
+          {# $course.Intro #}
+       	</div>
+
+
+
+      </div>
+    </div>
+</div>
+{# include file="foot.htm" #}
+<link rel="stylesheet" href="/js/jquery/external/bxslider/jquery.bxslider.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/js/jquery/external/bxslider/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/js/jquery/external/hxdialog/hxdialog.min.js" ></script>
+<SCRIPT LANGUAGE="JavaScript">
+var S = {};
+S.CouponId = 0;
+S.CourseId = {# $course.Id #};
+S.CoursePrcie ={# $course.Price #} ;
+S.CourseCouponJson = {# $coupionjson #};
+S.JJId = {#if $JJId#}{#$JJId#}{#else#}0{#/if#};
+
+S.init = function()
+{
+	var html_1 = '';
+	var html_2 = '';
+	// //初始化右侧选择价格处 \ 左侧缩略图内容
+	for(var i=0; i<S.CourseCouponJson.length; i++)
+	{
+		 var rd = S.CourseCouponJson[i];
+		
+		 html_1 += '<li class="" id="Coupon_'+ rd.Id +'">';
+		 html_1 += '<img class="small_quan" src="http://www.houxue.com/kecheng/row/style/3/images/'+ rd.ImgName +'" /></li>';
+
+		 html_2 += "<span id='check_price_"+ rd.Id +"'>"+ rd.Price +"抵"+ rd.FaceValue +"</span>";
+	}
+	$("#course_small_box").html(html_1);
+	$("#check_price").html(html_2);	
+
+	S.showOneCoupon(S.CourseCouponJson[0].Id);
+
+	//绑定左侧事件
+	$("#course_small_box li").each(function(i){
+		$(this).click(function(){
+			var id = $(this).attr("id").split("_")[1];
+			S.showOneCoupon(id);
+		});
+	});
+	
+	//右侧事件
+	$("#check_price span").each(function(){
+		$(this).click(function(){
+			var id = $(this).attr("id").split("_")[2];
+			S.showOneCoupon(id);
+		});
+	});
+
+	//付款按钮
+	$(".payButton").click(function(){
+		window.location.href = 'http://www.houxue.com/product/coupon/index.php?mod=ordersure&jjid='+ S.JJId +'&courseid='+ S.CourseId +'&id=' + S.CouponId;
+	});
+
+}
+
+
+S.showOneCoupon = function(id)
+{
+	var coupon;
+	for(var i=0; i<S.CourseCouponJson.length; i++)
+	{
+		var rd = S.CourseCouponJson[i];
+		if(id==rd.Id)
+		{
+			coupon = rd;
+			break;
+		}
+	}
+	S.CouponId = coupon.Id;
+	
+	//左侧上图文字
+	$("#course_quan_big_background").attr("class", coupon.Class);
+
+	//左侧缩略图 加curent
+	$("#course_small_box li").removeClass("current");	
+	$("#Coupon_"+ coupon.Id).addClass("current");
+	
+	//设置右上头部文本价格
+	$(".SFaceValue").html(coupon.FaceValue);	
+	$(".SPrice").html(coupon.Price);	
+	$(".need_pay").text(S.CoursePrcie-coupon.FaceValue);		
+
+	//更改选择价格处
+	$("#check_price span").removeClass("current");
+	$("#check_price_" + coupon.Id).addClass("current");
+
+	//设置有效期
+	$(".SExpireDtt").text(coupon.HoldStartDtt + '至' + coupon.ExpireDtt);
+}
+
+S.init();
+
+$('.bxslider1').bxSlider({
+	slideWidth: 70,
+	minSlides: 2,
+	maxSlides: 4,
+	slideMargin: 10,
+	nextSelector: '#slider-next',
+	prevSelector: '#slider-prev',
+	nextText: '<a href="javascript:void(0);"><img src="http://www.houxue.com/kecheng/row/style/3/images/scroll_r.jpg" /></a>',
+	prevText: '<a href="javascript:void(0);"><img  src="http://www.houxue.com/kecheng/row/style/3/images/scroll_l.jpg" /></a>',
+	pager: false,
+	infiniteLoop: false
+});
+
+function openAddMessageDialog()
+{	
+	if(HXDialog.list[0]) HXDialog.list[0].close();
+	new HXDialog({id:"0", title:'留言咨询', width:600, height:350, content:$("#openAddMessageDialogCont").html()});
+}
+</SCRIPT>
+<div id="openAddMessageDialogCont" style="display:none;">
+	<form style="font-size:14px;" id="dialogForm" action="http://www.houxue.com/order_add.php">
+		<input style="display:none">
+		<input type="hidden" value="{# $course.LoginId #}" name="x_SchoolLoginId">
+		<input type="hidden" value="{# $course.Id #}" name="x_CourseId">
+		<input type="hidden" value="3" name="x_SourceId">
+		<input type="hidden" value="{# $course.AreaId #}" name="x_AreaId">
+		<input type="hidden" value="{# $course.CategoryId #}" name="x_CategoryId">
+		<input type="hidden" value="{# $course.Price #}" name="x_Money">
+		<input type="hidden" value="msg" name="flag">
+		<input type="hidden" value="http://{# $course.Domain #}.houxue.com/kecheng-{# $course.Id #}/" name="forward">
+		<input type="hidden" value="预约留言成功" name="alertText">
+		<input type="hidden" value="yes" name="flag_sms">
+		<input type="hidden" value="yes" name="flag_smsToLeaner">
+		<input type="hidden" value="yes" name="flag_share">
+		<input type="hidden" value="{#$JJId#}" name="x_JJId">
+
+		<div class="input-row">
+			<label class="input-label"><strong>姓名</strong></label>
+			<div class="input-cont">
+				<input type="text" class="input-text" id="x_Name" name="x_Name" style="width:400px;" value="">
+			</div>
+		</div>
+		<div class="input-row">
+			<label class="input-label"><strong>电话</strong></label>
+			<div class="input-cont">
+				<input type="text" class="input-text" id="x_Phone" name="x_Phone" style="width:400px;" value="">
+			</div>
+		</div>
+{#if $prepareTextList#}
+	{# foreach key=rownum item=row from=$prepareTextList #}
+		<div class="input-row">
+			<label class="input-label"><strong>{# $row.Name #}</strong></label>
+			<div class="input-cont">
+				{#if $row.TypeId==1#}
+					<select id="selectprepareText_{# $row.Id #}" type="select" class="input-select">
+					{# foreach key=rownum item=row1 from=$row.T_Content #}
+						<option value="{# $row.Name #}：{# $row1.Text #}">{# $row1.Text #}</option>
+					{# /foreach #}
+					</select>
+				{#/if#}
+				{#if $row.TypeId==2#}					
+					{# foreach key=rownum item=row1 from=$row.T_Content #}
+						<input type="radio" value="{# $row.Name #}：{# $row1.Text #}" id="selectprepareText_{# $row.Id #}_{# $row1.Id #}" name="selectprepareText_{# $row.Id #}"> {# $row1.Text #}
+					{# /foreach #}
+				{#/if#}
+				{#if $row.TypeId==3#}					
+					{# foreach key=rownum item=row1 from=$row.T_Content #}
+						<input type="checkbox" value="{# $row.Name #}：{# $row1.Text #}" id="selectprepareText_{# $row.Id #}_{# $row1.Id #}"> {# $row1.Text #}
+					{# /foreach #}
+				{#/if#}
+			</div>
+		</div>
+	{# /foreach #}
+{#/if#}	
+		<div class="input-row" style="height:auto;">
+			<label class="input-label"><strong>问题</strong></label>
+			<div class="input-cont">
+				<textarea class="input-text" id="x_Contents" style="width:400px;height:100px;"></textarea>
+				<input type="hidden" value="" name="x_Content" id="x_Content">
+			</div>
+		</div>
+		<div class="mt15">
+			<label class="input-label">&nbsp;</label>
+			<div id="dialogFormBtnBar">
+				<input type="submit" value="提交" name="" class="mr10 btn btn_red w200 lh24 f20 b fw">
+				<input type="button" value="取消" name="" class="fw btn btn_gray w100 lh24 f20 b" onclick="HXDialog.list[0].close();">
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		function set_x_Content()
+		{
+			var str = $("#x_Contents").val();
+			$("[id^='selectprepareText_']").each(function(){
+				if($(this).attr('type')=="select") str += "|" + $(this).val();
+				if($(this).attr('type')=="radio" && $(this).attr("checked")) str += "|" + $(this).val();
+				if($(this).attr('type')=="checkbox" && $(this).attr("checked")) str += "|" + $(this).val();
+			});
+			$("#x_Content").val(str);
+		}
+		$(document).ready(function(){
+			$("[id^='selectprepareText_']").click(function(){
+				set_x_Content();
+			});
+			$("#x_Contents").keyup(function(){
+				set_x_Content();
+			});
+		}); 
+	</script>
+</div>
+
+{# if $course.OnlineCallCode#}
+	{#$course.OnlineCallCode#}
+{#else#}
+	{# if $school.OnlineCallCode != "" #}{# $school.OnlineCallCode #}{# else #}{# $Area.Path.1.OnlineCallCode #}{# /if #}
+{#/if#}
+
+{# if $Area.Path.1.SiteCounterCode != "" #}<div style="display:none;">{# $Area.Path.1.SiteCounterCode #}</div>{# /if #}
+{# $CONFIG.sitecountercode #}
+
+<div style="display:none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/17419612.js"></script></div>
+    {# 'PCStat'|get_common_config #}
+</body>
+</html>

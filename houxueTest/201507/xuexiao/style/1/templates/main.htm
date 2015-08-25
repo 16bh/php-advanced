@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# if $school.SeoTitle == "" #}{# $school.ShortName #}-学校首页{# else #}{# $school.SeoTitle #}{# /if #}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{# $school.ShortName #},{# $school.Name #},{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训学校"/>
+<meta name="description" content="{# $school.ShortName #}首页为您提供{# $school.Name #}（简称{# $school.ShortName #}）的简要介绍，人气课程推荐，学员评论，学校名师，学校环境等信息。"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=http://m.houxue.com/xuexiao/{# $school.LoginId #}/">
+<link href="http://www.houxue.com/xuexiao/style/1/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+
+<div id="content"> {# include file="left_main.htm" #}
+  <div id="main">
+      <div class="right_box1">
+        <div class="right_title"><span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" alt=""/></span><span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" alt=""/></span>
+            <h2 class="title_bg">{# $school.ShortName #}学校介绍</h2>
+        </div>
+        <ul class="box_con">
+          <li class="ti">
+		  {# if $school.BaiduMapPointLng > 0 && $school.BaiduMapPointLat > 0 #}
+
+            <div id="baidumap" class="map"></div>
+
+		  {# /if #}
+		  {# $school.Intro|truncateex:600:"utf-8"|replace:" ":"　"|nl2br #}{# if mb_strlen($school.Intro,'utf-8') > 600 #}<a class="blue1" href="jieshao.htm">>> 详细介绍</a>{# /if #} </li>
+        </ul>
+
+		{# if $ad.page_schoolpage_ad3 != "" #}
+		 <div>
+			{# $ad.page_schoolpage_ad3 #}
+		 </div>
+		{# /if #}
+      </div>
+    <div class="right_box2">
+        <div class="search">
+          <ul>
+            <li class="w1"></li>
+            <li class="w2">
+              <form id="form3" name="form3" method="post" action="" onsubmit="return false;">
+                <label>
+                <select name="x_cid" id="x_cid" class="kc_sel">
+
+
+							{# foreach key=rownum item=row from=$SchoolCategory #}
+
+
+                  <option value="{# $row.CategoryId #}">{# $row.CategoryName #}</option>
+
+
+							{# /foreach #}
+
+
+                </select>
+                </label>
+              </form>
+            </li>
+            <li class="w3">
+              <form id="form2" name="form1" method="post" action="" onsubmit="return false;">
+                <label>
+                <input name="x_keywords" type="text" id="x_keywords" size="18" />
+                </label>
+              </form>
+            </li>
+            <li class="w4"><a  href="javascript:;" onclick="document.location='http://{# $school.Domain #}.houxue.com/kecheng'+parseInt(0+GetE('x_cid').value)+'-0----'+GetE('x_keywords').value+'--/';"><img src="/xuexiao/style/{# $school.DisplayStyle #}/images/sel_btn.gif" alt="" /></a></li>
+          </ul>
+        </div>
+      <ul class="box_con">
+        {# foreach key=rownum item=row from=$SchoolCategory #}
+        <li class="kc_btn"><a href="kecheng.htm#cid_{# $row.CategoryId #}">{# $row.CategoryName #}</a> </li>
+        {# /foreach #}
+      </ul>
+    </div>
+    {# if $debug == 1 #}
+    {# foreach key=rownum item=row from=$SchoolCategory #}
+    <div class="right_box3" id="cid_{# $row.CategoryId #}">
+        <div class="kc">
+          <div class="kc_t"><span class="fr mr5 fb fs14"> 咨询电话:{# $school.Workphone #}</span>
+              <h2>{# $row.CategoryName #}培训课程</h2>
+          </div>
+        </div>
+      <ul class="box_con">
+        {# foreach key=rownum1 item=row1 from=$row.courselist #}
+        <li class="{# if $rownum1 % 2 == 1 #}bg2{# else #}bg1{# /if #}">
+            <div class="w1 "><a class="blue1" title="{# $row1.Name|truncateex:25:"utf-8":"" #}" href="http://www.houxue.com/kecheng/{# $row1.Id #}/"> * {# $row1.Name|truncateex:13:"utf-8":"" #}</a></div>
+          <div class="w2">{# $row1.DT #} &nbsp;</div>
+            <div class="w5">{# $row1.Price #} &nbsp;</div>
+            <div class="w3">{# $row1.Visit #} &nbsp;</div>
+            <div class="w4"><a href="http://www.houxue.com/kecheng/{# $row1.Id #}/" ><img src="/xuexiao/style/1/images/bm_btn.gif" /></a></div>
+          </li>
+        {# /foreach #}
+      </ul>
+    </div>
+    {# /foreach #}
+    {# /if #}
+
+
+    {# if $envlist.0.ImageId > 0 #}
+    <!--right_box1-->
+        <div class="right_box1">
+          <div class="right_title"><span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span><span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+              <h2 class="title_bg">学校环境</h2>
+          </div>
+          <ul class="box_con">
+            {# if $envlist.0.ImageId > 0 #}
+            <li class="hj_box"><img src="http://www.houxue.com/loadimage.php?id={# $envlist.0.ImageId #}" width="292" height="216" /></li>
+            {# /if #}
+            {# if $envlist.1.ImageId > 0 #}
+            <li class="hj_box"><img src="http://www.houxue.com/loadimage.php?id={# $envlist.1.ImageId #}" width="292" height="216" /></li>
+            {# /if #}
+            {# if $envlist.2.ImageId > 0 #}
+            <li class="hj_box"><img src="http://www.houxue.com/loadimage.php?id={# $envlist.2.ImageId #}" width="292" height="216" /></li>
+            {# /if #}
+            {# if $envlist.3.ImageId > 0 #}
+            <li class="hj_box"><img src="http://www.houxue.com/loadimage.php?id={# $envlist.3.ImageId #}" width="292" height="216" /></li>
+            {# /if #}
+          </ul>
+        </div>
+    {# /if #}
+
+    {# if $debug == 1 #}
+    <div class="right_box3">
+          <div class="kc">
+            <div class="kc_t"><span class="fr mr5 fs14 fb"> 咨询电话:{# $school.Workphone #}</span>
+                <h2> 人气课程</h2>
+            </div>
+          </div>
+      <ul class="box_con">
+        {# foreach key=rownum item=row from=$courselist_visit_top10 #}
+        <li class="{# if $rownum % 2 == 1 #}bg1{# else #}bg2{# /if #}">
+            <div class="w1"> * <a class="blue1" title="{# $row.Name|truncateex:25:"utf-8":"" #}" href="http://www.houxue.com/kecheng/{# $row.Id #}/" target=_blank>{# $row.Name|truncateex:14:"utf-8":"" #}</a></div>
+          <div class="w2">{# $row.DT #}&nbsp;</div>
+            <div class="w5">{# $row.Price #}&nbsp;</div>
+            <div class="w3">{# $row.Visit #}&nbsp;</div>
+            <div class="w4"><a  href="http://www.houxue.com/kecheng/{# $row.Id #}/"><img src="/xuexiao/style/1/images/bm_btn.gif" alt="我要报名" width="69" height="21" /></a></div>
+          </li>
+        {# /foreach #}
+      </ul>
+    </div>
+    {# /if #}
+
+	{# if $school.DisplayAd != 'no' #}
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-7576374042341131";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		google_ad_format = "728x90_as";
+		google_ad_type = "text_image";
+		//-->
+		</script> <script type="text/javascript"
+		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+    {# /if #}
+
+	</div>
+</div>
+{# include file="foot.htm" #}
+<script language="javascript" src="/js/jquery/external/jquery.couplet.js"></script>
+{# if $ad.page_schoolpage_float_left != "" #}
+	<div id="page_schoolpage_float_left">{# $ad.page_schoolpage_float_left #}</div>
+	<script type="text/javascript">
+		$("#page_schoolpage_float_left").couplet({
+			floatHorizontally: "left",		
+			horizontalPadding:"0",
+			floatVertically: "top",
+			verticalPadding:"100",	
+			width: "100",
+			height: "200", 
+			allowClose: true
+		});
+	</script>
+{#/if#}
+{# if $ad.page_schoolpage_float_right != "" #}
+	<div id="page_schoolpage_float_right">{# $ad.page_schoolpage_float_right #}</div>
+	<script type="text/javascript">
+		$("#page_schoolpage_float_right").couplet({
+			floatHorizontally: "right",		
+			horizontalPadding:"0",
+			floatVertically: "top",
+			verticalPadding:"100",	
+			width: "100",
+			height: "200", 
+			allowClose: true
+		});
+	</script>
+{#/if#}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+		{# if $school.BaiduMapPointLng > 0 && $school.BaiduMapPointLat > 0 #}
+			var map = new BMap.Map("baidumap");
+			var mapPoint = new BMap.Point({# $school.BaiduMapPointLng #}, {# $school.BaiduMapPointLat #});
+			map.centerAndZoom(mapPoint, 12);
+			map.enableScrollWheelZoom();
+			var mapMarker = new BMap.Marker(mapPoint);
+			var mapLable = new BMap.Label("{# $school.ShortName #}");
+			var mapSize = new BMap.Size(18,0);
+			mapLable.setOffset(mapSize);
+			mapMarker.setLabel(mapLable);
+			mapMarker.setTitle("{# $school.Name #}");
+			map.addOverlay(mapMarker);
+
+			{# foreach key=rownum item=row from=$sublist #}
+			{# if $row.BaiduMapPointLng > 0 && $row.BaiduMapPointLat > 0 #}
+				var mapPoint = new BMap.Point({# $row.BaiduMapPointLng #}, {# $row.BaiduMapPointLat #});
+				var mapMarker = new BMap.Marker(mapPoint);
+				var mapLable = new BMap.Label("{# $row.SubName #}");
+				var mapSize = new BMap.Size(18,0);
+				mapLable.setOffset(mapSize);
+				mapMarker.setLabel(mapLable);
+				mapMarker.setTitle("{# $row.SubName #}");
+				map.addOverlay(mapMarker);
+
+			{# /if #}
+			{# /foreach #}
+		{# else #}
+		{# /if #}
+//-->
+</SCRIPT>

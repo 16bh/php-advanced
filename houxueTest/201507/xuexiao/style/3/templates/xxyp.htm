@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-学校用品</title>
+<meta name="keywords" content="{# $school.ShortName #}学校用品"/>
+<meta name="description" content="{# $school.ShortName #}的最新学校用品"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<style type="text/css">
+/*学习用品*/
+.xxyp_top{height:43px;background:url(/xuexiao/style/1/images/xxyp_t_bg.jpg) repeat-x left top;line-height:43px;}
+.box_con span{display:inline-block; vertical-align:middle;font-size:14px;}
+.xxyp_con dl{padding-top:7px;color:#666;}
+.xxyp_con dt{height:38px;background:#f5f9fb;line-height:38px;}
+.xxyp_con dd{height:38px;line-height:38px;}
+.box_con .w1{width:410px;padding-left:10px;}
+.box_con .w2{width:65px;}
+.box_con .w3{width:88px;}
+.xxyp_sale{width:43px;height:22px;display:inline-block;background:url(/xuexiao/style/1/images/xxyp_sale.png) repeat-x left top;margin-right:4px;}
+.xxyp_buy{width:43px;height:22px;display:inline-block;background:url(/xuexiao/style/1/images/xxyp_buy.png) repeat-x left top;margin-right:4px;}
+.xxyp_bottom{height:46px;background:url(/xuexiao/style/1/images/xxyp_t_bg.jpg) repeat-x left top;}
+.xxyp_page{margin-bottom:120px;margin-top:10px;}
+.xxyp_page a{border:1px solid #a5b6c7;padding:0px 8px;display:inline-block;margin-right:3px; font-family:Arial, Helvetica, sans-serif;}
+.xxyp_page a:hover{background:#a5b6c7;color:#fff;}
+</style>
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+      <div class="right_box1">
+   		<div class="title_bg "><span class="more">当前位置：首页> 学习用品</span><h2 class="title1" >学习用品</h2></div>
+        <div class="bd r_con_info" >
+
+<div class="box_con">
+            <div class="xxyp_top">
+            			<span class="w1 c55">标题</span>
+                       	<span class="w2 c55">价格</span>
+                        <span class="w2 c55">新旧</span>
+                        <span class="w3 c55">发布时间</span>
+            </div>
+            <div class="xxyp_con">
+            	<dl>
+{# foreach key=rownum item=row from=$XxypList name=foo#}
+	{# if $smarty.foreach.foo.index % 2 == 0 #}
+					<dt>
+                    	<span class="w1"><span class="xxyp_{# if $row.SDFlag=='supply' #}sale{# else #}buy{# /if #} pngtm"></span> <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xxyp/{# $row.Id #}.htm">{# $row.Title #}</a></span>
+                        <span class="w2">{# $row.Price #}</span>
+                        <span class="w2">{# $row.DegreeContent #}</span>
+                        <span class="w3">{# $row.Dtt|date_format:"%Y-%m-%d" #}</span>
+                  	</dt>
+	{# else #}
+					<dd>
+                    	<span class="w1"><span class="xxyp_{# if $row.SDFlag=='supply' #}sale{# else #}buy{# /if #} pngtm"></span> <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xxyp/{# $row.Id #}.htm">{# $row.Title #}</a></span>
+                        <span class="w2">{# $row.Price #}</span>
+                        <span class="w2">{# $row.DegreeContent #}</span>
+                        <span class="w3">{# $row.Dtt|date_format:"%Y-%m-%d" #}</span>
+                    </dd>
+	{# /if #}
+{# /foreach #}
+                </dl>
+            </div>
+{# if $XxypList.0.Id#} <div class="xxyp_bottom"></div>{# /if #}
+<!--end-->
+      </div>
+
+
+		</div>
+
+      </div>
+	</div>
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

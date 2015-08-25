@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="http://cdn.houxue.com/libs/jquery-ui/1.11.4/jquery-ui.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://cdn.houxue.com/libs/jquery/1.11/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.houxue.com/libs/jquery-ui/1.11/jquery-ui.min.js"></script>
+</head>
+<body>
+    <form class="form-search" id="q-form" method="get">
+        <div class="input-append" id="q-input">
+            <input type="text" class="span6 search-query" name="q" title="输入任意关键词皆可搜索" value="" />
+            <button type="submit" class="btn">搜索</button>
+        </div>
+    </form>
+    <script>
+        $(function() {
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+            ];
+            $( "#q-input .search-query" ).autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
+</body>
+</html>

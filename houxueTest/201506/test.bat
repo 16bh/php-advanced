@@ -1,0 +1,1 @@
+D:\wamp\bin\php\php5.5.12\php.exe -q D:\wamp\www\houxueTest\201506\test.php

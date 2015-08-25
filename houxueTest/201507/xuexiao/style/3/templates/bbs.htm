@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.Name #}的论坛</title>
+<meta name="keywords" content="{# $school.Name #}的论坛"/>
+<meta name="description" content="{# $school.Name #}的论坛"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js" ></script>
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container ">
+
+	<!--bbs start-->
+	<div class="bbs">
+        	<h2 class="bbs_title" style="position:relative;">
+				<span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span>
+				<span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+        		<div class="bbs_title_bg" ><img style="position:absolute;top:-3px;" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_title.jpg" width="110" height="34" /></div>
+        	</h2>
+            <div class="bbs_con">
+{#if $bbsBoard.Id#}
+                <div class="bbs_con_head">
+                    <div class="bbs_page" >
+						<span>
+						{#pager rowcount=$pager.rowcount_all show='page' limit=$pager.limit txt_prev="上一页" txt_next="下一页" posvar=$pager.posvar forwardvars=$pager.forwardvars shift=$pager.shift txt_pos=$pager.txt_pos  txt_first=$pager.L_MORE class_num="pager_class_num" class_numon="cc0" class_text="f1"#}
+						</span>&nbsp;
+					</div>
+                    <span class="bbs_type">
+						<span class="bbs_type_sele"><strong>全部</strong></span>
+						<span class="bbs_type_sele1">精华</span>
+						<span class="bbs_type_sele2">推荐</span>
+					</span>
+                </div>
+                <!--主体内容-->
+                <div class="bbs_con_mid">
+                	<ul><li style="line-height:45px;line-height:45px;" >
+                    		<span style="font-size:12px;" class="w1">话题</span>
+                            <span style="font-size:12px;" class="w2">作者</span>
+                            <span style="font-size:12px;" class="w2">点击/回复</span>
+                            <span style="font-size:12px;" class="w2">最新回复</span>
+                    	</li>
+			{# foreach key=rownum item=row from=$bbsThreadList name=foo#}
+                    	<li>
+							<span class="w1">
+								{#if $row.IsTop=='yes'#}<img class="vm" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_music.jpg" width="15" height="15" />{#/if#}
+								<a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/bbs/thread-{# $row.Id #}-0.htm" class="vm ">&nbsp;&nbsp;{# $row.Subject #}</a>
+								{#if $row.IsEssence=='yes'#}<img class="vm" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_j.jpg" width="16" height="15" />{#/if#}
+								{#if $row.ImageCount>0#}<img class="vm" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_img.jpg" width="16" height="14" />{#/if#}
+							</span>
+                            <span class="w2 mt4">{# $school.ShortName|htmlspecialchars#}<label class="bbs_dtt">{#$row.Dtt|dgmdate#}</label></span>
+                            <span class="w2">{#$row.Visit#} / {#$row.ReplyCount#}</span>
+                            <span class="w2 mt4">{# $row.LastReplName #}<label class="bbs_dtt">{# $row.LastReplyDtt|dgmdate#}</label></span>
+						</li>
+			{# /foreach #}
+                    </ul>
+                </div>
+                <!--主体结束-->
+               <div class="bbs_con_foot">
+					<div class="bbs_page">
+						<span>
+						{#pager rowcount=$pager.rowcount_all show='page' limit=$pager.limit txt_prev="上一页" txt_next="下一页" posvar=$pager.posvar forwardvars=$pager.forwardvars shift=$pager.shift txt_pos=$pager.txt_pos  txt_first=$pager.L_MORE class_num="pager_class_num" class_numon="cc0" class_text="f1"#}
+						</span>&nbsp;
+					</div>
+					{#if $bbsBoard.IsAllowPost=='yes'#}
+						<a href="http://www.houxue.com/xuexiao/{#$school.LoginId#}/bbs/add.htm"><img src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_write.jpg" width="83" height="23" /></a>
+					{#/if#}
+				</div>
+{#else#}
+	该学校暂未开通论坛服务！
+{#/if#}
+            </div>
+
+	</div>
+	<!--bbs end-->
+
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

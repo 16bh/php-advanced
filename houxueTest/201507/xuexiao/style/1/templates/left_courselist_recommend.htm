@@ -1,0 +1,11 @@
+{# if $courselist_recommend.0.Id  > 0 #}
+		<div class="left_box2">
+			<div class="left_title"><span class="fr mr5 fs12"><a class="fs12" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">&gt;&gt;更多</a></span><h2>推荐课程</h2></div>
+			 <ul class="box_con">
+				{# foreach key=rownum item=row from=$courselist_recommend #}
+				<p><a href="http://www.houxue.com/kecheng/{# $row.Id #}/" target=_self>{# $row.Name #}</a></p>
+				{# /foreach #}
+			</ul>
+
+		</div>
+{# /if #}

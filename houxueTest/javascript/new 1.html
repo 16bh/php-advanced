@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+</head>
+<body>
+	<script>
+	var $name = 'chenxi';
+	document.write($name);
+	</script>
+</body>
+</html>
+
+
+var interValObj;
+                    var seconds = 300;
+                    var curCount;
+                    curCount = seconds;
+                    $('#button').attr('disabled', 'disabled').css('background-color','#ddd').val("重新发送("+curCount+")");
+
+                    interValObj = window.setInterval("setRemainTime()", 1000);
+                    function setRemainTime(){
+                        if(curCount == 0){
+                            window.clearInterval(interValObj);
+                            $('#button').val('免费获取验证码短信').removeAttr('disabled').css('background-color','rgb(126, 181, 211)');
+                        }else{
+                            curCount--;
+                            $('#button').attr('disabled', 'disabled').css('background-color','#ddd').val("重新发送("+curCount+")");
+                        }
+                    }

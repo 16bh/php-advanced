@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}的评价</title>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1><a href="./">{# $school.Name #}</a>评价</h1></div>
+		<div class="clear" style="height:10px;"></div>
+
+		<table style="font-size:11px;">
+			<th>
+			<tr align=center>
+				<td width=80>时间</td>
+				<td width=80>电话号码</td>
+				<td width=100>满意度</td>
+				<td width=50>学校环境</td>
+				<td width=50>课程性价</td>
+				<td width=50>老师教学</td>
+				<td width=50>交通便利</td>
+			</tr>
+			</th>
+			{# foreach key=rownum item=row from=$commentlist #}
+			<tr align=center>
+				<td>{# $row.Dtt|date_format:"%Y-%m-%d" #}</td>
+				<td style="font-size:11px;" align=left>{# $row.Phone|truncate:7:"" #}****</td>
+				<td>
+					{# if $row.Satisfaction > 10 #}<a class="star1"></a>{# else #}<a class="star2"></a>{# /if #}
+					{# if $row.Satisfaction > 30 #}<a class="star1"></a>{# else #}<a class="star2"></a>{# /if #}
+					{# if $row.Satisfaction > 50 #}<a class="star1"></a>{# else #}<a class="star2"></a>{# /if #}
+					{# if $row.Satisfaction > 70 #}<a class="star1"></a>{# else #}<a class="star2"></a>{# /if #}
+					{# if $row.Satisfaction > 90 #}<a class="star1"></a>{# else #}<a class="star2"></a>{# /if #}
+				</td>
+				<td>
+					{# $row.Vote1|star2text #}
+					&nbsp;
+				</td>
+				<td>
+					{# $row.Vote2|star2text #}
+					&nbsp;
+				</td>
+				<td>
+					{# $row.Vote3|star2text #}
+					&nbsp;
+				</td>
+				<td>
+					{# $row.Vote4|star2text #}
+					&nbsp;
+				</td>
+			</tr>
+			{# /foreach #}
+		</table>
+
+
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+	  </div>
+
+
+		{#include file="right.htm"#}
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+</body>
+</html>
+
+<div style="DISPLAY: none"><script src="http://s4.cnzz.com/stat.php?id=2844384&web_id=2844384" language="JavaScript"></script></div>

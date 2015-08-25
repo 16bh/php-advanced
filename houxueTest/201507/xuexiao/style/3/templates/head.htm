@@ -1,0 +1,54 @@
+<div class="top_info">
+	<span style="float:right;"><a href="http://www.houxue.com">培训网</a><a href="http://list.houxue.com/search/school.html">学校</a><a href="http://list.houxue.com/search/course.html">课程</a><a href="http://list.houxue.com/search/teacher.html">名师</a><a href="http://www.houxue.com/news0-0/">资讯</a><a href="http://www.houxue.com/ask/list-0-0-0/">知道</a><a href="http://www.houxue.com/qiuxue/">求学</a><a href="http://www.houxue.com/ziliao/list-0.htm">资料</a><a href="http://www.houxue.com/shijuan/">试卷</a><a class="lasta" href="http://www.houxue.com/pxcd/list-0.htm">场地</a></span>
+
+</div>
+<div class="logo">
+<h1 class="w1">{# $school.Name #}</h1>
+<p class="w2"><img src="/xuexiao/style/2/images/tel.jpg" /></p>
+<p class="w3">免费咨询电话：<br />
+{# $school.Workphone #}</p>
+</div>
+<div class="nav">
+	<div class="nav_box">
+        	<ul>
+            	<li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">学校首页</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm">学校介绍</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">培训课程</a></li>
+				{# if $sublist.0.Id > 0 #}
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xiaoqu.htm">分校校区</a></li>
+				{# /if #}
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/laoshi.htm">名师风采</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/huanjing.htm">环境展示</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xinwen.htm">新闻资讯</a></li>
+				<li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/bbs/list-0.htm">学校论坛</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">学员评论</a></li>
+              	<li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">网上报名</a></li>
+				<li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/list-0.htm">{# $CompanyLabel #}视频</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/youhuiquan/list-0.htm">优惠券</a></li>
+                <li><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm">联系我们</a></li>
+          </ul>
+     </div>
+	{# if $debug == 1 #}
+    <div class="nav_tj">
+    	<ul>
+       	  <li class="pt5"><div class="nav_hot">热点推荐</div></li>
+            <li>&nbsp;托福 &nbsp;|&nbsp; 雅思 &nbsp;|&nbsp; 新世界日语 &nbsp;|&nbsp; 留学直通车 &nbsp;|&nbsp; 酷学酷玩 &nbsp;|&nbsp; 中学生学习中心</li>
+        </ul>
+    </div>
+	{# /if #}
+</div>
+{# if $school.BannerImageId > 0 #}
+<div class="banner mt8">
+	{# if $school.BannerImageLink != "" #}
+	<a href="{# $school.BannerImageLink #}"><img id="pBanner" src="/images/blank.gif" psrc="/loadimage.php?id={# $school.BannerImageId #}&w=980&h=300"/></a>
+	{# else #}
+	<img id="pBanner" src="/images/blank.gif" psrc="/loadimage.php?id={# $school.BannerImageId #}&w=980&h=300"/>
+	{# /if #}
+</div>
+<SCRIPT LANGUAGE="JavaScript">$(document).ready(function(){$("#pBanner").attr("src", $("#pBanner").attr("psrc"));}); </SCRIPT>
+{# /if #}
+<script>
+$(function(){
+	$(".top_info span a:last").css({"border-right":"none"})
+		   })
+</script>

@@ -1,0 +1,11 @@
+language: php
+
+php:
+    - 7.0
+
+script:
+
+    - ./build/tools/phpunit.phar --configuration ./build/travis-ci.xml
+
+notifications:
+  email: false

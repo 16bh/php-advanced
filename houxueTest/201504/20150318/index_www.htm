@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="厚学网,培训网,培训,教育,教育培训,培训课程,培训招生网,中国培训网,外语培训,英语培训学校,电脑培训中心,IT培训,职业培训,学历教育,中小学辅导" />
+    <meta name="description" content="厚学培训网是中国领先的教育培训门户网，提供343个城市的教育培训资讯，培训学校报名指南，课程在线报名服务，涵盖外语、电脑IT、职业培训、学历教育等多个类别。" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.houxue.com/">
+    <!--[if IE 6]>
+    <script src="http://www.houxue.com/sa/images/png.js" ></script>
+    <script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+    <link href="templates/css/layout.css" rel="stylesheet" />
+<link href="templates/css/common_base.css" rel="stylesheet" />
+</head>
+<body>
+<div class="h_bg">
+    <!--top begin-->
+    <div class="top_border">
+        <div class="index_top fw">
+            <div class="index_top_con auto">
+                <div class="top_logo pngtm mr10"><h1>厚学网,中国领先的教育培训门户网</h1></div>
+                <div class="top_city">
+                    <input type="hidden" id="x_AreaId" name="aid" value="">
+                    <a class="white" href="javascript:void(0);"><span class="area" id="x_AreaId_display">&nbsp;</span><em id="x_AreaId_display_btn"></em></a>
+                </div>
+                <div class="top_side_nav  mt20 f16">
+                    <a class="white vm" href="http://www.houxue.com/mobile.htm">手机版</a><span class="ml15 mr15 f12 vm white">|</span>
+                    <a class="white vm" href="http://www.houxue.com/help/ask.htm">帮助</a><span class="ml15 mr15 f12 vm white">|</span>
+                    <a class="white vm" href="http://www.houxue.com/reg.php">免费注册</a><span class="ml15 mr15 f12 vm white">|</span>
+                    <a class="white vm" href="http://www.houxue.com/login.php">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--top end-->
+    <div class="h_title clearfix pngtm"></div>
+    <div class="h_counter clearfix pngtm">
+        <div class="h_counter_num ">
+            <span>2</span><span>1</span><span>2</span><span>3</span><span>0</span><span>0</span>
+        </div>
+    </div>
+    <div class="search">
+        <form class="form-wrapper fix">
+            <input type="text" placeholder="你想学什么？" >
+            <button type="submit">立即开始</button>
+        </form>
+        <div class="h_shadow pngtm"></div>
+    </div>
+    <div class="h_list box">
+        <div class="l_left clearfix">
+            <div class="qr_code"><img src="templates/images/qr_code.png" /></div>
+            <div class="ml5">
+                <div class="h_ensure"><img class="pngtm" src="templates/images/approved.png" /><span>认证学校</span></div>
+                <div class="h_ensure "><img class="pngtm" src="templates/images/timesaver.png" /><span>省时省心</span></div>
+                <div class="h_ensure"><img class="pngtm" src="templates/images/cheaper.png" /><span>报名优惠</span></div>
+                <div class="h_ensure "><img class="pngtm" src="templates/images/awardable.png" /><span>点评奖金</span></div>
+                <div class="h_ensure"><img class="pngtm" src="templates/images/refunds.png" /><span>随时退</span></div>
+                <div class="h_ensure "><img class="pngtm" src="templates/images/immediate.png" /><span>过期退</span></div>
+            </div>
+
+        </div>
+        <div class="l_right clearfix">
+            <div class="l_left_top">
+                {#foreach key=rownum item=row from=$InNa#}
+                <a class="{#if $rownum==0#}one{#else#}{#/if#}" href="javascript:;">{#$row.Name#}</a>
+                {#/foreach#}
+            </div>
+            {#foreach key=rownum item=row from=$InNa#}
+            <div class="text_field clearfix text_field{#if $rownum==0#}_one{#else#}{#/if#}">
+                <ul>
+                    {#foreach key=num item=row1 from=$InNa1.$rownum#}
+                    <li>
+                        <span class="title_type">{#$row1.Name#}</span>
+                        <span class="cell">
+                            {#foreach key=num1 item=row2 from=$InNa2.$rownum.$num#}
+						 <a href="{#$row2.Url#}" target="{#if $row2.TargetBlank#}_blank{#else#}{#/if#}">{#$row2.Name#}</a>
+                              {#/foreach#}
+                        </span>
+                    </li>
+                    {#/foreach#}
+                </ul>
+            </div>
+            {#/foreach#}
+        </div>
+    </div>
+    <div class="links clearfix ">
+        <h2 class="fw f14 c6">友情链接</h2>
+        <div class="links_con">
+            <a href="http://www.tuniu.com" target="_blank">途牛旅游网</a> <a href="http://www.qianmi.com" target="_blank">千米网</a> <a href="http://www.longhoo.net" target="_blank">龙虎网</a> <a href="http://www.weblink.cn" target="_blank">南京百度</a> <a href="http://www.njjht.com" target="_blank">化妆培训</a> <a href="http://www.ciwong.com" target="_blank">中国习网</a> <a href="http://www.lagou.com" target="_blank">招聘网</a> <a href="http://www.hao123.com/">hao123</a> <a href="http://www.pxto.com.cn" target="_blank">培训通</a> <a href="http://hao.360.cn/" target="_blank">360安全网址导航</a> <a href="http://www.maogp.com" target="_blank">化妆学校</a> <a href="http://www.szpxe.com" target="_blank">神州培训网</a> <a href="http://www.prcedu.com" target="_blank">答疑网</a> <a href="http://www.gaodun.com/" target="_blank">高顿网校</a> <a href="http://www.aceona.com" target="_blank">社交网站</a>&nbsp;<a href="http://www.jiangshi.org" target="_blank">中华讲师网</a> <a href="http://www.shsunedu.com" target="_blank">二级建造师</a> <a href="http://www.dezhi.com" target="_blank">德智教育</a> <a href="http://www.taoke.com/" target="_blank">淘课网</a> <a href="http://www.eoffcn.com/" target="_blank">公务员考试</a> <a href="http://www.gaofen.com/" target="_blank">高分网</a> &nbsp;<a href="http://www.hengqijy.com" target="_blank">会计培训</a> <a href="http://www.wyzc.com" target="_blank">我赢职场</a>&nbsp;&nbsp;<a href="http://www.longre.com/" target="_blank">朗阁</a> <a href="http://www.xuanxue.com" target="_blank">微营销培训</a> <a href="http://www.100.com/" target="_blank">100教育</a> <a href="http://www.juren.com" target="_blank">巨人网</a> <a href="http://www.gjgwy.org/" target="_blank">国家公务员考试</a> <a href="http://www.5haoxue.net/" target="_blank">好学教育</a>&nbsp;<a href="http://www.kuaiji.com" target="_blank">会计网</a> <a href="http://xialingying.houxue.com" target="_blank">南京夏令营</a> <a href="http://www.whrhkj.com/" target="_blank">实战会计培训</a> <a href="http://xiaoxue.xdf.cn/" target="_blank">小学教育</a> <a href="http://www.gjgwy.net" target="_blank">国家公务员考试</a> <a href="http://www.kjcity.com" target="_blank">会计城</a> <a href="http://www.mobiletrain.org/" target="_blank">千锋ios培训</a> <a href="http://www.canadagoldlife.com/" target="_blank">加拿大金莱福</a> <a href="http://www.houxue.com/help/link.htm" target="_blank" clickid="1064" clickgroupid="30015">更多及申请链接</a> </div>
+    </div>
+</div>
+<div class="footer_wrap mt15">
+    <div class="footer auto tc lh22">
+        <ul>
+            <li><a target="_blank" class="white" href="http://www.houxue.com/help/about.htm" clickid="1065" clickgroupid="30015">关于厚学网</a> |
+                <a target="_blank" class="white" href="http://www.houxue.com/index.html" clickid="1066" clickgroupid="30015">网站地图</a> |
+                <a target="_blank" class="white" href="http://www.houxue.com/help/process.htm" clickid="1067" clickgroupid="30015">使用帮助</a> |
+                <a class="white" href="http://www.houxue.com/s/" clickid="1068" clickgroupid="30015">热招地带</a> |
+                <a class="white" target="_blank" href="http://www.houxue.com/help/zhaopin.htm" clickid="1069" clickgroupid="30015">招贤纳士</a> |
+                <a class="white" target="_blank" href="http://www.houxue.com/help/link.htm" clickid="1070" clickgroupid="30015">友情链接</a> |
+                <a class="white" target="_blank" href="http://www.houxue.com/help/contact.htm" clickid="1071" clickgroupid="30015">联系我们</a>
+            </li>
+            <li>Copyright © 2007-2015 Houxue.com All rights reserved by 南京首屏信息技术有限公司.苏ICP备<a class="white" href="http://www.miitbeian.gov.cn/" target="_blank"><span >14012599</span></a>号-1</li>
+            <li>培训导航<a class="white" href="/letters/A/">A</a>
+                <a class="white" href="/letters/B/" clickid="1072" clickgroupid="30015">B</a>
+                <a class="white" href="/letters/C/" clickid="1073" clickgroupid="30015">C</a>
+                <a class="white" href="/letters/D/" clickid="1074" clickgroupid="30015">D</a>
+                <a class="white" href="/letters/E/" clickid="1075" clickgroupid="30015">E</a>
+                <a class="white" href="/letters/F/" clickid="1076" clickgroupid="30015">F</a>
+                <a class="white" href="/letters/G/" clickid="1077" clickgroupid="30015">G</a>
+                <a class="white" href="/letters/H/" clickid="1078" clickgroupid="30015">H</a>
+                <a class="white" href="/letters/I/" clickid="1079" clickgroupid="30015">I</a>
+                <a class="white" href="/letters/J/" clickid="1080" clickgroupid="30015">J</a>
+                <a class="white" href="/letters/K/" clickid="1081" clickgroupid="30015">K</a>
+                <a class="white" href="/letters/L/" clickid="1082" clickgroupid="30015">L</a>
+                <a class="white" href="/letters/M/" clickid="1083" clickgroupid="30015">M</a>
+                <a class="white" href="/letters/N/" clickid="1084" clickgroupid="30015">N</a>
+                <a class="white" href="/letters/O/" clickid="1085" clickgroupid="30015">O</a>
+                <a class="white" href="/letters/P/" clickid="1086" clickgroupid="30015">P</a>
+                <a class="white" href="/letters/Q/" clickid="1087" clickgroupid="30015">Q</a>
+                <a class="white" href="/letters/R/" clickid="1088" clickgroupid="30015">R</a>
+                <a class="white" href="/letters/S/" clickid="1089" clickgroupid="30015">S</a>
+                <a class="white" href="/letters/T/" clickid="1090" clickgroupid="30015">T</a>
+                <a class="white" href="/letters/U/" clickid="1091" clickgroupid="30015">U</a>
+                <a class="white" href="/letters/V/" clickid="1092" clickgroupid="30015">V</a>
+                <a class="white" href="/letters/W/" clickid="1093" clickgroupid="30015">W</a>
+                <a class="white" href="/letters/X/" clickid="1094" clickgroupid="30015">X</a>
+                <a class="white" href="/letters/Y/" clickid="1095" clickgroupid="30015">Y</a>
+                <a class="white" href="/letters/Z/" clickid="1096" clickgroupid="30015">Z</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="templates/js/jquery-1.11.1.js"></script>
+<script language="javascript" src="/js/area_select.js"></script>
+<script language="javascript">var ObjHXDialogArea = HXDialogArea.setup({inputField:'x_AreaId',displayField:'x_AreaId_display',displayFieldType:'span'});</script>
+<script>
+    $.ajax({
+        url: 'http://www.houxue.net/ajax/thread_www_index.php',
+        data: 'flag=getInitData',
+        type: "get",
+        cache : false,
+        beforeSend: function(){	},
+        success: function(data){
+            try{var myObject = eval('(' + data + ')');}catch (e){return;}
+            $("#x_AreaId").val(myObject["data"]["aid"]);$("#x_AreaId_display").html(myObject["data"]["areanamepath"]);
+            if(myObject["data"]["todayordernums"]) $("#TodayOrderNums").html('今天已有 <a href="http://www.houxue.net/qiuxue/" target="_blank"><span class="f24 tdl red b">'+ myObject["data"]["todayordernums"] +'</span></a> 人在这里求学');
+        },
+        timeout:30000,
+        error: function(data){	currentAjax.abort();	}
+    });
+    $("#x_AreaId_display_btn").click(function(){
+        ObjHXDialogArea.open();
+    });
+    //自适应浏览器
+    var w = $(window).width();
+    $('.h_bg').css('width',w);
+
+    $(function(){setTimeout(onWidthChange,100);});
+
+    function onWidthChange()
+    {
+        if( $(window).width() > 600 ) {
+            var h = $(window).height();
+            var w = $(window).width();
+            $('.h_bg').css('width',w);
+        }
+
+        setTimeout(onWidthChange,100);
+    }
+
+    /*tab*/
+    $(function(){
+        $('.l_right').find('.l_left_top a').hover(function(){
+            $('.l_right').find('.l_left_top a').attr('class','');
+            $('.l_right').find('.text_field').css('display','none');
+            $(this).attr('class','one');
+            $('.l_right').find('.text_field').eq( $(this).index() ).css('display','block');
+        });
+    });
+
+</script>
+</body>
+</html>
+                                          

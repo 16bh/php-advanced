@@ -1,0 +1,46 @@
+RewriteEngine on
+RewriteBase /xuexiao/
+
+# m站
+RewriteCond %{HTTP_HOST} ^m\.houxue\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^[^.]*\.m\.houxue\.com$
+RewriteRule ^(.*)(\.php|\/|\.htm) ../m/distribute.php [L]
+
+# www站
+RewriteCond %{HTTP_HOST} ^www\.houxue\.com$
+RewriteRule ^([0-9]*)$ http://www.houxue.com/xuexiao/$1/ [L]
+RewriteRule ^([0-9]*)/$ index.php?id=$1 [L]
+RewriteRule ^([0-9]*)/jieshao.htm$ index.php?id=$1&mod=jieshao [L]
+RewriteRule ^([0-9]*)/kecheng.htm$ index.php?id=$1&mod=kecheng [L]
+RewriteRule ^([0-9]*)/laoshi.htm$ index.php?id=$1&mod=laoshi [L]
+RewriteRule ^([0-9]*)/huanjing.htm$ index.php?id=$1&mod=huanjing [L]
+RewriteRule ^([0-9]*)/xinwen.htm$ index.php?id=$1&mod=xinwen [L]
+RewriteRule ^([0-9]*)/pingjia.htm$ index.php?id=$1&mod=pingjia [L]
+RewriteRule ^([0-9]*)/baoming.htm$ index.php?id=$1&mod=baoming [L]
+RewriteRule ^([0-9]*)/lianxi.htm$ index.php?id=$1&mod=lianxi [L]
+RewriteRule ^([0-9]*)/xiaoqu.htm$ index.php?id=$1&mod=xiaoqu [L]
+RewriteRule ^([0-9]*)/fenxiao-([0-9]*).htm$ index.php?id=$1&mod=fenxiao&subid=$2 [L]
+RewriteRule ^([0-9]*)/xxyp.htm$ index.php?id=$1&mod=xxyp [L]
+RewriteRule ^([0-9]*)/xxyp/([0-9]+).htm$ index.php?id=$1&mod=xxyp_detail&stuid=$2 [L]
+RewriteRule ^([0-9]*)/qxzs-([0-9]*).htm$ index.php?id=$1&mod=qiuxue&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/bbs/list-([0-9]*).htm$ index.php?id=$1&mod=bbs&flag=list&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/bbs/thread-([0-9]+)-([0-9]+).htm$ index.php?id=$1&mod=bbs&flag=detail&tid=$2&pager_rownum=$3 [L]
+RewriteRule ^([0-9]*)/bbs/(add).htm$ index.php?id=$1&mod=bbs&flag=addThread [L]
+#RewriteRule ^([0-9]*)/bbs/(addsave).htm\?BoardId=([0-9]*)$ index.php?id=$1&mod=bbs&flag=addThreadSave&BoardId=$3 [L]
+RewriteRule ^([0-9]*)/bbs/([0-9]*)/(addsave).htm$ index.php?id=$1&mod=bbs&flag=addThreadSave&BoardId=$2 [L]
+RewriteRule ^([0-9]*)/bbs/([0-9]*)/([0-9]*)/(addreplysave)-([0-9]*).htm$ index.php?id=$1&mod=bbs&flag=addThreadReplySave&ThreadId=$2&BoardId=$3&pager_rownum=$5 [L]
+RewriteRule ^([0-9]*)/bbs/(image).htm$ index.php?id=$1&mod=bbs [L]
+RewriteRule ^([0-9]*)/shipin/list-([0-9]*).htm$ index.php?id=$1&mod=shipin&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/shipin/([0-9]+).htm$ index.php?id=$1&mod=shipin&flag=detail&zid=$2 [L]
+
+RewriteRule ^([0-9]*)/ziliao/list-([0-9]*).htm$ ziliao.php?id=$1&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/ziliao/([0-9]+).htm$ ziliao.php?id=$1&flag=detail&zid=$2 [L]
+RewriteRule ^([0-9]*)/shijuan/list-([0-9]*).htm$ shijuan.php?id=$1&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/youhuiquan/list-([0-9]*).htm$ youhuiquan.php?id=$1&pager_rownum=$2 [L]
+RewriteRule ^([0-9]*)/youhuiquan/([0-9]+).htm$ youhuiquan.php?id=$1&flag=detail&zid=$2 [L]
+
+
+# 其它
+RewriteCond %{HTTP_HOST} [^(www|m)]\.houxue\.com$
+RewriteRule ^(.*)(\.php|\.htm) index.php [L]
+RewriteRule ^$ index.php [L]

@@ -1,0 +1,1139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>{# if $CONFIGAREA.$AreaId.page_index_title != "" #}{# $CONFIGAREA.$AreaId.page_index_title #}{# else #}{# $Area.AreaName #}培训|{# $Area.AreaName #}培训网|{# $Area.AreaName #}培训教育网|{# $Area.AreaName #}培训机构|{# $Area.AreaName #}培训学校|{# $Area.AreaName #}培训中心-厚学网{# /if #}</title>
+		<meta name="keywords" content='{# if $CONFIGAREA.$AreaId.page_index_keywords != ""#}{# $CONFIGAREA.$AreaId.page_index_keywords #}{# else #}{# $Area.AreaName #}培训,{# $Area.AreaName #}培训网,{# $Area.AreaName #}培训教育网,{# $Area.AreaName #}培训机构,{# $Area.AreaName #}培训学校,{# $Area.AreaName #}培训中心{# /if #}' />
+		<meta name="description" content="{# $CONFIGAREA.$AreaId.page_index_description|default:$CONFIGAREA.0.page_index_description|strip_tags #}" />
+		{# $CONFIGAREA.$AreaId.page_index_verify|default:$CONFIGAREA.0.page_index_verify #}
+      <link href="http://www.houxue.net/js/jquery/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+      <link href="http://www.houxue.net/css09/basic.css" rel="stylesheet" type="text/css" media="all" />
+	  <script type="text/javascript" src="http://www.houxue.net/js/jquery/jquery.min.js"></script>
+	  <script type="text/javascript" src="http://www.houxue.net/js/jquery/ui/minified/jquery.ui.core.min.js"></script>
+	  <script type="text/javascript" src="http://www.houxue.net/js/jquery/ui/minified/jquery.ui.widget.min.js"></script>
+	  <script type="text/javascript" src="http://www.houxue.net/js/jquery/ui/minified/jquery.ui.tabs.min.js"></script>
+  </head>
+
+	<body>
+	<div class="a9_box">
+
+	{#include file="head_09.htm"#}
+	{#include file="index_head_menu09.htm"#}
+
+		{# if $CONFIGAREA.$AreaId.page_index_banner1 != "" || $CONFIGAREA.0.page_index_banner1 != "" #}
+		<div class="indexbanner20091228">
+		{# $CONFIGAREA.$AreaId.page_index_banner1|default:$CONFIGAREA.0.page_index_banner1 #}
+		</div>
+		{# /if #}
+
+		<div class="a9_left">
+		  <div class="a9_gg">
+		    <div id="a9_gg_title"> <font>{# $Area.AreaName #}培训网公告栏</font>
+		     {# if $tmp == 1 #} <!--a id="a9_gray_help" href="http://www.houxue.net/help/about.htm" target="_blank">网站使用帮助</a-->{# /if #}
+	        </div>
+		    <ul>
+		      {# $CONFIGAREA.$AreaId.page_index_notice|default:$CONFIGAREA.0.page_index_notice #}
+	        </ul>
+		    <ul id="a9_ggrl">
+		      <li id="a9_ksrl">
+				<p><a {# if date("n")==1 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link1|default:$CONFIGAREA.0.page_index_exam_link1 #}" target="_blank">1月</a></p>					<p><a {# if date("n")==2 #}class="a9_green"{# /if #}href="{# $CONFIGAREA.$AreaId.page_index_exam_link2|default:$CONFIGAREA.0.page_index_exam_link2 #}" target="_blank">2月</a></p>					<p><a {# if date("n")==3 #}class="a9_green"{# /if #}href="{# $CONFIGAREA.$AreaId.page_index_exam_link3|default:$CONFIGAREA.0.page_index_exam_link3 #}" target="_blank">3月</a></p>					<p><a {# if date("n")==4 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link4|default:$CONFIGAREA.0.page_index_exam_link4 #}" target="_blank">4月</a></p>					<p><a {# if date("n")==5 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link5|default:$CONFIGAREA.0.page_index_exam_link5 #}" target="_blank">5月</a></p>					<p><a {# if date("n")==6 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link6|default:$CONFIGAREA.0.page_index_exam_link6 #}" target="_blank">6月</a></p>					<p><a {# if date("n")==7 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link7|default:$CONFIGAREA.0.page_index_exam_link7 #}" target="_blank">7月</a></p>					<p><a {# if date("n")==8 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link8|default:$CONFIGAREA.0.page_index_exam_link8 #}" target="_blank">8月</a></p>					<p><a {# if date("n")==9 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link9|default:$CONFIGAREA.0.page_index_exam_link9 #}" target="_blank">9月</a></p>					<p><a {# if date("n")==10 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link10|default:$CONFIGAREA.0.page_index_exam_link10 #}" target="_blank">10月</a></p>					<p><a {# if date("n")==11 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link11|default:$CONFIGAREA.0.page_index_exam_link11 #}" target="_blank">11月</a></p>					<p><a {# if date("n")==12 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link12|default:$CONFIGAREA.0.page_index_exam_link12 #}" target="_blank">12月</a></p>
+	          </li>
+	        </ul>
+	      </div>
+		  <!--a9_gg and-->
+
+	  <div class="a9_ad1">
+				<!--img src="images09/6871657.gif"/-->
+				{# $CONFIGAREA.$AreaId.page_index_left_img1|default:$CONFIGAREA.0.page_index_left_img1 #}
+			</div>
+
+			{# if $tmp == 1 #}
+			<iframe src="/index_left.php" frameborder=0 height=1666></iframe>
+			{# /if #}
+
+			<div class="a9_class">
+				<div class="a9_class_title">{# $Area.AreaName #}培训网培训课程分类</div>
+				<div class="a9_class_con">
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng2-0/" target="_blank" title="{# $Area.AreaName #}语言培训">{# $Area.AreaName #}语言培训</a> </li>
+						<li>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng26-0/" target="_blank" title="{# $Area.AreaName #}雅思">雅思&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng30-0/" target="_blank" title="{# $Area.AreaName #}公共英语">公共英语&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng21-0/" target="_blank" title="{# $Area.AreaName #}商务英语">商务英语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng20-0/" target="_blank" title="{# $Area.AreaName #}基础英语">基础英语</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng27-0/" target="_blank" title="{# $Area.AreaName #}托福">托福&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng22-0/" target="_blank" title="{# $Area.AreaName #}专业英语">专业英语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng149-0/" target="_blank" title="{# $Area.AreaName #}职称英语">职称英语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng31-0/" target="_blank" title="{# $Area.AreaName #}少儿英语">少儿英语</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng28-0/" target="_blank" title="{# $Area.AreaName #}托业">托业&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng24-0/" target="_blank" title="{# $Area.AreaName #}四六级">四六级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng23-0/" target="_blank" title="{# $Area.AreaName #}英语口语">英语口语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng25-0/" target="_blank" title="{# $Area.AreaName #}口译笔译">口译笔译</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng29-0/" target="_blank" title="{# $Area.AreaName #}GRE">GRE&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng150-0/" target="_blank" title="{# $Area.AreaName #}新概念英语">新概念英语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng153-0/" target="_blank" title="{# $Area.AreaName #}许国璋">许国璋&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng154-0/" target="_blank" title="{# $Area.AreaName #}对外汉语">对外汉语</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng34-0/" target="_blank" title="{# $Area.AreaName #}日语">日语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng35-0/" target="_blank" title="{# $Area.AreaName #}韩语">韩语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng151-0/" target="_blank" title="{# $Area.AreaName #}俄语">俄语&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng428-0/" target="_blank" title="{# $Area.AreaName #}荷兰语">荷兰语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng36-0/" target="_blank" title="{# $Area.AreaName #}西班牙语">西班牙语</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng32-0/" target="_blank" title="{# $Area.AreaName #}法语">法语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng92-0/" target="_blank" title="{# $Area.AreaName #}意大利语">意大利语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng429-0/" target="_blank" title="{# $Area.AreaName #}瑞典语">瑞典语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng144-0/" target="_blank" title="{# $Area.AreaName #}葡萄牙语">葡萄牙语</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng33-0/" target="_blank" title="{# $Area.AreaName #}德语">德语&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng146-0/" target="_blank" title="{# $Area.AreaName #}阿拉伯语">阿拉伯语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng155-0/" target="_blank" title="{# $Area.AreaName #}普通话">普通话&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng156-0/" target="_blank" title="{# $Area.AreaName #}演讲口才">演讲口才</a></p></li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng1-0/" target="_blank" title="{# $Area.AreaName #}电脑/IT培训">{# $Area.AreaName #}电脑/IT培训</a>  </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng167-0/" target="_blank" title="{# $Area.AreaName #}微软">微软&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng19-0/" target="_blank" title="{# $Area.AreaName #}等级考试">等级考试&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng7-0/" target="_blank" title="{# $Area.AreaName #}软件开发">软件开发&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng18-0/" target="_blank" title="{# $Area.AreaName #}办公应用">办公应用</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng169-0/" target="_blank" title="{# $Area.AreaName #}思科">思科&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng8-0/" target="_blank" title="{# $Area.AreaName #}平面设计">平面设计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng17-0/" target="_blank" title="{# $Area.AreaName #}动漫设计">动漫设计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng12-0/" target="_blank" title="{# $Area.AreaName #}网站设计">网站设计</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng170-0/" target="_blank" title="{# $Area.AreaName #}华为">华为&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng13-0/" target="_blank" title="{# $Area.AreaName #}影视制作">影视制作&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng9-0/" target="_blank" title="{# $Area.AreaName #}游戏开发">游戏开发&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng14-0/" target="_blank" title="{# $Area.AreaName #}软件测试">软件测试</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng171-0/" target="_blank" title="{# $Area.AreaName #}IBM">IBM&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng158-0/" target="_blank" title="{# $Area.AreaName #}工程制图">工程制图&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng16-0/" target="_blank" title="{# $Area.AreaName #}装饰装潢">装饰装潢&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng159-0/" target="_blank" title="{# $Area.AreaName #}硬件维修">硬件维修</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng173-0/" target="_blank" title="{# $Area.AreaName #}SUN">SUN&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng160-0/" target="_blank" title="{# $Area.AreaName #}速录速记">速录速记&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng10-0/" target="_blank" title="{# $Area.AreaName #}网络技术">网络技术&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng161-0/" target="_blank" title="{# $Area.AreaName #}手机开发">手机开发</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng174-0/" target="_blank" title="{# $Area.AreaName #}JAVA">JAVA&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng162-0/" target="_blank" title="{# $Area.AreaName #}Adobe">Adobe&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng165-0/" target="_blank" title="{# $Area.AreaName #}嵌入式培训">嵌入式培训&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng166-0/" target="_blank" title="{# $Area.AreaName #}北大青鸟">北大青鸟</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng168-0/" target="_blank" title="{# $Area.AreaName #}NIIT">NIIT&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng164-0/" target="_blank" title="{# $Area.AreaName #}Oracle">Oracle&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng172-0/" target="_blank" title="{# $Area.AreaName #}Linux">Linux&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng163-0/" target="_blank" title="{# $Area.AreaName #}Micromedia认证">Micromedia认证</a></p> </li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng3-0/" target="_blank" title="{# $Area.AreaName #}职业技能培训">{# $Area.AreaName #}职业技能培训</a>  </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng38-0/" target="_blank" title="{# $Area.AreaName #}美容">美容&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng37-0/" target="_blank" title="{# $Area.AreaName #}驾驶培训">驾驶培训&nbsp;&nbsp;</a></p>
+						{# if $Area.Domain == "nj" #}
+						<p><a class="a9_green" href="http://www.jsxdf.com/index.shtml" target="_blank" title="厨师培训">厨师培训&nbsp;&nbsp;</a></p>
+						{# else #}
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng40-0/" target="_blank" title="{# $Area.AreaName #}厨师培训">厨师培训&nbsp;&nbsp;</a></p>
+						{# /if #}
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng42-0/" target="_blank" title="{# $Area.AreaName #}服装设计">服装设计</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng39-0/" target="_blank" title="{# $Area.AreaName #}美发">美发&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng41-0/" target="_blank" title="{# $Area.AreaName #}汽车维修">汽车维修&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng181-0/" target="_blank" title="{# $Area.AreaName #}家电维修">家电维修&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng182-0/" target="_blank" title="{# $Area.AreaName #}手机维修">手机维修</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng143-0/" target="_blank" title="{# $Area.AreaName #}美甲">美甲&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng184-0/" target="_blank" title="{# $Area.AreaName #}修摩托车">修摩托车&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng185-0/" target="_blank" title="{# $Area.AreaName #}机电维修">机电维修&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng183-0/" target="_blank" title="{# $Area.AreaName #}电脑维修">电脑维修</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng175-0/" target="_blank" title="{# $Area.AreaName #}色彩">色彩&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng186-0/" target="_blank" title="{# $Area.AreaName #}电工">电工&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng189-0/" target="_blank" title="{# $Area.AreaName #}焊工">焊工&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng194-0/" target="_blank" title="{# $Area.AreaName #}装载机">装载机&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng188-0/" target="_blank" title="{# $Area.AreaName #}数控机床">数控机床</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng142-0/" target="_blank" title="{# $Area.AreaName #}化妆">化妆&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng187-0/" target="_blank" title="{# $Area.AreaName #}车工">车工&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng191-0/" target="_blank" title="{# $Area.AreaName #}钳工">钳工&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng195-0/" target="_blank" title="{# $Area.AreaName #}挖掘机">挖掘机&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng192-0/" target="_blank" title="{# $Area.AreaName #}模具设计">模具设计</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng178-0/" target="_blank" title="{# $Area.AreaName #}模特">模特&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng43-0/" target="_blank" title="{# $Area.AreaName #}礼仪">礼仪&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng176-0/" target="_blank" title="{# $Area.AreaName #}形象">形象&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng180-0/" target="_blank" title="{# $Area.AreaName #}足疗师">足疗师&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng45-0/" target="_blank" title="{# $Area.AreaName #}保健按摩">保健按摩</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng177-0/" target="_blank" title="{# $Area.AreaName #}摄影">摄影&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng179-0/" target="_blank" title="{# $Area.AreaName #}演艺">演艺&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng199-0/" target="_blank" title="{# $Area.AreaName #}花艺">花艺&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng50-0/" target="_blank" title="{# $Area.AreaName #}DJ音控">DJ音控&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng200-0/" target="_blank" title="{# $Area.AreaName #}POP手绘">POP手绘</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng49-0/" target="_blank" title="{# $Area.AreaName #}调酒">调酒&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng197-0/" target="_blank" title="{# $Area.AreaName #}茶艺">茶艺&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng201-0/" target="_blank" title="{# $Area.AreaName #}酒店">酒店&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng198-0/" target="_blank" title="{# $Area.AreaName #}咖啡师">咖啡师&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng196-0/" target="_blank" title="{# $Area.AreaName #}建筑施工">建筑施工</a></p>  </li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng5-0/" target="_blank" title="{# $Area.AreaName #}资格认证培训">{# $Area.AreaName #}资格认证培训</a>  </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng71-0/" target="_blank" title="{# $Area.AreaName #}教师">教师&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng103-0/" target="_blank" title="{# $Area.AreaName #}会计从业">会计从业&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng141-0/" target="_blank" title="{# $Area.AreaName #}注册会计">注册会计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng313-0/" target="_blank" title="{# $Area.AreaName #}注册税务">注册税务</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng44-0/" target="_blank" title="{# $Area.AreaName #}导游">导游&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng310-0/" target="_blank" title="{# $Area.AreaName #}初级会计">初级会计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng311-0/" target="_blank" title="{# $Area.AreaName #}中级会计">中级会计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng312-0/" target="_blank" title="{# $Area.AreaName #}高级会计">高级会计&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng76-0/" target="_blank" title="{# $Area.AreaName #}医师">医师&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng319-0/" target="_blank" title="{# $Area.AreaName #}银行从业">银行从业&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng320-0/" target="_blank" title="{# $Area.AreaName #}证券从业">证券从业&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng344-0/" target="_blank" title="{# $Area.AreaName #}保险从业">保险从业</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng340-0/" target="_blank" title="{# $Area.AreaName #}药师">药师&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng108-0/" target="_blank" title="{# $Area.AreaName #}建造师">建造师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng350-0/" target="_blank" title="{# $Area.AreaName #}建筑师">建筑师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng73-0/" target="_blank" title="{# $Area.AreaName #}置业顾问">置业顾问</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng341-0/" target="_blank" title="{# $Area.AreaName #}护士">护士&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng75-0/" target="_blank" title="{# $Area.AreaName #}营养师">营养师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng74-0/" target="_blank" title="{# $Area.AreaName #}育婴师">育婴师&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng109-0/" target="_blank" title="{# $Area.AreaName #}心理咨询师">心理咨询师</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng329-0/" target="_blank" title="{# $Area.AreaName #}秘书">秘书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng112-0/" target="_blank" title="{# $Area.AreaName #}人力资源管理师">人力资源管理师&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng77-0/" target="_blank" title="{# $Area.AreaName #}理财规划师">理财规划师</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng147-0/" target="_blank" title="{# $Area.AreaName #}律师">律师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng70-0/" target="_blank" title="{# $Area.AreaName #}公务员">公务员&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng333-0/" target="_blank" title="{# $Area.AreaName #}策划师">策划师&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng338-0/" target="_blank" title="{# $Area.AreaName #}汽车经纪人">汽车经纪人</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng62-0/" target="_blank" title="{# $Area.AreaName #}报关员">报关员&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng65-0/" target="_blank" title="{# $Area.AreaName #}报检员">报检员&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng66-0/" target="_blank" title="{# $Area.AreaName #}外销员">外销员&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng324-0/" target="_blank" title="{# $Area.AreaName #}国际商务师">国际商务师</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng63-0/" target="_blank" title="{# $Area.AreaName #}跟单员">跟单员&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng67-0/" target="_blank" title="{# $Area.AreaName #}单证员">单证员&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng69-0/" target="_blank" title="{# $Area.AreaName #}物流师">物流师&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng326-0/" target="_blank" title="{# $Area.AreaName #}电子商务师">电子商务师</a></p>
+						</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng4-0/" target="_blank" title="{# $Area.AreaName #}企业管理培训">{# $Area.AreaName #}企业管理培训</a> </li>
+						<li>
+
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng51-0/" target="_blank" title="{# $Area.AreaName #}行政">行政&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng57-0/" target="_blank" title="{# $Area.AreaName #}商务秘书">商务秘书&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng55-0/" target="_blank" title="{# $Area.AreaName #}商务操作">商务操作&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng53-0/" target="_blank" title="{# $Area.AreaName #}商务策划">商务策划</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng52-0/" target="_blank" title="{# $Area.AreaName #}财务">财务&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng60-0/" target="_blank" title="{# $Area.AreaName #}电子商务">电子商务&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng56-0/" target="_blank" title="{# $Area.AreaName #}信息管理">信息管理&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng58-0/" target="_blank" title="{# $Area.AreaName #}工商管理">工商管理</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng206-0/" target="_blank" title="{# $Area.AreaName #}生产">生产&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng212-0/" target="_blank" title="{# $Area.AreaName #}质量管理">质量管理&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng54-0/" target="_blank" title="{# $Area.AreaName #}项目管理">项目管理&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng59-0/" target="_blank" title="{# $Area.AreaName #}市场营销">市场营销</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng46-0/" target="_blank" title="{# $Area.AreaName #}采购">采购&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng207-0/" target="_blank" title="{# $Area.AreaName #}公开课">公开课&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng211-0/" target="_blank" title="{# $Area.AreaName #}危机管理">危机管理&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng61-0/" target="_blank" title="{# $Area.AreaName #}拓展训练">拓展训练</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng48-0/" target="_blank" title="{# $Area.AreaName #}物流">物流&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng210-0/" target="_blank" title="{# $Area.AreaName #}研修班">研修班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng208-0/" target="_blank" title="{# $Area.AreaName #}战略管理">战略管理&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng209-0/" target="_blank" title="{# $Area.AreaName #}领导艺术">领导艺术</a></p>	</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng6-0/" target="_blank" title="{# $Area.AreaName #}文体艺术培训">{# $Area.AreaName #}文体艺术培训</a>  </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng79-0/" target="_blank" title="{# $Area.AreaName #}书法">书法&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng214-0/" target="_blank" title="{# $Area.AreaName #}街舞">街舞&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng78-0/" target="_blank" title="{# $Area.AreaName #}拉丁舞">拉丁舞&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng215-0/" target="_blank" title="{# $Area.AreaName #}芭蕾舞">芭蕾舞&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng216-0/" target="_blank" title="{# $Area.AreaName #}钢管舞">钢管舞</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng83-0/" target="_blank" title="{# $Area.AreaName #}钢琴">钢琴&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng84-0/" target="_blank" title="{# $Area.AreaName #}围棋">围棋&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng217-0/" target="_blank" title="{# $Area.AreaName #}现代舞">现代舞&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng218-0/" target="_blank" title="{# $Area.AreaName #}肚皮舞">肚皮舞&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng219-0/" target="_blank" title="{# $Area.AreaName #}爵士舞">爵士舞</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng224-0/" target="_blank" title="{# $Area.AreaName #}吉他">吉他&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng220-0/" target="_blank" title="{# $Area.AreaName #}象棋">象棋&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng225-0/" target="_blank" title="{# $Area.AreaName #}羽毛球">羽毛球&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng226-0/" target="_blank" title="{# $Area.AreaName #}乒乓球">乒乓球&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng364-0/" target="_blank" title="{# $Area.AreaName #}民族舞">民族舞</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng85-0/" target="_blank" title="{# $Area.AreaName #}声乐">声乐&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng87-0/" target="_blank" title="{# $Area.AreaName #}篮球">篮球&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng88-0/" target="_blank" title="{# $Area.AreaName #}足球">足球&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng227-0/" target="_blank" title="{# $Area.AreaName #}网球">网球&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng228-0/" target="_blank" title="{# $Area.AreaName #}台球">台球&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng90/" title="{# $Area.AreaName #}跆拳道">跆拳道</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng81-0/" target="_blank" title="{# $Area.AreaName #}器乐">器乐&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng229-0/" target="_blank" title="{# $Area.AreaName #}轮滑">轮滑&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng230-0/" target="_blank" title="{# $Area.AreaName #}健身">健身&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng89-0/" target="_blank" title="{# $Area.AreaName #}瑜珈">瑜珈&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng232-0/" target="_blank" title="{# $Area.AreaName #}武术">武术&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng233-0/" target="_blank" title="{# $Area.AreaName #}太极拳">太极拳</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng82-0/" target="_blank" title="{# $Area.AreaName #}绘画">绘画&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng80-0/" target="_blank" title="{# $Area.AreaName #}插花">插花&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng231-0/" target="_blank" title="{# $Area.AreaName #}游泳">游泳&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng86-0/" target="_blank" title="{# $Area.AreaName #}摄影">摄影&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng91-0/" target="_blank" title="{# $Area.AreaName #}竞技">竞技&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng221-0/" target="_blank" title="{# $Area.AreaName #}影视戏">影视戏</a></p>	</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng104-0/" target="_blank" title="{# $Area.AreaName #}中小学幼儿培训">{# $Area.AreaName #}中小学幼儿培训</a> </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng243-0/" target="_blank" title="{# $Area.AreaName #}幼儿智力">幼儿智力&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng244-0/" target="_blank" title="{# $Area.AreaName #}记忆力培训">记忆力培训&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng365-0/" target="_blank" title="{# $Area.AreaName #}讲故事培训">讲故事培训</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng157-0/" target="_blank" title="{# $Area.AreaName #}小学辅导班">小学辅导班&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng247-0/" target="_blank" title="{# $Area.AreaName #}夏令营">夏令营&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng100-0/" target="_blank" title="{# $Area.AreaName #}高考美术辅导">高考美术辅导</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng234-0/" target="_blank" title="{# $Area.AreaName #}初中辅导班">初中辅导班&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng248-0/" target="_blank" title="{# $Area.AreaName #}冬令营">冬令营&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng240-0/" target="_blank" title="{# $Area.AreaName #}高考音乐辅导">高考音乐辅导</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng235-0/" target="_blank" title="{# $Area.AreaName #}高中辅导班">高中辅导班&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng245-0/" target="_blank" title="{# $Area.AreaName #}珠算心算">珠算心算&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng241-0/" target="_blank" title="{# $Area.AreaName #}体育特招培训">体育特招培训</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng238-0/" target="_blank" title="{# $Area.AreaName #}高考复读班">高考复读班&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng236-0/" target="_blank" title="{# $Area.AreaName #}家教辅导">家教辅导&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng250-0/" target="_blank" title="{# $Area.AreaName #}高考艺术辅导">高考艺术辅导</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng237-0/" target="_blank" title="{# $Area.AreaName #}作文辅导班">作文辅导班&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng246-0/" target="_blank" title="{# $Area.AreaName #}素质训练">素质训练&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng242-0/" target="_blank" title="{# $Area.AreaName #}科技竞赛辅导">科技竞赛辅导</a></p>	</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng93-0/" target="_blank" title="{# $Area.AreaName #}学历文凭培训">{# $Area.AreaName #}学历文凭培训</a> </li>
+						<li>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng96-0/" target="_blank" title="{# $Area.AreaName #}自考">自考&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng254-0/" target="_blank" title="{# $Area.AreaName #}专转本">专转本&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng251-0/" target="_blank" title="{# $Area.AreaName #}同等学历">同等学历&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng97-0/" target="_blank" title="{# $Area.AreaName #}在职硕士">在职硕士</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng94-0/" target="_blank" title="{# $Area.AreaName #}考研">考研&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng101-0/" target="_blank" title="{# $Area.AreaName #}本专科">本专科&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng252-0/" target="_blank" title="{# $Area.AreaName #}民办院校">民办院校&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng258-0/" target="_blank" title="{# $Area.AreaName #}法律硕士">法律硕士</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng255-0/" target="_blank" title="{# $Area.AreaName #}考博">考博&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng98-0/" target="_blank" title="{# $Area.AreaName #}研修班">研修班&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng95-0/" target="_blank" title="{# $Area.AreaName #}成人高考">成人高考&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng259-0/" target="_blank" title="{# $Area.AreaName #}会计硕士">会计硕士</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng99-0/" target="_blank" title="{# $Area.AreaName #}MBA">MBA&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng99-0/" target="_blank" title="{# $Area.AreaName #}EMBA">EMBA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng102-0/" target="_blank" title="{# $Area.AreaName #}中外本科">中外本科&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng260-0/" target="_blank" title="{# $Area.AreaName #}教育硕士">教育硕士</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng256-0/" target="_blank" title="{# $Area.AreaName #}MPA">MPA&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng257-0/" target="_blank" title="{# $Area.AreaName #}MPM&nbsp;">MPM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng253-0/" target="_blank" title="{# $Area.AreaName #}空乘专业">空乘专业&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng261-0/" target="_blank" title="{# $Area.AreaName #}工程硕士">工程硕士</a></p>	</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng105-0/" target="_blank" title="{# $Area.AreaName #}出国留学培训">{# $Area.AreaName #}出国留学培训</a> </li>
+						<li>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng132-0/" target="_blank" title="{# $Area.AreaName #}美国留学">美国留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng133-0/" target="_blank" title="{# $Area.AreaName #}加拿大">加拿大&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng264-0/" target="_blank" title="{# $Area.AreaName #}俄罗斯">俄罗斯&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng263-0/" target="_blank" title="{# $Area.AreaName #}意大利">意大利</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng134-0/" target="_blank" title="{# $Area.AreaName #}英国留学">英国留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng265-0/" target="_blank" title="{# $Area.AreaName #}西班牙">西班牙&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng266-0/" target="_blank" title="{# $Area.AreaName #}葡萄牙">葡萄牙&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng269-0/" target="_blank" title="{# $Area.AreaName #}比利时">比利时</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng131-0/" target="_blank" title="{# $Area.AreaName #}法国留学">法国留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng270-0/" target="_blank" title="{# $Area.AreaName #}丹麦">丹麦&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng274-0/" target="_blank" title="{# $Area.AreaName #}挪威留学">挪威留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng272-0/" target="_blank" title="{# $Area.AreaName #}奥地利">奥地利</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng130-0/" target="_blank" title="{# $Area.AreaName #}德国留学">德国留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng267-0/" target="_blank" title="{# $Area.AreaName #}瑞士">瑞士&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng268-0/" target="_blank" title="{# $Area.AreaName #}瑞典留学">瑞典留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng273-0/" target="_blank" title="{# $Area.AreaName #}匈牙利">匈牙利</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng128-0/" target="_blank" title="{# $Area.AreaName #}荷兰留学">荷兰留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng275-0/" target="_blank" title="{# $Area.AreaName #}波兰">波兰&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng271-0/" target="_blank" title="{# $Area.AreaName #}芬兰留学">芬兰留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng129-0/" target="_blank" title="{# $Area.AreaName #}爱尔兰">爱尔兰</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng278-0/" target="_blank" title="{# $Area.AreaName #}印度留学">印度留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng279-0/" target="_blank" title="{# $Area.AreaName #}印尼">印尼&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng136-0/" target="_blank" title="{# $Area.AreaName #}澳洲留学">澳洲留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng135-0/" target="_blank" title="{# $Area.AreaName #}新西兰">新西兰</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng140-0/" target="_blank" title="{# $Area.AreaName #}日本留学">日本留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng277-0/" target="_blank" title="{# $Area.AreaName #}泰国">泰国&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng139-0/" target="_blank" title="{# $Area.AreaName #}马来西亚">马来西亚&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng276-0/" target="_blank" title="{# $Area.AreaName #}菲律宾">菲律宾</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng127-0/" target="_blank" title="{# $Area.AreaName #}韩国留学">韩国留学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng282-0/" target="_blank" title="{# $Area.AreaName #}巴西">巴西&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng283-0/" target="_blank" title="{# $Area.AreaName #}阿根廷">阿根廷&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng137-0/" target="_blank" title="{# $Area.AreaName #}新加坡">新加坡</a></p>
+						</li>
+					</ul>
+					<dl></dl>
+					<ul>
+						<li><a class="a9_class_link" href="http://{# $Area.Domain #}.houxue.net/kecheng114-0/" target="_blank" title="{# $Area.AreaName #}网络远程培训">{# $Area.AreaName #}网络远程培训</a> </li>
+						<li>
+						<p><a class="a9_red" href="http://{# $Area.Domain #}.houxue.net/kecheng288-0/" target="_blank" title="{# $Area.AreaName #}远程财会">远程财会&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng304-0/" target="_blank" title="{# $Area.AreaName #}电脑">电脑&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng291-0/" target="_blank" title="{# $Area.AreaName #}公务员">公务员&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng300-0/" target="_blank" title="{# $Area.AreaName #}成人高考">成人高考</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng289-0/" target="_blank" title="{# $Area.AreaName #}远程外语">远程外语&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng298-0/" target="_blank" title="{# $Area.AreaName #}法律">法律&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng301-0/" target="_blank" title="{# $Area.AreaName #}中小学">中小学&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng292-0/" target="_blank" title="{# $Area.AreaName #}人力资源">人力资源</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng290-0/" target="_blank" title="{# $Area.AreaName #}远程自考">远程自考&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng295-0/" target="_blank" title="{# $Area.AreaName #}金融">金融&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng115-0/" target="_blank" title="{# $Area.AreaName #}高起专">高起专&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng299-0/" target="_blank" title="{# $Area.AreaName #}心理咨询">心理咨询</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng293-0/" target="_blank" title="{# $Area.AreaName #}远程考研">远程考研&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng305-0/" target="_blank" title="{# $Area.AreaName #}外贸">外贸&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng117-0/" target="_blank" title="{# $Area.AreaName #}高起本">高起本&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng302-0/" target="_blank" title="{# $Area.AreaName #}在职硕士">在职硕士</a></p>
+						<p><a class="a9_green" href="http://{# $Area.Domain #}.houxue.net/kecheng296-0/" target="_blank" title="{# $Area.AreaName #}远程建筑">远程建筑&nbsp;&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng297-0/" target="_blank" title="{# $Area.AreaName #}医卫">医卫&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng116-0/" target="_blank" title="{# $Area.AreaName #}专升本">专升本&nbsp;&nbsp;</a></p>
+						<p><a href="http://{# $Area.Domain #}.houxue.net/kecheng287-0/" target="_blank" title="{# $Area.AreaName #}网络学习卡">网络学习卡</a></p>
+						</li>
+					</ul>
+
+
+				</div>
+				<!--a9_class_con and-->
+			</div>
+			<!--a9_class and-->
+
+			<div class="a9_newschool">
+				<div class="a9_newschool_title">{# $Area.AreaName #}培训学校 <a id="iwntreg" href="reg.php">我要注册</a></div>
+				<div class="a9_newschool_con">
+					{# foreach key=rownum item=row from=$schoolList #}
+					<dl>
+						<dt><a href="http://{# $row.Domain #}.houxue.net/xuexiao-{# $row.LoginId #}/" target="_blank">{# $row.Name #}</a></dt>
+						{# if $tmp == 1 #}
+						<dd><font id="a9_gray">电话：</font>{# $row.Workphone #}</dd>
+						<dd><font id="a9_gray">地址：</font>{# $row.Addr|strip_tags|trim|truncateex:34:'utf-8' #}</dd>
+						{# /if #}
+						<dd>{# $row.Addr|strip_tags|trim|truncateex:34:'utf-8' #}</dd>
+					</dl>
+					{# /foreach #}
+
+				</div>
+				<!--a9_newschool_con and-->
+			</div>
+			<!--a9_newschool and-->
+
+			{# if $debug == 1 #}
+			<div class="a9_info">
+				<div class="a9_info_title">{# $Area.AreaName #}培训问答</div>
+				<div class="a9_info_con">
+					<!--
+					<dl>
+						{# $CONFIGAREA_bak.$AreaId.page_index_left_news|default:$CONFIGAREA_bak.0.page_index_left_news #}
+					</dl>
+					-->
+
+					<ul>
+						{# foreach key=rownum item=row from=$newsList_bak #}
+						<li><font><a class="crey" href="news.php?cid={# $row.CategoryId #}" target="_blank">[  {# $row.CategoryName #}  ]</a></font> <a href="http://www.houxue.net/news-{# $row.Id #}/" title="{# $row.Title|strip_tags #}" target="_blank">  {# $row.Title|truncateex:11:'utf-8' #}</a></li>
+						{# /foreach #}
+						{# foreach key=rownum item=row from=$asklist #}
+						<li><font><a href="/ask/list--{# $row.CategoryId #}-/" target="_blank">[{# $row.CategoryName #}]</a></font> <a href="http://{# $row.Domain #}.houxue.net/ask/ask-{# $row.Id #}/" title="{# $row.Subject|strip_tags #}" target="_blank">{# $row.Subject|truncateex:11:'utf-8' #}</a></li>
+						{# /foreach #}
+					</ul>
+
+				</div>
+
+				<!--a9_info_con and-->
+			</div>
+			<!--a9_info and-->
+			{# /if #}
+
+			<div class="a9_info">
+				<div class="a9_info_title">{# $Area.AreaName #}培训网最新登录培训学校</div>
+				<div class="a9_info_con">
+					<ul>
+						{# foreach key=rownum item=row from=$last_login_school #}
+						<li><font>[<a class="crey" href="http://{# $row.Area.Domain #}.houxue.net/xuexiao{# $row.CategoryId #}-0/" target="_blank" title="{# $row.Area.Path.1.AreaName #}{# $row.CategoryName #}培训学校">{# $row.CategoryName #}</a>]</font> <a href="http://www.houxue.net/xuexiao/{# $row.LoginId #}/" title="{# $row.Name|strip_tags #}" target="_blank">  {# $row.ShortName|truncateex:11:'utf-8' #}</a></li>
+						{# /foreach #}
+					</ul>
+
+				</div>
+
+				<!--a9_info_con and-->
+			</div>
+			<!--a9_info and-->
+
+			<div class="a9_info">
+				<div class="a9_info_title">培训授课老师</div>
+				<div class="a9_info_con1">
+                  <ul >
+				    {# foreach key=rownum item=row from=$teacherlist #}
+                    <li><a class="crey right_ms" href="http://{# $row.SchoolDomain #}.houxue.net/xuexiao-{# $row.LoginId #}/">[{# $row.SchoolShortName #}]</a> <a href="http://www.houxue.net/teacher/{# $row.Id #}/">  {# $row.Name #} </a> </li>
+					{# /foreach #}
+			      </ul>
+                </div>
+				<!--a9_info_con and-->
+			</div><div class="banner_bottom">{# $CONFIGAREA.$AreaId.page_index_left_bottom|default:$CONFIGAREA.0.page_index_left_bottom #}</div>
+			<!--a9_info and-->
+
+		</div>
+		<!--a9_left and-->
+
+
+
+		<div class="a9_right">
+			<div style="height:248px;">
+			<div id="a9_flash" class="a9_flash ui-tabs ui-widget ui-widget-content ui-corner-all">
+				<div id="fragment-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom"><a href="{# $CONFIGAREA.$AreaId.page_index_logo_1_link|default:$CONFIGAREA.0.page_index_logo_1_link #}" target="_blank"><img src="{# $CONFIGAREA.$AreaId.page_index_logo_1|default:$CONFIGAREA.0.page_index_logo_1 #}" width="375" height="180"></a></div>
+				<div id="fragment-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><a href="{# $CONFIGAREA.$AreaId.page_index_logo_2_link|default:$CONFIGAREA.0.page_index_logo_2_link #}" target="_blank"><img src="{# $CONFIGAREA.$AreaId.page_index_logo_2|default:$CONFIGAREA.0.page_index_logo_2 #}" width="375" height="180"></a></div>
+				<div id="fragment-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><a href="{# $CONFIGAREA.$AreaId.page_index_logo_3_link|default:$CONFIGAREA.0.page_index_logo_3_link #}" target="_blank"><img src="{# $CONFIGAREA.$AreaId.page_index_logo_3|default:$CONFIGAREA.0.page_index_logo_3 #}" width="375" height="180"></a></div>
+				{# if $Area.Id == 2 || $Area.Id == 183 #}<div id="fragment-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><a href="{# $CONFIGAREA.$AreaId.page_index_logo_4_link|default:$CONFIGAREA.0.page_index_logo_4_link #}" target="_blank"><img src="{# $CONFIGAREA.$AreaId.page_index_logo_4|default:$CONFIGAREA.0.page_index_logo_4 #}" width="375" height="180"></a></div>{# /if #}
+				<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" >
+					<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#fragment-1"><span>1</span></a></li>
+					<li class="ui-state-default ui-corner-top"><a href="#fragment-2"><span>2</span></a></li>
+					<li class="ui-state-default ui-corner-top"><a href="#fragment-3"><span>3</span></a></li>
+					{# if $Area.Id == 2 || $Area.Id == 183 #}<li class="ui-state-default ui-corner-top"><a href="#fragment-4"><span>4</span></a></li>{# /if #}
+				</ul>
+				{# if $tmp == 1 #}
+				<!--img src="images09/banner3.gif"/-->
+				{# /if #}
+			</div>
+
+			<div class="a9_hot_kecheng">
+				<font>{# $Area.AreaName #}培训网热门课程推荐</font>
+				<ul>
+					<li id="a9_hot_kecheng_title_img"></li>
+					{# $CONFIGAREA.$AreaId.page_index_recommand_course|default:$CONFIGAREA.0.page_index_recommand_course #}
+					{# foreach item=row key=rownum from=$recommendcourselist #}
+					<li>
+					{# if $row.flag == "text" #}
+						{# $row.data #}
+					{# else #}
+					<p class="a9_p6"><a href="/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:10:"utf-8":"" #}</a></p>
+					<p class="a9_p7"><a class="a9_gray2" target="_blank" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" title="{# $row.data.SchoolShortName|strip_tags #}">{# $row.data.SchoolShortName|truncateex:6:"utf-8":"" #}</a></p>
+					<p class="a9_p8">{# $row.data.OrgPrice|myprice #}</p>
+					<p class="a9_p9">{# $row.data.Price|myprice #}</p>
+					{# /if #}
+					</li>
+					{# /foreach #}
+				</ul>
+			</div>
+
+			<div class="a9_houxue_info" id="a9_houxue_info"></div>
+			</div>
+<!--广告一--><div class="a9_banner1">
+				<div class="left">
+                <div class="tuijian_left"><img src="/images/tj_left.gif" width="38" height="66" /></div>
+                 <div id="scrollDiv">
+                    <ul>
+                      <li>
+						  <div class="float_left"  >
+
+						  {# if $schoollist_fenshu.0.LoginId != "" #}
+						  <div><span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" />  <a style="" href="http://{# $schoollist_fenshu.0.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.0.LoginId #}/" target="_blank">{# $schoollist_fenshu.0.ShortName|truncateex:8:"utf-8":"" #}</a> </span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.0.Fenshu #}分</span></div>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link1|default:$CONFIGAREA.0.page_index_ad_c_link1 #}
+						  {# /if #}
+						  </div>
+
+						  <div class="float_right">
+						  {# if $schoollist_fenshu.5.LoginId != "" #}
+						  <span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" /> <a href="http://{# $schoollist_fenshu.5.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.5.LoginId #}/" target="_blank">{# $schoollist_fenshu.5.ShortName|truncateex:8:"utf-8":"" #}</a></span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.5.Fenshu #}分</span>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link6|default:$CONFIGAREA.0.page_index_ad_c_link6 #}
+						  {# /if #}
+						  </div>
+					  </li>
+                      <li >
+						  <div class="float_left"  >
+
+						  {# if $schoollist_fenshu.1.LoginId != "" #}
+						  <div><span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" />  <a style="" href="http://{# $schoollist_fenshu.1.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.1.LoginId #}/" target="_blank">{# $schoollist_fenshu.1.ShortName|truncateex:8:"utf-8":"" #}</a> </span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.1.Fenshu #}分</span></div>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link2|default:$CONFIGAREA.0.page_index_ad_c_link2 #}
+						  {# /if #}
+						  </div>
+
+						  <div class="float_right">
+						  {# if $schoollist_fenshu.6.LoginId != "" #}
+						  <span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" /> <a href="http://{# $schoollist_fenshu.6.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.6.LoginId #}/" target="_blank">{# $schoollist_fenshu.6.ShortName|truncateex:8:"utf-8":"" #}</a></span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.6.Fenshu #}分</span>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link7|default:$CONFIGAREA.0.page_index_ad_c_link7 #}
+						  {# /if #}
+						  </div>
+					  </li>
+                      <li >
+						  <div class="float_left"  >
+
+						  {# if $schoollist_fenshu.2.LoginId != "" #}
+						  <div><span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" />  <a style="" href="http://{# $schoollist_fenshu.2.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.2.LoginId #}/" target="_blank">{# $schoollist_fenshu.2.ShortName|truncateex:8:"utf-8":"" #}</a> </span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.2.Fenshu #}分</span></div>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link3|default:$CONFIGAREA.0.page_index_ad_c_link3 #}
+						  {# /if #}
+						  </div>
+
+						  <div class="float_right">
+						  {# if $schoollist_fenshu.7.LoginId != "" #}
+						  <span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" /> <a href="http://{# $schoollist_fenshu.7.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.7.LoginId #}/" target="_blank">{# $schoollist_fenshu.7.ShortName|truncateex:8:"utf-8":"" #}</a></span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.7.Fenshu #}分</span>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link8|default:$CONFIGAREA.0.page_index_ad_c_link8 #}
+						  {# /if #}
+						  </div>
+					  </li>
+                      <li >
+						  <div class="float_left"  >
+
+						  {# if $schoollist_fenshu.3.LoginId != "" #}
+						  <div><span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" />  <a style="" href="http://{# $schoollist_fenshu.3.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.3.LoginId #}/" target="_blank">{# $schoollist_fenshu.3.ShortName|truncateex:8:"utf-8":"" #}</a> </span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.3.Fenshu #}分</span></div>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link4|default:$CONFIGAREA.0.page_index_ad_c_link4 #}
+						  {# /if #}
+						  </div>
+
+						  <div class="float_right">
+						  {# if $schoollist_fenshu.8.LoginId != "" #}
+						  <span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" /> <a href="http://{# $schoollist_fenshu.8.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.8.LoginId #}/" target="_blank">{# $schoollist_fenshu.8.ShortName|truncateex:8:"utf-8":"" #}</a></span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.8.Fenshu #}分</span>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link9|default:$CONFIGAREA.0.page_index_ad_c_link9 #}
+						  {# /if #}
+						  </div>
+					  </li>
+                      <li >
+						  <div class="float_left"  >
+
+						  {# if $schoollist_fenshu.4.LoginId != "" #}
+						  <div><span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" />  <a style="" href="http://{# $schoollist_fenshu.4.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.4.LoginId #}/" target="_blank">{# $schoollist_fenshu.4.ShortName|truncateex:8:"utf-8":"" #}</a> </span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.4.Fenshu #}分</span></div>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link5|default:$CONFIGAREA.0.page_index_ad_c_link5 #}
+						  {# /if #}
+						  </div>
+
+						  <div class="float_right">
+						  {# if $schoollist_fenshu.9.LoginId != "" #}
+						  <span style="float:left;"><img src="/images/jiantou.gif"  width="5" height="5" align="absmiddle" alt="" /> <a href="http://{# $schoollist_fenshu.9.Domain #}.houxue.net/xuexiao-{# $schoollist_fenshu.9.LoginId #}/" target="_blank">{# $schoollist_fenshu.9.ShortName|truncateex:8:"utf-8":"" #}</a></span><span style="float:right;color:#f60;font-size:12px;">{# $schoollist_fenshu.9.Fenshu #}分</span>
+						  {# else #}
+						  {# $CONFIGAREA.$AreaId.page_index_ad_c_link10|default:$CONFIGAREA.0.page_index_ad_c_link10 #}
+						  {# /if #}
+						  </div>
+					  </li>
+                   </ul>
+               </div>
+               </div>
+				<div class="right">{# $CONFIGAREA.$AreaId.page_index_ad_cr|default:$CONFIGAREA.0.page_index_ad_cr #}</div>
+			</div>
+
+			<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><a href="http://{# $Area.Domain #}.houxue.net/xuexiao2-0/" target="_blank"><font class="a9_index_info_name">语言培训</font></a>  {# $CONFIGAREA.$AreaId.page_index_waiyu_text|default:$CONFIGAREA.0.page_index_waiyu_text #}</div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p> </li>
+						{# foreach item=row key=rownum from=$courseList.2 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_waiyu_img1|default:$CONFIGAREA.0.page_index_waiyu_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_waiyu_img2|default:$CONFIGAREA.0.page_index_waiyu_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>语言培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_waiyu_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_waiyu_recommand_school #}
+					{# elseif $newslist_waiyu.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_waiyu #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_waiyu_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+			</div>
+			<!--a9_index_info_list and-->
+
+
+		<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">电脑/IT</font> {# $CONFIGAREA.$AreaId.page_index_computer_text|default:$CONFIGAREA.0.page_index_computer_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p> </li>
+						{# foreach item=row key=rownum from=$courseList.1 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_computer_img1|default:$CONFIGAREA.0.page_index_computer_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_computer_img2|default:$CONFIGAREA.0.page_index_computer_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>电脑/IT培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_computer_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_computer_recommand_school #}
+					{# elseif $newslist_computer.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_computer #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_computer_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+		  </div>
+			<!--a9_index_info_list and-->
+
+
+
+			<div class="a9_banner">{# $CONFIGAREA.$AreaId.page_index_wide_img1|default:$CONFIGAREA.0.page_index_wide_img1 #}</div>
+
+
+
+		<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">职业技能</font> {# $CONFIGAREA.$AreaId.page_index_zyjn_text|default:$CONFIGAREA.0.page_index_zyjn_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p> </li>
+						{# foreach item=row key=rownum from=$courseList.3 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zyjn_img1|default:$CONFIGAREA.0.page_index_zyjn_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zyjn_img2|default:$CONFIGAREA.0.page_index_zyjn_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>职业技能培训推荐信息：</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_zyjn_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_zyjn_recommand_school #}
+					{# elseif $newslist_zyjn.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_zyjn #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_zyjn_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+		  </div>
+			<!--a9_index_info_list and-->
+
+
+		<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">资格认证</font> {# $CONFIGAREA.$AreaId.page_index_zige_text|default:$CONFIGAREA.0.page_index_zige_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p> </li>
+						{# foreach item=row key=rownum from=$courseList.5 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5" title="{# $row.data.DT #}">{# $row.data.DT|mydtt:5 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zige_img1|default:$CONFIGAREA.0.page_index_zige_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zige_img2|default:$CONFIGAREA.0.page_index_zige_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>资格认证培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_zige_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_zige_recommand_school #}
+					{# elseif $newslist_zige.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_zige #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_zige_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+		  </div>
+			<!--a9_index_info_list and-->
+
+			<div class="a9_banner">{# $CONFIGAREA.$AreaId.page_index_wide_img2|default:$CONFIGAREA.0.page_index_wide_img2 #}</div>
+
+
+			<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">企业管理</font> {# $CONFIGAREA.$AreaId.page_index_qygl_text|default:$CONFIGAREA.0.page_index_qygl_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p> </li>
+						{# foreach item=row key=rownum from=$courseList.4 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|trim|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_qygl_img1|default:$CONFIGAREA.0.page_index_qygl_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_qygl_img2|default:$CONFIGAREA.0.page_index_qygl_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>企业管理培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_qygl_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_qygl_recommand_school #}
+					{# elseif $newslist_qygl.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_qygl #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_qygl_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+			</div>
+			<!--a9_index_info_list and-->
+
+
+		<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">文体艺术</font> {# $CONFIGAREA.$AreaId.page_index_wtys_text|default:$CONFIGAREA.0.page_index_wtys_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p></li>
+						{# foreach item=row key=rownum from=$courseList.6 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_wtys_img1|default:$CONFIGAREA.0.page_index_wtys_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_wtys_img2|default:$CONFIGAREA.0.page_index_wtys_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>文体艺术培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_wtys_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_wtys_recommand_school #}
+					{# elseif $newslist_wtys.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_wtys #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_wtys_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+		  </div>
+			<!--a9_index_info_list and-->
+
+			<div class="a9_banner">{# $CONFIGAREA.$AreaId.page_index_wide_img3|default:$CONFIGAREA.0.page_index_wide_img3 #}</div>
+
+
+			<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">中小学幼儿</font> {# $CONFIGAREA.$AreaId.page_index_zxxye_text|default:$CONFIGAREA.0.page_index_zxxye_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p></li>
+						{# foreach item=row key=rownum from=$courseList.104 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zxxye_img1|default:$CONFIGAREA.0.page_index_zxxye_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_zxxye_img2|default:$CONFIGAREA.0.page_index_zxxye_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>中小学幼儿培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_zxxye_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_zxxye_recommand_school #}
+					{# elseif $newslist_zxxye.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_zxxye #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_zxxye_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+			</div>
+			<!--a9_index_info_list and-->
+
+
+		<div class="a9_index_info_list">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">学历文凭</font> {# $CONFIGAREA.$AreaId.page_index_xueli_text|default:$CONFIGAREA.0.page_index_xueli_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p_img"></p></li>
+						{# foreach item=row key=rownum from=$courseList.93 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:12:"utf-8" #}</a></p> <p id="a9_p2"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4">{# $row.data.Price|myprice #}</p> <p id="a9_p5">{# $row.data.DT|mydtt:7 #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+				<div class="a9_index_info_right">
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_xueli_img1|default:$CONFIGAREA.0.page_index_xueli_img1 #}</div>
+					<div class="a9_ad2">{# $CONFIGAREA.$AreaId.page_index_xueli_img2|default:$CONFIGAREA.0.page_index_xueli_img2 #}</div>
+
+					<div class="a9_ad3">
+					<font>学历文凭培训最新资讯</font>
+					<ul>
+					{# if $CONFIGAREA.$AreaId.page_index_xueli_recommand_school != "" #}
+						{# $CONFIGAREA.$AreaId.page_index_xueli_recommand_school #}
+					{# elseif $newslist_xueli.0.Id != "" #}
+						{# foreach key=rownum item=row from=$newslist_xueli #}
+							<li><a target="_blank" href="http://www.houxue.net/news-{# $row.Id #}/">{# $row.Title|strip_tags|truncateex:14:"utf-8":"" #}</a></li>
+						{# /foreach #}
+					{# else #}
+						{# $CONFIGAREA.0.page_index_xueli_recommand_school #}
+					{# /if #}
+					</ul>
+					</div>
+				</div>
+
+		  </div>
+			<!--a9_index_info_list and-->
+
+
+			<div class="a9_banner">{# $CONFIGAREA.$AreaId.page_index_wide_img4|default:$CONFIGAREA.0.page_index_wide_img4 #}</div>
+
+
+
+
+		</div>
+		<div class="a9_index_info_list2">
+				<div class="a9_index_info_title"><a href="http://{# $Area.Domain #}.houxue.net/xuexiao105-0/" target="_blank" title="{# $Area.AreaName #}出国留学培训"><font class="a9_index_info_name">出国留学</font></a> {# $CONFIGAREA.$AreaId.page_index_liuxue_text|default:$CONFIGAREA.0.page_index_liuxue_text #}				</div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p1b_img"></p></li>
+						{# foreach item=row key=rownum from=$courseList.105 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1b"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:11:"utf-8" #}</a></p> <p id="a9_p2b"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3b">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4b">{# $row.data.Price|myprice #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+
+
+	  </div>
+			<!--a9_index_info_list2 and-->
+
+
+
+			<div class="a9_index_info_list3">
+				<div class="a9_index_info_title"><font class="a9_index_info_name">网络远程</font> {# $CONFIGAREA.$AreaId.page_index_yuancheng_text|default:$CONFIGAREA.0.page_index_yuancheng_text #} </div>
+				<div class="a9_index_info_left">
+					<ul>
+						<li id="a9_index_info_title2"><p id="a9_p1b_img"></li>
+						{# foreach item=row key=rownum from=$courseList.114 #}
+						<li {# cycle values='id="a9_index_info_list_bg",""'#}>
+						{# if $row.flag == "text" #}
+							{# $row.data #}
+						{# else #}
+						<p id="a9_p1b"><a href="http://{# $row.data.Domain #}.houxue.net/kecheng-{# $row.data.Id #}/" title="{# $row.data.Name|strip_tags #}" target="_blank">{# $row.data.Name|truncateex:11:"utf-8" #}</a></p> <p id="a9_p2b"><a id="a9_gray3" href="http://{# $row.data.SchoolDomain #}.houxue.net/xuexiao-{# $row.data.LoginId #}/" target="_blank">{# $row.data.SchoolShortName|truncateex:10:"utf-8" #}</a></p> <p id="a9_p3b">{# $row.data.OrgPrice|myprice #}</p> <p id="a9_p4b">{# $row.data.Price|myprice #}</p>
+						{# /if #}
+						</li>
+						{# /foreach #}
+					</ul>
+				</div>
+
+			</div>
+			<!--a9_index_info_list2 and-->
+
+			<div class="a9_banner2">
+			<div class="a9_banner2_left">{# $CONFIGAREA.$AreaId.page_index_wide_img5|default:$CONFIGAREA.0.page_index_wide_img5 #}</div>
+			<div class="a9_banner2_right">{# $CONFIGAREA.$AreaId.page_index_wide_img6|default:$CONFIGAREA.0.page_index_wide_img6 #}</div>
+			</div>
+
+
+		</div>
+		<!--a9_right and-->
+		<div></div>
+
+		<div class="a9_links">
+			<dl>
+				<dd ><span style="color:#FF6600;font-size:12px;font-weight:bold;">友情链接:</span>
+
+				{# $CONFIGAREA.$AreaId.page_index_flink #} <a id="a9_orange" href="http://www.houxue.net/help/friendlink_app.php?x_AreaId={# $AreaId #}&x_CategoryId=&x_HouxueUrl=http://{# $smarty.server.HTTP_HOST #}&x_HouxueUrlType=cityindex">更多>></a></dd>
+			</dl>
+		</div>
+
+
+
+
+		{# if $debug ==1 #}<script language="javascript" src="/js/foot.js"></script>{# /if #}
+
+
+		<script language="javascript" >
+		//考试日历
+		//var objstr = "";
+		//objstr += '					<p><a {# if date("n")==1 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link1|default:$CONFIGAREA.0.page_index_exam_link1 #}" target="_blank">1月</a></p>					<p><a {# if date("n")==2 #}class="a9_green"{# /if #}href="{# $CONFIGAREA.$AreaId.page_index_exam_link2|default:$CONFIGAREA.0.page_index_exam_link2 #}" target="_blank">2月</a></p>					<p><a {# if date("n")==3 #}class="a9_green"{# /if #}href="{# $CONFIGAREA.$AreaId.page_index_exam_link3|default:$CONFIGAREA.0.page_index_exam_link3 #}" target="_blank">3月</a></p>					<p><a {# if date("n")==4 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link4|default:$CONFIGAREA.0.page_index_exam_link4 #}" target="_blank">4月</a></p>					<p><a {# if date("n")==5 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link5|default:$CONFIGAREA.0.page_index_exam_link5 #}" target="_blank">5月</a></p>					<p><a {# if date("n")==6 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link6|default:$CONFIGAREA.0.page_index_exam_link6 #}" target="_blank">6月</a></p>					<p><a {# if date("n")==7 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link7|default:$CONFIGAREA.0.page_index_exam_link7 #}" target="_blank">7月</a></p>					<p><a {# if date("n")==8 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link8|default:$CONFIGAREA.0.page_index_exam_link8 #}" target="_blank">8月</a></p>					<p><a {# if date("n")==9 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link9|default:$CONFIGAREA.0.page_index_exam_link9 #}" target="_blank">9月</a></p>					<p><a {# if date("n")==10 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link10|default:$CONFIGAREA.0.page_index_exam_link10 #}" target="_blank">10月</a></p>					<p><a {# if date("n")==11 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link11|default:$CONFIGAREA.0.page_index_exam_link11 #}" target="_blank">11月</a></p>					<p><a {# if date("n")==12 #}class="a9_green"{# /if #} href="{# $CONFIGAREA.$AreaId.page_index_exam_link12|default:$CONFIGAREA.0.page_index_exam_link12 #}" target="_blank">12月</a></p>';
+		//document.getElementById("a9_ksrl").innerHTML = objstr;
+
+		//中间flash
+//		 objstr = "";
+//		objstr += '		      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase=http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6.0.0.0 width=375 height=180>';
+//		objstr += '			      <param name="allowScriptAccess" value="sameDomain" />';
+//		objstr += '			      <param name="movie" value="http://www.houxue.net/images/pixviewer.swf" />';
+//		objstr += '			      <param name="quality" value="high" />';
+//		objstr += '			      <param name="bgcolor" value="#F0F0F0" />';
+//		objstr += '			      <param name="menu" value="false" />';
+//		objstr += '			      <param name=wmode value="opaque" />';
+//		objstr += '			      <param name="FlashVars" value="pics={# $CONFIGAREA.$AreaId.page_index_logo_1|default:$CONFIGAREA.0.page_index_logo_1 #}|{# $CONFIGAREA.$AreaId.page_index_logo_2|default:$CONFIGAREA.0.page_index_logo_2 #}|{# $CONFIGAREA.$AreaId.page_index_logo_3|default:$CONFIGAREA.0.page_index_logo_3 #}{# if $Area.Id == 2 || $Area.Id == 183 #}|{# $CONFIGAREA.$AreaId.page_index_logo_4|default:$CONFIGAREA.0.page_index_logo_4 #}{# /if #}&links={# $CONFIGAREA.$AreaId.page_index_logo_1_link|default:$CONFIGAREA.0.page_index_logo_1_link #}|{# $CONFIGAREA.$AreaId.page_index_logo_2_link|default:$CONFIGAREA.0.page_index_logo_2_link #}|{# $CONFIGAREA.$AreaId.page_index_logo_3_link|default:$CONFIGAREA.0.page_index_logo_3_link #}{# if $Area.Id == 2 || $Area.Id == 183 #}|{# $CONFIGAREA.$AreaId.page_index_logo_4_link|default:$CONFIGAREA.0.page_index_logo_4_link #}{# /if #}&texts=t1|t2|t3|t4&borderwidth=375&borderheight=180&textheight=0" />';
+//		objstr += '			      <embed src="http://www.houxue.net/images/pixviewer.swf" wmode="opaque" flashvars="pics={# $CONFIGAREA.$AreaId.page_index_logo_1|default:$CONFIGAREA.0.page_index_logo_1 #}|{# $CONFIGAREA.$AreaId.page_index_logo_2|default:$CONFIGAREA.0.page_index_logo_2 #}|{# $CONFIGAREA.$AreaId.page_index_logo_3|default:$CONFIGAREA.0.page_index_logo_3 #}{# if $Area.Id == 2 || $Area.Id == 183 #}|{# $CONFIGAREA.$AreaId.page_index_logo_4|default:$CONFIGAREA.0.page_index_logo_4 #}{# /if #}&links={# $CONFIGAREA.$AreaId.page_index_logo_1_link|default:$CONFIGAREA.0.page_index_logo_1_link #}|{# $CONFIGAREA.$AreaId.page_index_logo_2_link|default:$CONFIGAREA.0.page_index_logo_2_link #}|{# $CONFIGAREA.$AreaId.page_index_logo_3_link|default:$CONFIGAREA.0.page_index_logo_3_link #}{# if $Area.Id == 2 || $Area.Id == 183 #}|{# $CONFIGAREA.$AreaId.page_index_logo_4_link|default:$CONFIGAREA.0.page_index_logo_4_link #}{# /if #}&texts=t1|t2|t3&borderwidth=375&borderheight=180&textheight=0" menu="false" bgcolor="#F0F0F0" quality="high" width ="375" height="180" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> ';
+//		objstr += '</object>';
+//		document.getElementById("a9_flash").innerHTML = objstr;
+
+		</script>
+
+		<script language='javascript' src="/js/index_inner1.js.php"></script>
+		<script language="javascript" src="/ajax/thread_pageview.php?areaid={# $Area.Id #}&item=IndexPage"></script>
+
+
+
+		{#include file="foot_1.htm"#}
+	</div>
+	<!--box and-->
+	</body>
+
+</html>
+
+
+<script type="text/javascript">
+//滚动插件
+(function($){
+$.fn.extend({
+        Scroll:function(opt,callback){
+                //参数初始化
+                if(!opt) var opt={};
+                var _this=this.eq(0).find("ul:first");
+                var        lineH=_this.find("li:first").height(), //获取行高
+                        line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), //每次滚动的行数，默认为一屏，即父容器高度
+                        speed=opt.speed?parseInt(opt.speed,10):10000, //卷动速度，数值越大，速度越慢（毫秒）
+                        timer=opt.timer?parseInt(opt.timer,10):30000; //滚动的时间间隔（毫秒）
+                if(line==0) line=1;
+                var upHeight=0-line*lineH;
+                //滚动函数
+                scrollUp=function(){
+                        _this.animate({
+                                marginTop:upHeight
+                        },speed,function(){
+                                for(i=1;i<=line;i++){
+                                        _this.find("li:first").appendTo(_this);
+                                }
+                                _this.css({marginTop:0});
+                        });
+                }
+                //鼠标事件绑定
+                _this.hover(function(){
+                        clearInterval(timerID);
+                },function(){
+                        timerID=setInterval("scrollUp()",timer);
+                }).mouseout();
+        }
+})
+})(jQuery);
+
+$(document).ready(function(){
+		try{
+			$("#a9_flash").tabs({
+				event: 'mouseover'
+			});
+			$("#a9_flash").tabs( "rotate" , 3000, false);
+		}catch(e){}
+
+        $("#scrollDiv").Scroll({line:1,speed:500,timer:3000});
+});
+</script>
+{# $Area.OnlineCallCode #}
+{# $Area.SiteCounterCode #}
+<div id="gotopbtn"><img src="images/top.jpg" /></div>
+		<script type="text/javascript">
+		backTop=function (btnId){
+			var btn=document.getElementById(btnId);
+			var d=document.documentElement;
+			window.onscroll=set;
+			btn.onclick=function (){
+				btn.style.display="none";
+				window.onscroll=null;
+				this.timer=setInterval(function(){
+					d.scrollTop-=Math.ceil(d.scrollTop*0.1);
+					if(d.scrollTop==0) clearInterval(btn.timer,window.onscroll=set);
+				},10);
+			};
+			function set(){btn.style.display=d.scrollTop?'block':"none"}
+		};
+		backTop('gotopbtn');
+		</script>
+	</div>
+{# if $debug == 1 #}
+<div style="display:none;"><script src="http://s4.cnzz.com/stat.php?id=2844553&web_id=2844553" language="JavaScript"></script></div>
+{# /if #}
+
+{# if $CONFIGAREA.$AreaId.page_index_float_left != "" && $CONFIGAREA.$AreaId.page_index_float_right != "" #}
+<script language="javascript">var lastScrollY=0;function heartBeat(){var diffY;if(document.documentElement&&document.documentElement.scrollTop)
+diffY=document.documentElement.scrollTop;else if(document.body)
+diffY=document.body.scrollTop
+else
+{}
+percent=.1*(diffY-lastScrollY);if(percent>0)percent=Math.ceil(percent);else percent=Math.floor(percent);document.getElementById("adleft").style.top=parseInt(document.getElementById("adleft").style.top)+percent+"px";document.getElementById("adright").style.top=parseInt(document.getElementById("adright").style.top)+percent+"px";lastScrollY=lastScrollY+percent;}
+function adhide(names){document.getElementById(names).style.display='none';}
+function screencl(names){if(screen.width<=800){adhide(names);}}
+zcode="<div id='adleft' style='left:10px;position: absolute;z-index:1;top:100px;width:130px;'>{# $CONFIGAREA.$AreaId.page_index_float_right #}<div align='right' style='background:#fff;font-size:0px;'>　<img src='/xueche/images/close.gif' title='关闭' onclick=adhide('adleft') style='cursor:pointer'></div></div>";ycode="<div id='adright' style='right:10px;position: absolute;z-index:1;top:100px;'>{# $CONFIGAREA.$AreaId.page_index_float_left #}<div align='left' style='background:#fff;font-size:0px;'>　<img src='/xueche/images/close.gif' title='关闭' onclick=adhide('adright') style='cursor:pointer'></div></div>";document.write(zcode);document.write(ycode);screencl('adleft');screencl('adright');window.setInterval("heartBeat()",1);</script>
+{# /if #}

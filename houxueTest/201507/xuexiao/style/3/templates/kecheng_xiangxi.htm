@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $course.Name #}</title>
+{# if $course.SeoNoindex == 'yes' #}
+<meta name="robots" content="noindex,nofollow" />
+{# /if #}
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.houxue.com/kecheng/{# $course.Id #}/">
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<link href="http://www.houxue.com/css/common_base.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+
+      <div class="right_box1">
+   		<div class="title_bg "><span class="more">当前位置：首页> 开班信息</span><h2 class="title1" >开班信息</h2></div>
+        <div class="bd r_con_xx" >
+       	  <div class="kc_w1">
+           	<h3 class="green btl pb5 f16">{# $course.Name #}</h3>
+                <ul>
+                	<li>费用：<span class="f14 cf60">￥{# $course.Price+0 #}</span></li>
+                    <li>开班时间：{# $course.DT #}</li>
+                    <li>上课班制：{# $course.SKSJ #} 课时:{# $course.Hour #}</li>
+                    <li>上课地点：{# $course.Addr #}</li>
+                    <li>学校名称：<span class="green"><a href="/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a></span></li>
+                    <li>咨询热线：<span class="tel1">{# if $course.Workphone#}{#$course.Workphone#}{#else#}{# $school.Workphone #}{#/if#}</span></li>
+                    <li>在线客服：{# if $school.QQDisplayMode == 1 #}<a style=" display:inline-block; vertical-align:middle;" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={# $school.QQ #}&site=houxue.com&menu=yes" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img src="/xuexiao/style/2/images/pa.gif" border=0>{# if $debug == 1 #}<img border="0" src="http://wpa.qq.com/pa?p=2:{# $school.QQ #}:41 &r=0.20744272637433886">{# /if #}</a>&nbsp;&nbsp;{# $school.QQ #}
+						{# /if #}
+
+						{# if $school.QQDisplayMode == 0 #}
+						<script src="/js/float_order_by_click_qq.js.php?loginid={# $school.LoginId #}" language="JavaScript"></script>
+						<a style="display:inline-block; vertical-align:middle;" href="javascript:show_float_order_by_click_qq();" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img src="/images/qq_online.gif" border=0></a>
+						{# /if #}
+					</li>
+              </ul>
+          </div>
+            <div class="kc_w2">
+            	<div class="lesson_right">
+					<form onsubmit="return f_chkmsgform(this);" method="post" action="/order_add.php">
+					<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+					<input type="hidden" name="x_CourseId" value="{# $course.Id #}" />
+					<input type="hidden" name="x_AreaId" value="{# $course.AreaId #}" />
+					<input type="hidden" name="x_CategoryId" value="{# $course.CategoryId #}" />
+					<input type="hidden" name="x_Money" value="{# $course.Price #}">
+					<input type="hidden" name="flag" value="msg" />
+					<input type="hidden" name="flag_sms" value="yes" />
+					<input type="hidden" name="flag_smsToLeaner" value="yes" />
+					<input type="hidden" name="flag_share" value="yes" />
+					<input type="hidden" name="forward" value="http://www.houxue.com/kecheng/{# $course.Id #}/" />
+					<input type="hidden" name="alertText" value="预约留言成功" />
+					<h3 class="cfff f16 ffmly pb5">网上报名 :</h3>
+                	<ul class="bm_color">
+                    	<li class="a_ly_1"></li>
+                        <li class="a_ly_2">
+                        	<div>
+                            	<div>
+                                    <p class="n_1">姓名：</p>
+                                    <p class="n_2"><input type="text" class="input_name"  name="x_Name" title=""></p>
+                                    <p class="n_1">性别：</p>
+                                    <p class="n_1"><input type="radio" checked="checked" value="1" name="x_Sex"> 男</p>
+                                  <p class="n_1"><input type="radio" value="2" name="x_Sex"> 女</p>
+                                </div>
+                               <div class="clear">
+                                    <p class="n_1">电话：</p>
+                                    <p class="n_5"><input type="text" size="36" class="input_tel" name="x_Phone"></p>
+                              </div>
+                                <div class="clear">
+                                	<p class="n_1">内容：</p>
+                                    <p class="n_5">
+                                      <textarea id="textarea" rows="2" cols="29" class="input_con"  name="x_Content"></textarea>
+                                    </p>
+                               </div>
+                               <!--btn-->
+                               <div class="btn_bm">
+                                 <input type="image" src="http://www.houxue.com/images09/images_coursepage/a_btn.gif" title="在线报名" class="fl" />
+                               </div>
+                               <div class="clear"></div>
+                          </div>
+                        </li>
+
+
+                     </ul>
+                     <ul>
+                     	 <li class="cfff mt10 l20">{# $course.Promise #}</li>
+                     </ul>
+					</form>
+                </div>
+            </div>
+       	</div>
+
+       <div class="title_bg mt10"><h2 class="title1" >课程详情</h2></div>
+        <div class="bd r_con3" >
+          {# $course.Intro #}
+       	</div>
+
+
+
+      </div>
+    </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

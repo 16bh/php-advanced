@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $row.Title #}_{# $school.ShortName #}</title>
+<meta name="keywords" content="{# $school.ShortName #}{# $subschool.SubName #},{# $school.ShortName #}{# $subschool.SubName #}报名地址,{# $school.ShortName #}{# $subschool.SubName #}电话"/>
+<meta name="description" content="{# $school.ShortName #}{# $subschool.SubName #}的联系方式,报名地址,咨询电话和培训内容"/>
+{# include file="css.htm" #}
+<link type="text/css" rel="stylesheet" href="http://www.houxue.com/js/jquery/themes/base/jquery.ui.all.css">
+
+<style type="text/css">
+.clearfix:after{ content: '\200B'; display: block; clear: both; height: 0; overflow: hidden; visibility: hidden;}
+.clearfix{zoom:1;}  /*清除浮动*/
+.right_tab{ word-break:break-all;}
+.right_tab .ui-state-active a, .right_tab .ui-state-active a:link, .right_tab .ui-state-active a:visited{color:#666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected{background:#65a6ed;padding-bottom:0px; position:relative;font-weight:bold;color:#666666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a{color:#fff;}
+
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover span{display:block;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a span{display:block;color:#777;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected span{ position:absolute; top:17px;left:8px;*top:14px;_top:14px;}
+.right_tab .a9_flash{background-color: #fcfcfc; width:498px; height: 180px; float: none;border:1px solid #ccc;}
+.right_tab .ui-tabs{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li{margin:0 0 0px 0;top:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li a{padding:0.13em 0em;_padding:0.13em 0em;width:72px; text-align:center;font-size:12px;color:#626262;}
+.right_tab .ui-widget-content{color:#555555;border:none;}
+.container .right_tab .ui-tabs .ui-tabs-panel{font-size:12px;padding-top:1.2em;margin-top:1.0em;border-top:1px dashed #ccc;width:730px;padding-left:0px;}
+.right_tab .ui-tabs-panel  li{padding-left: 0px;line-height:28px;font-size:0px;overflow:hidden;}
+
+.right_tab .ui-tabs-panel  li a{margin-right:6px;color:#4e86e3;font-size:12px;}
+.right_tab .ui-tabs-panel  li a:hover{color:#f60;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-bottom,  .right_tab.ui-corner-right, .right_tab .ui-corner-br{ border-radius:0px;}
+.right_tab .ui-widget-header{border:0px solid #dddddd;background:#fff;}
+.right_tab .ui-widget-content .bd{border:1px solid #dddddd;border-top:none;}
+.right_tab .ui-state-default, .right_tab .ui-widget-content .ui-state-default, .right_tab.ui-widget-header .ui-state-default{background:none;border-left:none;border-top:none;border-bottom:none;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-top, .right_tab  .ui-corner-right, .right_tab  .ui-corner-tr{border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;}
+.right_tab li span{display:inline-block;font-size:12px;color:#444444;width:60px;float:left;}
+
+#tabs-1 li span{width:40px;}
+.right_tab li .r_con{font-size:12px;color:#444444;float:left;width:655px;}
+.right_tab li .r_con a{margin-right:1px;}
+.right_tab .ui-tabs-panel a{color:#888;margin-right:10px;line-height:25px;}
+.hot_gg{width:890px;background:#efefef;margin-bottom:15px;min-height:60px;}
+.right_tab .jt_2{display:none;}
+.input-text{border: 1px solid #CCCCCC;height: 20px;width:200px;}
+#ajaxpost{background: none repeat scroll 0 0 #4D8BCE;border: medium none;border-radius: 0.2em;color: #FFFFFF;cursor: pointer;display: inline;font-family: "微软雅黑";font-size: 14px;font-weight: bold;height:25px;text-shadow: 0 1px 0 #666666;width:72px; margin-top: 3px;}
+.news_voucher_b{margin-bottom: 25px;}
+.news_voucher{margin: 30px auto 10px auto;text-align: center;}
+.news_explain{margin-bottom: 25px;}
+.news_explain h2{font-size: 14px;height: 30px;}
+
+.news_explain ul{border-top:1px solid #dcdcdc;}
+.news_explain li{font-size: 12px;color: #666;border-bottom: 1px solid #dcdcdc;background: #f9f9f9;line-height: 25px;}
+.news_explain li .explain_left{width:90px; text-align: center;font-weight: bold;float: left;padding-top: 5px;}
+.news_explain li .explain_right{width:585px;float:right;border-left: 1px solid #dcdcdc;
+	padding:5px 0 5px 10px;background: #fff;}
+
+.news_curriculum{margin-bottom:30px;}
+.news_curriculum h2{font-size: 14px;height: 30px;}
+.news_curriculum ul{border-top:1px solid #dcdcdc;}
+.news_curriculum li{height: 35px;line-height: 35px;font-size: 12px;color: #666;border-bottom: 1px solid #dcdcdc;}
+.news_curriculum li span{display: block;float: left;}
+.news_curriculum li a{color:#2f85e2;}
+.news_curriculum li a:hover{text-decoration:underline;}
+
+.w90{width: 90px;}
+.w100{width: 100px;}
+.w340{width: 340px;}
+.fw{font-weight: bold;}
+.center{text-align: center;}
+.pl30 { padding-left: 30px; }
+.red{color: red;}
+
+</style>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+	  <div class="right_box1">
+        <div class="title_bg "><span class="more">当前位置：首页> 培训优惠券 > {# $row.Title #}</span>
+            <h2 class="title1" > {# $school.Name #}</h2>
+        </div>
+        <div class="bd r_con_info" >
+			{# if $row.ProductId<=0 #}
+			<div class="news_detail" >
+				<div class="news_detail_t">
+					<h1 class="ffw">{# $row.Title #}</h1>
+					<p>
+						<span>点击：[{# $row.Click+1 #}]</span>
+						<span>开始领取：{# $row.HoldStartDtt|date_format:"%Y-%m-%d" #}</span>
+						<span>有效期限：{# $row.ExpireDtt|date_format:"%Y-%m-%d" #}</span>
+						<span>数量：{# $row.PublishAmount #}</span>
+						<span>已领取：{# $row.HoldAmount #}</span>
+					</p>
+				</div>
+
+				<div class="ml58 mt15">
+					<p>
+						请用手机微信扫描左侧官方二维码领取优惠券。
+					</p>
+					<p>
+						<img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}">
+					</p>
+					<a href="{#$row.FlashUrl#}" target=_blank>{#$row.FlashUrl#}</a>
+				</div>
+
+				<div class="news_detail_con mt15">
+					<p> {# $row.Content #}</p>
+				</div>
+			</div>
+			{# else if $row.ProductId>0 #}
+			<div class="news_detail" >
+				<div class="news_detail_t">
+					<h1 class="ffw">{# $row.Title #}</h1>
+					<p>点击：[{# $row.Click+1 #}]&nbsp;&nbsp;&nbsp;有效期限：{# $row.ExpireDtt|date_format:"%Y-%m-%d" #}&nbsp;&nbsp;&nbsp;数量：{# $row.PublishAmount #}</p>
+				</div>
+				<div class="news_voucher_b">
+					<div class="news_voucher">
+						<img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}" width="450" height="280"/>
+					</div>
+					<p>{# $row.Content #}</p>
+				</div>
+				<div class="news_explain">
+					<h2>使用说明</h2>
+					<div class=""></div>
+					<ul>
+					    {#if $condition #}
+						<li class="clearfix">
+							<div class="explain_left clearfix">使用规则</div>
+							<div class="explain_right clearfix">
+								<p>{#$condition#}</p>
+							</div>
+						</li>
+						{#/if#}
+						<li class="clearfix">
+							<div class="explain_left clearfix">有效期</div>
+							<div class="explain_right clearfix">
+								<p>{# $row.HoldStartDtt|date_format:"%Y-%m-%d" #}至{# $row.ExpireDtt|date_format:"%Y-%m-%d" #}<p>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="explain_left clearfix">限用提醒</div>
+							<div class="explain_right clearfix">
+								<p>每次限用1张，不能重复叠加使用</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="news_curriculum">
+					<h2>支持课程</h2>
+					<ul id="discolour">
+						<li class="fw"><span class="w90 center">课程类别</span><span class="w340 pl30">课程名称</span><span class="w100 center">开班时间</span><span class="w100 center">课程原价</span></li>
+						{# foreach item=rowItem from=$courseList #}
+						<li>
+						   <span class="w90 center">{#$rowItem.CategoryName#}</span>
+						   <span class="w340 pl30">
+						      <a href="{#$rowItem.href#}">{#$rowItem.Name#}</a>
+						   </span>
+						   <span class="w100 center">{#$rowItem.DT#}</span><span class="w100 center red">{#$rowItem.Price#}</span>
+						</li>
+						{#/foreach#}
+					</ul>
+				</div>
+				{# if $row.ExpireDtt>$smarty.now #}
+				<div>
+					<button class=" news_btn" type="button" onclick='window.location.href="http://www.houxue.com/product/coupon/index.php?mod=ordersure&loginid={#$school.LoginId#}&id={#$row.Id#}";'>立即抢购</button>
+				</div>
+				{# /if #}
+			</div>
+			{# /if #}
+        </div>
+      </div>
+	</div>
+</div>
+{# include file="foot.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.tabs.min.js"></script>
+<script>
+	$("#discolour li:even").css("background","#fafafa");
+</script>
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

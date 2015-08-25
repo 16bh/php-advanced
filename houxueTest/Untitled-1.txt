@@ -1,0 +1,39 @@
+ <td>{{item.schoolname}}
+            <td>
+                {{item.phone}}
+                {% if item.phone != ""%}
+                <img src="" style="display: none" id="callimg" name="callimg"/>
+                <a class="btn btn-green" onclick="callimg2('{{CallerNo}}','{{item.phone}}','{{time}}')">呼</a>
+                {% endif %}
+            </td>
+            <td>{{item.email}}</td>
+            <td><a href="{{item.url}}" target='_blank'>{{item.url}}</a></td>
+            <td>{{ item.fullname|default(item.loginname) }}</td>
+            <td>{{ item.begin_time|date('Y-m-d') }}</td>
+            <td>{{ item.end_time|date('Y-m-d') }}</td>
+            <td> {% if item.star != 0 %}{{item.star/10}}&nbsp;分{% endif %}</td>
+            <td>
+                {% if item.status == 1 %}
+                <label style="color: red;">已完成</label>
+                {% elseif item.status == 0 %}
+                <label style="color: green;">跟进中</label>
+                {% endif %}
+            </td>
+            <td>
+                {% if item.status == 0 %}
+                    {%if allow_update%}
+                    <a href="{{dirctl}}/followdetail/{{item.id}}/" data-title="查看跟进明细" class="btn btn-green"
+                       data-width="700" data-height="400" data-toggle="dialog" data-id="view_form">查看</a>
+                    <a href="{{dirctl}}/followedit/{{item.id}}/" data-title="客户跟进修改" class="btn btn-green"
+                       data-width="700" data-height="400" data-toggle="dialog" data-id="view_form">跟进</a>
+                    <a href="{{dirctl}}/edit/{{item.id}}" class="btn btn-green" data-mask="true" data-toggle="dialog"
+                       data-width="700" data-height="400" data-id="dialog" data-title="编辑">编辑</a>
+                    <a href="{{dirctl}}/follow/{{item.id}}" class="btn btn-green" data-mask="true"
+                       data-toggle="dialog" data-width="700" data-height="400" data-id="dialog" data-title="客户跟进">客户跟进</a>
+                    <a href="{{dirctl}}/finish/{{item.id}}" class="btn btn-green" data-toggle="doajax"
+                       data-confirm-msg="您确定要将该客户状态更新为已完成吗？">完成</a>
+                    <a href="{{dirctl}}/giveup/{{item.id}}" class="btn btn-green" data-toggle="doajax"
+                       data-confirm-msg="您确定要放弃该保护客户吗？">放弃</a>
+                    {% endif %}
+                {% endif %}
+            </td>

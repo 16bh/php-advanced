@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}联系电话-联系地址</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="{# $school.Name #}联系电话,{# $school.ShortName #}联系地址"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1>{# $school.Name #}联系方式</h1></div>
+		<div class="clear"></div>
+
+		<div style="height:30px;">&nbsp;</div>
+
+		<div class="indexblock" >
+
+			<table>
+				<tr>
+					<td>电话:</td>
+					<td>{# $school.Workphone #}</td>
+				</tr>
+				<tr>
+					<td>QQ:</td>
+					<td>{# $school.QQ #}</td>
+				</tr>
+				<tr>
+					<td>联系人:</td>
+					<td>{# $school.Linkman #}</td>
+				</tr>
+			</table>
+
+		    <div class="index-blockbottom"></div>
+		</div>
+
+
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+	  </div>
+
+
+		{#include file="right.htm"#}
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+</body>
+</html>

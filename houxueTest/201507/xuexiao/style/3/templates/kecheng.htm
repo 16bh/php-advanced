@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}培训招生项目</title>
+<meta name="keywords" content="{# $school.ShortName #}培训，{# $school.ShortName #}招生，{# $school.ShortName #}报名"/>
+<meta name="description" content="{# $school.ShortName #}主要提供{# foreach key=rownum item=row from=$SchoolCategory #}{# $row.CategoryName #}、{# /foreach #}培训招生项目"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+{# include file="head.htm" #}
+
+<div class="container mt10">
+  <div >
+
+      <div class="right_box2">
+   		<div class="title_bg "><span class="more" >当前位置：首页> 培训课程</span>
+   		  <h2 class="title1" >培训课程</h2>
+   		</div>
+		<div class="bd pb20" >
+		{# foreach key=rownum item=row from=$SchoolCategory #}
+		{# foreach key=rownum1 item=row1 from=$row.courselist #}
+			<div class="kc_main">
+				<h3 class="colora title f16">[<a href="kecheng.htm#cid_{# $row.CategoryId #}"  name="cid_{# $row.CategoryId #}"><span class="green">{# $row.CategoryName #} </span></a>]
+				{# if $row1.LinkFlag =='yes' #}
+					<a class="kc_links" href="{# $row1.OrderLink #}">{# $row1.Name #}</a>
+					{# if $row1.Recommend =='yes' #}
+						<span class="">&nbsp;<img class="pngtm" src="/images09/images_coursepage/tj.png" alt="推荐" align="abstop" /></span>
+					{# /if #}
+					{# if $row1.TryUrl #}
+						<a href="{# $row1.TryUrl #}" title="试听" ><img alt="试听" src="http://www.houxue.com/xuexiao/style/2/images/audition.gif" /></a>
+					{# /if #}
+				{# else #}
+					<a class="kc_links" href="http://www.houxue.com/kecheng/{# $row1.Id #}/">{# $row1.Name #}</a>
+					{# if $row1.Recommend =='yes' #}
+						<span class="">&nbsp;<img class="pngtm" src="/images09/images_coursepage/tj.png" alt="推荐" align="abstop" /></span>
+					{# /if #}
+				{# /if #}
+				</h3>
+				<div class="kc_con">
+					<div class="w1">
+						<ul>
+							{# if $row1.DT != "" #}<li><span >上课时间</span>：{# $row1.DT #}</li>{# /if #}
+							{# if $row1.Teacher != "" #}<li><span >上课老师</span>：{# $row1.Teacher #}</li>{# /if #}
+						</ul>
+					</div>
+					<div class="w2">
+						<div class="w2_n">
+							<p class="price">¥{# $row1.Price+0 #}</p>
+							{# if $row1.OrgPrice > 0 #}<p >原价：<span class="line">¥{# $row1.OrgPrice+0 #}</span></p>{# /if #}
+						</div>
+					</div>
+					<div class="w3">
+						<input  onclick="document.location='http://www.houxue.com/kecheng/{# $row1.Id #}/';" name="" value="课程详情" class="big_btn" type="button" />
+					</div>
+				</div>
+			</div>
+		{# /foreach #}
+		{# /foreach #}
+		</div>
+
+
+      </div>
+    </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

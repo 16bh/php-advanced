@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $course.Name #}</title>
+{# 'PCHead'|get_common_config #}
+{# if $course.SeoNoindex == 'yes' #}
+<meta name="robots" content="noindex,nofollow" />
+{# /if #}
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.houxue.com/kecheng/{# $course.Id #}/">
+{# include file="css.htm" #}
+<link href="http://www.houxue.com/css/common_base.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10 ">
+	<div class="right" style="width:980px;">
+
+      <div class="right_box1">
+   		<div class="title_bg "><span class="more">当前位置：首页> 开班信息</span><h2 class="title1" >开班信息</h2></div>
+        <div class="bd r_con_xx" >
+       	  <div class="kc_w1" style="width:460px;margin:10px;">
+           	<h3 class="green btl pb10 f20 ffmly ">{# $course.Name #}</h3>
+                <ul style="font-size:14px;margin-top:10px;">
+                	<li>费&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用：<span class="f14 cf60">￥{# $course.Price+0 #}</span></li>
+                    <li>开班时间：{# $course.DT #}</li>
+                    <li>上课班制：{# $course.SKSJ #} 课时:{# $course.Hour #}</li>
+                    <li>上课地点：{# $course.Addr #}</li>
+                    <li>学校名称：<span class="green"><a href="/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a></span></li>
+                    <li>咨询热线：<span class="tel1">{# if $course.Workphone#}{#$course.Workphone#}{#else#}{# $school.Workphone #}{#/if#}</span></li>
+                    <li>在线客服：{# if $school.QQDisplayMode == 1 #}<a style=" display:inline-block; " target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={# $school.QQ #}&site=houxue.com&menu=yes" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img class="vm" src="/xuexiao/style/2/images/pa.gif" border=0>{# if $debug == 1 #}<img border="0" class="vm" src="http://wpa.qq.com/pa?p=2:{# $school.QQ #}:41 &r=0.20744272637433886">{# /if #}</a>&nbsp;&nbsp;{# $school.QQ #}
+						{# /if #}
+						{# if $school.QQDisplayMode == 0 #}
+						<script src="/js/float_order_by_click_qq.js.php?loginid={# $school.LoginId #}" language="JavaScript"></script>
+						<a href="javascript:show_float_order_by_click_qq();" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img class="vm" src="/images/qq_online.gif" border=0></a>
+						{# /if #}					</li>
+              </ul>
+          </div>
+            <div class="n_right" style="margin:10px;">
+            	<div class="con1_right">
+				<div class="con1_tips pngtm"><img class="pngtm" src="http://www.houxue.com/kecheng/row/style/0/images/con1_tips.png" /></div>
+           		<div class="con1_r_book">
+               		<div class="mt20">
+                    	<p>在下面留言报名本课程，可获得厚学网赠送的 <span class="ff0">精美礼品</span></p>
+                        <p>培训结束后，点评本学校，可得 <span class="ff0">点评奖金{#$course.CommentsMoney#}元</span></p>
+                    </div>
+                    <div class="con1_r_form mt10 fix">
+                    	<div class="con_r_f_l">
+						  <form name="frm_msg2" action="http://www.houxue.com/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" target="_top">
+							<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+							<input type="hidden" name="x_CourseId" value="{# $course.Id #}" />
+							<input type="hidden" name="x_AreaId" value="{# $course.AreaId #}" />
+							<input type="hidden" name="x_CategoryId" value="{# $course.CategoryId #}" />
+							<input type="hidden" name="x_Money" value="{# $course.Price #}">
+							<input type="hidden" name="flag" value="msg" />
+							<input type="hidden" name="flag_sms" value="yes" />
+							<input type="hidden" name="flag_smsToLeaner" value="yes" />
+							<input type="hidden" name="flag_share" value="yes" />
+							<input type="hidden" name="forward" value="http://www.houxue.com/kecheng/{# $course.Id #}/" />
+							<input type="hidden" name="alertText" value="预约留言成功" />
+                        	<ul>
+                   			  <li class="mt2"><input class="input_box" value="姓名：" title="姓名：" onblur="if(this.value=='') this.value=this.title;" onfocus="if(this.value==this.title) this.value='';" id="x_Name" name="x_Name" type="text">
+                           	  </li><li class="mt10"><input class="input_box" value="电话：" title="电话：" onblur="if(this.value=='') this.value=this.title;" onfocus="if(this.value==this.title) this.value='';" id="x_Phone" name="x_Phone" type="text">
+                       	      </li><li class="mt2"><input class="con_r_l_btn mt10 btn" style="_padding:2px 10px; " value="立即享受此服务" type="submit">
+                            </li></ul>
+							</form>
+                        </div>
+                        <div class="con_r_f_r"><img class="mt10 ml10" src="/kecheng/row/style/0/images/baoming_wenzi.jpg"></div>
+                  </div>
+				</div>
+				<div class="con1_r_dianping clear mt10">
+					<ul>
+				  </ul>
+				</div>
+			</div>
+            </div>
+       	</div>
+
+       <div class="title_bg mt10"><h2 class="title1" >课程详情</h2></div>
+        <div class="bd r_con3" >
+          {# $course.Intro #}
+       	</div>
+
+
+
+      </div>
+    </div>
+</div>
+
+<div class="foot mt10">
+	<div class="tc"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $CompanyLabel #}首页</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm">{# $CompanyLabel #}介绍</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">培训课程</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/laoshi.htm">{# $CompanyLabel #}老师</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/huanjing.htm">{# $CompanyLabel #}环境</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xinwen.htm">{# $CompanyLabel #}新闻</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">学员评论</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">网上报名</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm">联系我们</a></div>
+    <div class="tc">Copyright 2007-{# $smarty.now|date_format:"%Y" #} &copy; <a href="http://www.houxue.com">厚学培训网</a> 版权所有 all right resevied  苏ICP备14012599号-1 </div>
+</div>
+
+{# if $course.OnlineCallCode#}
+	{#$course.OnlineCallCode#}
+{#else#}
+	{# $school.OnlineCallCode #}
+{#/if#}
+{# $CONFIG.sitecountercode #}
+{# $area.Path.1.SiteCounterCode #}
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&img=5&pos=right" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+		var bds_config = {"bdTop":0};
+		document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

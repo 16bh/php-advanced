@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.Name #}的论坛</title>
+<meta name="keywords" content="{#$bbsThread.Subject#}"/>
+<meta name="description" content="{#$bbsThread.Subject#}"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js" ></script>
+<style type="text/css">
+.clearfix{ *zoom:1;}
+.clearfix:after { clear:both; height:0; overflow:hidden; display:block; visibility:hidden; content:"."; }
+.hidden{ display:none;}
+
+.nph_chn{ padding:8px 0 6px; background:#FFF;}
+.nph_logo{ float:left; margin-right:12px;}
+.nph_crumb{ float:left; line-height:29px;}
+.nph_crumb, .nph_crumb a, .nph_crumb a:visited{ color:#727171;}
+.nph_crumb a:hover{ color:#BA2636;}
+.nph_area{ clear:both; margin:auto; width:722px; text-align:left;}
+
+.nph_gallery{ text-align:left; word-wrap:break-word;}
+.nph_gallery p{ margin:0; line-height:21px;}
+
+.nph_bg{ padding:8px 0; width:100%; background:#ffffff;}
+
+
+.nph_set_info span{ display:inline-block;}
+.nph_set_info .hidden{ display:none;}
+.nph_set_info h1, .nph_set_info h2{ display:inline; font-size:20px; font-family:simHei;}
+.nph_set_info h3{ float:left; font:20px/1.5 simHei;}
+
+.nph_set_title{ padding:3px 0 2px; line-height:25px;}
+.nph_set_title span{ line-height:21px;}
+.nph_set_cur{ font-size:14px;}
+.nph_set_cur span{ font-size:22px; font-weight:bold;}
+.nph_search_count{ font-size:14px; font-family:simSun;}
+
+.nph_set_info{ color:#C6C6C6;}
+.nph_set_info h1, .nph_set_info h1 a, .nph_set_info h1 a:visited, .nph_set_info h2, .nph_set_info h2 a, .nph_set_info h2 a:visited, .nph_set_info h3 span{ color:#ECECEC;}
+.nph_set_info h1 a:hover, .nph_set_info h2 a:hover{ color:#F9DF53;}
+.nph_set_info p, .nph_set_cur, .nph_set_size, .nph_set_info .nph_search_count{ color:#767676;}
+.nph_set_info p a, .nph_set_info p a:visited{ color:#BA2636;}
+
+.nph_set{ float:left; width:100%; min-height:1px;}
+.nph_set_prev{ float:left; margin-left:-100%; padding-top:6px; width:110px;}
+.nph_set_next{ float:left; margin-left:-110px; padding-top:6px; width:110px;}
+.container .nph_set_thumb{ margin:0 0px; padding:6px 1% 0;}
+
+.container .nph_photo_view{ position:relative; overflow:hidden; width:100%; text-align:center;height:220px;}
+.nph_photo_view .nph_cnt{ height:100%;}
+.nph_photo_view i{ display:inline-block; height:100%; vertical-align:middle;}
+.nph_photo_view img{ vertical-align:middle; max-width:100%; max-height:100%; -ms-interpolation-mode: bicubic;}
+.nph_photo_prev{ position:absolute; left:0; top:0; width:50%; height:250px; background:url(/js/imageview/163/bg06.png) repeat;}
+.nph_photo_next{ position:absolute; right:0; top:0; width:50%; height:250px; background:url(/js/imageview/163/bg06.png) repeat;}
+.nph_photo_loading{ position:absolute; left:50%; top:50%; margin:-19px 0 0 -19px; width:37px; height:37px; background:url(/js/imageview/163/loading.gif) no-repeat 0 0;}
+.nph_photo_desc h2{ min-height:10px; _height:10px; }
+.nph_photo_desc h2, .nph_photo_desc h2 a, .nph_photo_desc h2 a:visited{ color:#ECECEC;}
+.nph_photo_desc h2 a:hover{ color:#F9DF53;}
+.nph_photo_desc p{ color:#C6C6C6;}
+.nph_photo_desc p a, .nph_photo_desc p a:visited{ color:#BA2636;}
+.nph_photo_ctrl{ float:right; overflow:hidden; margin-top:8px;}
+.nph_photo_ctrl ul{ margin-right:-12px;}
+.nph_photo_ctrl li{ display:inline;}
+.nph_photo_ctrl .hidden{ display:none;}
+.nph_photo_ctrl, .nph_photo_ctrl a, .nph_photo_ctrl a:visited{ color:#767676;}
+.nph_photo_ctrl a:hover{ color:#ECDEAE;}
+
+
+.nph_photo_thumb{ margin:auto;}
+
+nph_photo, .nph_stream, .nph_search{ width:100%;}
+.nph_stream_view, .nph_search_view{ overflow:hidden; padding-top:12px; width:100%;}
+
+.nph_scrl{ float:left; width:100%; min-height:1px;}
+.nph_scrl_thumb{ margin:0 30px;}
+.nph_scrl_main{ overflow:hidden; padding-bottom:6px; width:100%;}
+.nph_scrl_prev{ float:left; margin-left:-100%; padding-top:6px;}
+.nph_scrl_next{ float:right; margin-left:-10px; margin-top:-100px;}
+.nph_scrl_bar{}
+.nph_scrl_lt{ float:left; margin-right:-3px; width:3px; height:20px; background:url(/images09/images_schoolpage/bg09.png) no-repeat 0 0;}
+.nph_scrl_rt{ float:right; margin-left:-3px; width:3px; height:20px; background:url(/images09/images_schoolpage/bg10.png) no-repeat 0 0;}
+.nph_scrl_bd{ float:left; width:100%; min-height:1px;}
+.nph_scrl_ct{ position:relative; margin:0 3px; padding-top:4px; height:20px; background:url(/images09/images_schoolpage//bg08.png) repeat-x 0 0;}
+
+.nph_list_thumb{ overflow:hidden; height:77px;}
+.nph_list_thumb li{ float:left; width:102px; padding:0 2px; text-align:center;}
+.nph_list_thumb h2, .nph_list_thumb p, .nph_list_thumb i{ display:none;}
+.nph_list_thumb a, .nph_list_thumb img{ display:block; margin:auto; width:100px; height:75px;}
+.nph_list_thumb a{ outline:none; border:1px solid #8B8B8C;}
+.nph_list_thumb a:hover{ border:1px solid #ECDEAE;}
+.nph_list_thumb .nph_list_active a{ border:1px solid #ff8400;}
+.nph_list_stream{ clear:both;}
+.nph_list_stream li{ float:left; overflow:hidden; line-height:21px;}
+.nph_list_stream div{ display:table; margin:0 auto 5px; width:164px; height:164px;}
+.nph_list_stream div a{ display:table-cell; *display:block; overflow:hidden; width:160px; height:160px; text-align:center; vertical-align:middle; border:2px solid #ECECEC; background:#000;}
+.nph_list_stream div a:hover{ border:2px solid #F9DF53;}
+.nph_list_stream i{ display:inline-block; height:100%; vertical-align:middle;}
+.nph_list_stream img{ vertical-align:middle; max-width:100%; max-height:100%;}
+.nph_list_stream h3, .nph_list_stream p{ margin:0 auto; width:160px;}
+.nph_list_stream h3, .nph_list_stream h3 a, .nph_list_stream h3 a:visited{ color:#ECECEC;}
+.nph_list_stream h3 a:hover{ color:#F9DF53;}
+.nph_list_stream p{ color:#767676;}
+
+
+.nph_btn_nscrl{ background:url(/images09/images_schoolpage/kc_btn_4.png) no-repeat left top;width:31px;height:61px; display:block;}
+.nph_btn_pscrl{ background:url(/images09/images_schoolpage/kc_btn_3.png) no-repeat left top;width:31px;height:61px;display:block;}
+
+.nph_btn_scrl{ position:absolute; display:block; width:36px; outline:none; cursor:default;}
+.nph_btn_scrl .nph_btn_lt{ float:left; margin-right:-10px; width:10px; height:15px;}
+.nph_btn_scrl .nph_btn_rt{ float:right; margin-left:-10px; width:10px; height:15px;}
+.nph_btn_scrl .nph_btn_bd{ float:left; width:100%; min-height:1px;}
+.nph_btn_scrl .nph_btn_bd span{ display:block; height:15px; margin:0 10px;}
+.nph_btn_scrl .nph_btn_ct{ display:block; margin:auto; width:14px; height:15px;}
+.nph_btn_scrl .nph_btn_lt, .nph_btn_scrl .nph_btn_rt, .nph_btn_scrl .nph_btn_bd span, .nph_btn_scrl .nph_btn_ct{ background:url(/images09/images_schoolpage/bg07.png) no-repeat;}
+.nph_btn_scrl .nph_btn_lt{ background-position:0 0;}
+.nph_btn_scrl .nph_btn_rt{ background-position:-26px 0;}
+.nph_btn_scrl .nph_btn_ct{ background-position:-11px 0;}
+.nph_btn_scrl:hover .nph_btn_lt{ background-position:0 -16px;}
+.nph_btn_scrl:hover .nph_btn_rt{ background-position:-26px -16px;}
+.nph_btn_scrl:hover .nph_btn_ct{ background-position:-11px -16px;}
+.nph_btn_scrl .nph_btn_bd span{ background:url(/images09/images_schoolpage/bg07.png) repeat-x 0 -32px;}
+.nph_btn_scrl:hover .nph_btn_bd span{ background-position:0 -48px;}
+
+
+.nph_btn_pphoto{ display:block; width:100%; height:100%; outline:none; cursor:url(/js/imageview/163/bg11.cur), auto;}
+.nph_btn_nphoto{ display:block; width:100%; height:100%; outline:none; cursor:url(/js/imageview/163/bg12.cur), auto;}
+
+
+.nph_gallery .nph_c_lh{ color:#E53333;}
+
+.nph_photo_view{ height:400px;}
+.nph_stream, .nph_search{ height:800px;}
+</style>
+
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container ">
+
+	<!--bbs start-->
+	<div class="bbs">
+        	<h2 class="bbs_title" style="position:relative;">
+				<span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span>
+				<span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+        		<div class="bbs_title_bg" ><img style="position:absolute;top:-3px;" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_title.jpg" width="110" height="34" /></div>
+        	</h2>
+            <div class="bbs_con" style="padding:0px;">
+
+                <div class="bbs_con_head">
+                    <div class="bbs_page" >
+						<span>共 &nbsp;<span class="cc0">{#$bbsThread.Visit#}</span> &nbsp;浏览&nbsp; <span class="cc0">{#$pager.rowcount_all#}</span> &nbsp;回复</span>
+						<span>
+						{#pager rowcount=$pager.rowcount_all show='page' limit=$pager.limit txt_prev="上一页" txt_next="下一页" posvar=$pager.posvar forwardvars=$pager.forwardvars shift=$pager.shift txt_pos=$pager.txt_pos  txt_first=$pager.L_MORE class_num="pager_class_num" class_numon="cc0" class_text="f1"#}
+						</span>&nbsp;
+					</div>
+					<span><a href="http://www.houxue.com/xuexiao/{#$school.LoginId#}/bbs/list-0.htm" style="margin-left: 10px;"> << 返回列表</a></span>
+                </div>
+                <!--主体内容-->
+                <div class="" style="background:url(/xuexiao/style/{# $school.DisplayStyle #}/images/body_bg.jpg) repeat-y left top;">
+                	<ul>
+                    	<li class="bbs_detail_fix ">
+                        	<div class="bbs_detail_left">
+                            	<p>
+								{#if $bbsThread.ImageId#}
+									<a href="{#$bbsThread.HomeUrl#}">
+										<img style="padding:1px; border:1px solid #ccc;" src="http://www.houxue.com/loadimage.php?id={#$bbsThread.ImageId#}&w=80&h=80" width="80" height="80" />
+									</a>
+								{#else#}
+									<img style="padding:1px; border:1px solid #ccc;" src="http://www.houxue.com/images/school_logo_example.gif" width="80" height="80" />
+								{#/if#}
+								</p>
+                                <p><a href="{#$bbsThread.HomeUrl#}">{#$bbsThread.Name#}</a></p>
+                                <p><img src="/xuexiao/style/{# $school.DisplayStyle #}/images/online.jpg" width="34" height="13" /></p>
+                            </div>
+                            <div class="bbs_detail_right">
+                            	<div class="title1 "><span class="fr">ID:{#$bbsThread.LoginId#} 发表于：{#$bbsThread.Dtt|date_format:"%Y-%m-%d %H:%M:%S"#} [<a class="blue" href="http://www.houxue.com/xuexiao/bbs.php?id={#$school.LoginId#}&flag=detail&tid={#$bbsThread.Id#}&viewLoginId={#$bbsThread.LoginId#}">只看该作者</a>]</span>
+                                <span class="fw" style="font-size:14px;">{#$bbsThread.Subject|htmlspecialchars#}</span></div>
+                                <div class="con1">{#$bbsThread.Content|htmlspecialchars#}</div>
+<div style="clear:both;position: relative;">
+{#if $StudyMaterial_Image.0.Id#}
+<div class="nph_area">
+<div class="nph_gallery clearfix" id="gallery">
+<div class="nph_bg" >
+	<div class="nph_cnt clearfix" style="display:none;">
+
+		<div class="nph_set_info">
+			<div id="setInfo">
+				<div class="nph_set_title">
+					<h1></h1><span class="nph_set_cur hidden" id="photoType"><span id="photoIndex" class="nph_c_lh"></span></span><span class="nph_set_size" id="streamType"><span class="nph_c_lh"></span></span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<div id="modePhoto" class="nph_photo">
+    <div class="nph_photo_view">
+        <div class="nph_cnt" id="photoView"><i></i><img src="" class="img_css" id="photo"/></div>
+        <div class="nph_photo_prev"><a href="#" hidefocus="true" target="_self" class="nph_btn_pphoto" id="photoPrev"></a></div>
+        <div class="nph_photo_next"><a href="#" hidefocus="true" target="_self" class="nph_btn_nphoto" id="photoNext"></a></div>
+        <div class="nph_photo_loading" id="photoLoading"></div>
+        <div style="width:100%; height:100%;position:absolute; left: 0; top:0;"  id="photoLayout">
+
+        </div>
+    </div>
+    <div class="nph_cnt">
+
+        <div class="nph_photo_desc" id="photoDesc"></div>
+    </div>
+
+		<div class="nph_cnt">
+			<div class="clearfix">
+				<div class="nph_set">
+					<div class="nph_set_thumb">
+						<div class="nph_photo_thumb clearfix" id="scrl" style="width:700px;">
+							<div class="clearfix">
+								<div class="nph_scrl">
+									<div class="nph_scrl_thumb">
+										<div class="nph_scrl_main">
+											<ul class="nph_list_thumb clearfix" id="thumb"></ul>
+										</div>
+										<div class="nph_scrl_bar clearfix">
+											<span class="nph_scrl_lt"></span>
+											<span class="nph_scrl_rt"></span>
+											<div class="nph_scrl_bd">
+												<div class="nph_scrl_ct">
+													<a href="" hidefocus="true" class="nph_btn_scrl" id="bar">
+														<b class="nph_btn_lt"></b>
+														<b class="nph_btn_rt"></b>
+														<span class="nph_btn_bd"><span><b class="nph_btn_ct"></b></span></span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="nph_scrl_prev"><a href="" hidefocus="true" class="nph_btn_pscrl" id="scrlPrev"></a></span>
+								<span class="nph_scrl_next"><a href="" hidefocus="true" class="nph_btn_nscrl" id="scrlNext"></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<textarea class="hidden" id="photoList">
+		{# foreach key=rownum item=row from=$StudyMaterial_Image #}
+			<li>
+				<a href="#p=IMAGE{# $row.ImageId #}" hidefocus="true"><img src="/loadimage.php?id={# $row.ImageId #}&w=100&h=75" alt="IMAGE{# $row.ImageId #}"/></a>
+				<h2></h2>
+				<p></p>
+				<i title="img">/loadimage.php?id={# $row.ImageId #}</i>
+				<i title="timg">/loadimage.php?id={# $row.ImageId #}</i>
+			</li>
+		{# /foreach #}
+	</textarea>
+</div>
+</div>
+
+<script type="text/javascript" language="javascript" src="http://www.houxue.com/js/imageview/163/ntes_jslib_1.x.js"></script>
+<script type="text/javascript" language="javascript" src="http://www.houxue.com/js/imageview/163/ntes_ui_scroll.js"></script>
+<script type="text/javascript" language="javascript" src="http://www.houxue.com/js/imageview/163/nph_gallery_2.18.js"></script>
+	<script type="text/javascript">
+		NTES.ready(function ($) {
+			var nphLayoutGG = $('#nphLayoutGG');
+			if (nphLayoutGG) {
+				nphLayoutGG.addCss({ display: 'block', position: 'absolute', left: 0, top: 0, width: '480px', height: '360px' });
+
+				new nph.Gallery({ photoViewMode: 2 });
+			} else {
+				new nph.Gallery({ photoViewMode: 0 });
+		}
+
+
+		});
+	</script>
+</div>
+{# /if #}
+</div>
+
+                            </div>
+                        </li>
+				{# foreach key=rownum item=row from=$bbsReplyList name=foo#}
+                        <li class="bbs_detail_fix bbs_detail_bt1">
+                        	<div class="bbs_detail_left">
+                            	<p>
+							{#if $row.ImageId#}
+								<a href="{#$row.HomeUrl#}">
+									<img style="padding:1px; border:1px solid #ccc;" src="http://www.houxue.com/loadimage.php?id={#$row.ImageId#}&w=80&h=80" width="80" height="80" />
+								</a>
+							{#else#}
+								<img style="padding:1px; border:1px solid #ccc;" src="http://www.houxue.com/images/school_logo_example.gif" width="80" height="80" />
+							{#/if#}
+								</p>
+                                <p><a href="{#$row.HomeUrl#}">{#$row.Name#}</a></p>
+                                <p><img src="/xuexiao/style/{# $school.DisplayStyle #}/images/online.jpg" width="34" height="13" /></p>
+                            </div>
+                            <div class="bbs_detail_right">
+                            	<div class="title"> 第 {#$row.Position#} 楼   ID:{#$row.LoginId#}  发表于：{#$row.Dtt|date_format:"%Y-%m-%d %H:%M:%S"#} [<a class="blue" href="http://www.houxue.com/xuexiao/bbs.php?id={#$school.LoginId#}&flag=detail&tid={#$bbsThread.Id#}&viewLoginId={#$row.LoginId#}">只看该作者</a>]</div>
+                                <div class="con">{#$row.Content|htmlspecialchars#}
+                                <div class="yy"> <!-- <a class="blue" href="#">回复</a> | <a class="blue" href="#">引用</a> --> </div>
+                              </div>
+
+                            </div>
+                        </li>
+				{# /foreach #}
+                    </ul>
+                </div>
+                <!--主体结束-->
+               <div class="bbs_con_foot">
+					<div class="bbs_page">
+						<span>共 &nbsp;<span class="cc0">{#$bbsThread.Visit#}</span> &nbsp;浏览&nbsp; <span class="cc0">{#$pager.rowcount_all#}</span> &nbsp;回复</span>
+						<span>
+						{#pager rowcount=$pager.rowcount_all show='page' limit=$pager.limit txt_prev="上一页" txt_next="下一页" posvar=$pager.posvar forwardvars=$pager.forwardvars shift=$pager.shift txt_pos=$pager.txt_pos  txt_first=$pager.L_MORE class_num="pager_class_num" class_numon="cc0" class_text="f1"#}
+						</span>&nbsp;
+					</div>
+				</div>
+
+            </div>
+
+{#if $bbsBoard.IsAllowReply=='yes'#}
+<script type="text/javascript">
+<!--
+function f_chkform()
+{
+	if( jQuery("#x_Content").val() == "" )
+	{
+		alert("回帖内容不能为空");
+		jQuery("#x_Content").focus();
+		return false;
+	}
+}
+//-->
+</script>
+				<!--replyhttp://www.houxue.com/xuexiao/bbs.php?id={#$school.LoginId#}&ThreadId={#$bbsThread.Id#}&flag=addThreadReplySave&BoardId={#$bbsBoard.Id#}&pager_rownum={#$pager_rownum#}-->
+				<div style="clear: both;width:100%;position: relative;">
+					<div style="padding-left:100px;">
+<form action="http://www.houxue.com/xuexiao/{#$school.LoginId#}/bbs/{#$bbsThread.Id#}/{#$bbsBoard.Id#}/addreplysave-{#$pager_rownum#}.htm" name="frm_1" method="post" onsubmit="return f_chkform();">
+						<ul class="bbs_add">
+							<li class="mt10">
+								<span class="w1" style="vertical-align:top;">回帖内容：</span>
+								<span class="vt">
+									<textarea id="x_Content" name="x_Content" class="input1" rows="5" cols="65"></textarea>
+								</span>
+							</li>
+							<li style="padding-left:110px;margin-top:13px;">
+								<span><input type="image" src="/xuexiao/style/{# $school.DisplayStyle #}/images/bbs_btn.jpg"></span>
+							</li>
+						</ul>
+</form>
+					</div>
+	{#if $LoginUserLoginId<=0#}
+					<div style="width:300px;position: absolute;top:50px;left:360px;z-index: 999;">
+								您需要登录后才可以回帖
+						<a href="http://www.houxue.com/login.php?forward=http://www.houxue.com/xuexiao/{#$school.LoginId#}/bbs/thread-{#$bbsThread.Id#}-0.htm"><font style="color: #336699;">登录</font></a> |
+						<a href="http://www.houxue.com/reg.php" target="_blank" class="xi2"><font style="color: #336699;">立即注册</font></a>
+					</div>
+	{#/if#}
+				</div>
+				<!--reply-->
+{#/if#}
+
+	</div>
+	<!--bbs end-->
+
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

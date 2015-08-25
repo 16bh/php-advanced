@@ -1,0 +1,13 @@
+
+<div id="footer">
+  <p><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/" title="{# $school.Name #}">学校首页</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm">学校介绍</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">培训课程</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/laoshi.htm">学校老师</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/huanjing.htm">学校环境</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xinwen.htm">学校新闻</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">学员评论</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">网上报名</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm">联系我们</a><br />
+  Copyright © 2007-{# $smarty.now|date_format:"%Y" #} <a href="http://{# $area.Domain #}.houxue.com">{# $area.Path.1.AreaName #}培训网</a> All rights reserved.苏ICP备14012599号-1 <br />
+  </p>
+  <p></p>
+</div>
+
+{# if $school.OnlineCallCode != "" #}{# $school.OnlineCallCode #}{# else #}{# $area.Path.1.OnlineCallCode #}{# /if #}
+
+{#$CONFIG.sitecountercode#}
+{# $area.Path.1.SiteCounterCode #}
+{# $school.CounterCode #}

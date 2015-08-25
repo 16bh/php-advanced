@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}_联系方式_报名电话</title>
+<meta name="keywords" content="{# $school.ShortName #}报名地址，{# $school.ShortName #}电话"/>
+<meta name="description" content="{# $school.ShortName #}的联系方式，报名地址，咨询电话"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<style type="text/css">#baidumap{height:300px; width:700px; border:1px solid gray;}</style>
+</head>
+
+<body>
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+
+      <div class="right_box2">
+   		<div class="title_bg "><span class="more">当前位置：首页> 联系我们</span>
+   		  <h2 class="title1" >联系我们</h2>
+   		</div>
+        <div class="bd r_con2" >
+
+			<div class="mt10">
+			<ul>
+				<li class="colora">学校名称：</li>
+				<li>{# $school.Name #}</li>
+				<li class="colora">学校地址：</li>
+				<li>{# $school.Addr #} </li>
+				<li class="colora">交通线路：</li>
+				<li>{# $school.Bus #}</li>
+				<li class="colora">联系人：</li>
+				<li>{# $school.Linkman #}</li>
+				<li class="colora">免费咨询热线：</li>
+				<li class="tel1">{# $school.Workphone #}</li>
+			</ul>
+			</div>
+			<div id="baidumap" title="学校位置地图"></div>
+
+			<br />
+			<br />
+			<br />
+			<br />
+
+        </div>
+
+
+      </div>
+    </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
+
+<script type="text/javascript">
+	var map = new BMap.Map("baidumap");
+	var mapPoint = new BMap.Point({# $school.BaiduMapPointLng #}, {# $school.BaiduMapPointLat #});
+	map.centerAndZoom(mapPoint, 12);
+	map.addControl(new BMap.NavigationControl());
+	map.enableScrollWheelZoom();
+	var mapMarker = new BMap.Marker(mapPoint);
+	var mapLable = new BMap.Label("{# $school.ShortName #}");
+	var mapSize = new BMap.Size(18,0);
+	mapLable.setOffset(mapSize);
+	mapMarker.setLabel(mapLable);
+	mapMarker.setTitle("{# $school.Name #}");
+	map.addOverlay(mapMarker);
+
+</script>

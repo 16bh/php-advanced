@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name|strip_tags #}-{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训学校</title>
+<meta name="keywords" content="{# if $school.SeoKeywords != '' #}{# $school.SeoKeywords #}{# else #}{# $school.Name|strip_tags #},{# $school.ShortName|strip_tags #},{# $area.Path.1.AreaName #}{# $area.Path.2.AreaName #}{# $category.CategoryName #}培训,{# $area.Path.1.AreaName #}{# $area.Path.2.AreaName #}{# $category.CategoryName #}培训学校{# /if #}"/>
+<meta name="description" content="{# if $school.SeoDescription != '' #}{# $school.SeoDescription #}{# else #}{# $school.Name|strip_tags #},简称({# $school.ShortName|strip_tags #}),是{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训学校,地址:{# $school.Addr #}{# if $courselist.0.Id != '' #},有培训课程:{# foreach key=rownum item=row from=$courselist name=courselist #}{# if $smarty.foreach.courselist.index < 5 #}《{# $row.Name|strip_tags|trim #}》{# /if #}{# /foreach #}...{# /if #}{# if $teacherlist.0.Id != '' #},有培训老师{# foreach key=rownum item=row from=$teacherlist name=teacherlist #}{# if $smarty.foreach.teacherlist.index < 5 #}{# $row.Name|strip_tags|trim #}{# /if #}{# if !$smarty.foreach.teacherlist.last #},{# /if #}{# /foreach #}...{# /if #}{# /if #}"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+{#if $smarty.request.flag=="msg_ok"#}
+<script language="javascript">alert("预约留言成功!");</script>
+{#/if#}
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1>{# $school.Name #}</h1></div>
+		<div class="clear"></div>
+
+		<div style="margin-top:35px;">
+		<div class="schoolphoto">
+			{# if $school.Logo != "" #}
+			<img src="{# if substr($school.Logo, 0, 7) != 'http://' #}http://www.houxue.com/{# /if #}{# $school.Logo #}" alt="" height="180" width="240" border="0" />
+			{# else #}
+			<img src="/images-s/school_logo_example.gif">
+			{# /if #}
+		</div>
+		<div class="school">
+			<div class="tele"><img src="/images-s/btn_tele.gif" width="99" height="33" align="bottom" style="float:left;" />&nbsp;
+			<span style="display:none1;font-size:22px;color:#FF9933; font-family:Arial, Helvetica, sans-serif;" >
+				{# if $area.Path.1.SchoolWorkphone != "" && $school.Rz != 1 #}
+					{# $area.Path.1.SchoolWorkphone #}
+				{# else #}
+					{# if $school.WorkphoneShow == 1 #}
+						<span id="s_workphone5" >{# $school.Workphone #}</span>
+					{# else #}
+						<span id="s_workphone5" style="display:none;" >{# $school.Workphone|default:"025-84767067" #}</span>
+						<a id="a_workphone5" class="tele_link" href="javascript:f_showphone('s_workphone5', 'a_workphone5');" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='Phone';p['expend']='0'; school_summery_log(p);">点击查看</a>
+					{# /if #}
+				{# /if #}
+			</span>
+			</div>
+			<div style="margin-top:10px;"><img src="/images-s/btn_zx.gif" alt="" width="99" height="34" />&nbsp;&nbsp;
+				{# if $area.Path.1.SchoolQQCallCode != "" && $school.Rz != 1 #}
+					{# $area.Path.1.SchoolQQCallCode #}
+				{# else #}
+					{# if $school.QQCallCode != "" #}
+						{# $school.QQCallCode #}
+					{# else #}
+						{# if $school.QQ != "" #}<a href="tencent://message/?uin={# $school.QQ #}&Site=www.houxue.com&Menu=yes" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img src="http://www.houxue.com/images/qq_online.gif" border=0></a>
+						{# else #}
+						暂无
+						{# /if #}
+					{# /if #}
+				{# /if #}
+			</div>
+			<div class="date"><img class="left" src="/images-s/time.gif" alt="" /> <span><strong>{# $school.Worktime|default:" 8：30-17：30" #}</strong></span></div>
+			<div class="vote"><a href="baoming.htm"><img src="/images-s/btn_bm.gif" alt="" width="169" height="43" /></a></div>
+		</div>
+		</div>
+        <!--学校图片结束-->
+
+
+		<div class="indexblock" >
+			<h2>{# $school.ShortName #}介绍</h2>
+			<div class="index-blockcontent">
+			<ul>
+		    <li>
+			<p>
+			{# $school.Intro|strip_tags|nl2br #}
+			</p>
+			</li>
+		  </ul>
+		</div>
+
+		<div class="index-blockbottom"></div>
+
+		</div>
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+
+
+	  </div>
+
+		{#include file="right.htm"#}
+
+	</div>
+  </div>
+</div>
+
+
+{#include file="foot.htm"#}
+</body>
+</html>
+
+{# if $school.Rz == 1 && $school.OnlineCallCode != "" #}{# $school.OnlineCallCode #}{# else #}{# $Area.Path.1.OnlineCallCode #}{# /if #}
+<div style="DISPLAY: none"><script src="http://s96.cnzz.com/stat.php?id=2564547&web_id=2564547" language="JavaScript"></script></div>

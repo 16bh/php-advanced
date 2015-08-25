@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $row.Title #}-培训资料-{# $school.ShortName #}</title>
+<meta name="keywords" content="{# $row.Title #}"/>
+<meta name="description" content="{# $row.Title #}"/>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+<!--head-->
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+<div id="content">
+	{# include file="left.htm" #}
+    <div id="main">
+
+
+    	<div class="right_box1"><!--right_box1 start-->
+        	<div class="title_bg1">
+				<span class="fr">当前位置:首页 > 培训资料 > {# $row.Title #} </span>
+				<h2 class="right_title">
+				{# $school.Name #}
+				</h2>
+			</div>
+            <div class="box_con pd20">
+				<div class="detial_title"><h1><span class="type_{#$row.DocFormatClass#}"></span> <span class="f16">{# $row.Title #}</span></h1></div>
+                <div class="detial_info mt15">
+                	<div class="title"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/" class="mr6 f14">{# $school.ShortName #}</a><em class="c66">发布于{# $row.Dtt|date_format:"%Y-%m-%d %H:%S" #}</em></div>					
+					<dl class="mt6">
+                    	<dt><span>类&nbsp;&nbsp;&nbsp;别：</span><span>{# $row.CategoryName #}</span></dt>
+                        <dd><span>大&nbsp;&nbsp;&nbsp;小：</span><span>{# $row.FileSizeDisplay #}</span></dd>
+                        <dt><span>浏&nbsp;&nbsp;&nbsp;览：</span><span>{# $row.Visit #}</span></dt>
+						<dt><span>下&nbsp;&nbsp;&nbsp;载：</span><span>{# $row.DownloadCount #}</span></dt>
+                        <dd><span>联系方式：</span><span><a onclick="javascript:{# if $school.WorkphoneToOrder === '0' #}show_float_workphone();{# elseif $school.WorkphoneToOrder == 1 #}show_float_msg();{# elseif $school.WorkphoneToOrder == 2 #}show_float_workphone();{# else #}document.getElementById('s_workphone1').style.display='';{# /if #}var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='Phone';p['expend']='0'; school_summery_log(p);" href="javascript:void(0);"><img width="116" height="25" alt="" src="/xuexiao/style/1/images/tel_1.jpg"></a></span></dd>
+                    </dl>
+				</div>
+                <div class="detial_con mt15">
+                	<div class="title"><span>摘要</span></div>
+                    <div class="mt15">&nbsp;&nbsp;&nbsp;&nbsp;{# $row.Description #}</div>
+					<div class="ml58 mt15"><input class="share_down_default" name="" type="button" onclick="document.location='http://www.houxue.com/ziliao/download.php?id={# $row.Id #}&hash={# $row.hash #}'" /></div>
+                </div>
+            </div>
+
+      </div><!--right_box1 end-->
+
+
+</div>
+{# include file="foot.htm" #}
+    {# 'PCStat'|get_common_config #}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?php
+	header("Content-type: text/html; charset=utf-8");
+	include_once 'IpAddress.class.php';
+	$objIpAddress = new IpAddress("./qqwry.dat");
+	$location = $objIpAddress->getlocation('112.64.100.71');
+	$location["area"] = iconv("gb2312", "utf-8", $location["area"]);
+	$location["operators"] = iconv("gb2312", "utf-8", $location["operators"]);
+	var_dump($location);
+	preg_match('/(.*?)省?(.*?)市|(上海|天津|北京|重庆)市/', $location["area"], $userLocation);
+	if (is_array($userLocation)) {
+		$offset = count($userLocation)-1;
+		var_dump($userLocation[$offset]);
+	}
+	/*
+	南京：58.240.123.178
+	天津：123.150.187.130
+	*/

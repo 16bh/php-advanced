@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}学校环境</title>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1><a href="./">{# $school.Name #}</a>学校环境及资质证书</h1></div>
+		<div class="clear"></div>
+
+		  <div style="padding-left:10px;padding-top:35px;">
+
+			<div style="width:560px;" class="box_img">
+
+			{# foreach key=rownum item=row from=$envlist #}
+			<img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}">
+			<div style="height:20px;">&nbsp;</div>
+			{# /foreach #}
+
+			{# foreach key=rownum item=row from=$certificatelist #}
+			<img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}">
+			<div style="height:20px;">&nbsp;</div>
+			{# /foreach #}
+
+			{# if $envlist == "" && $certificatelist == "" #}
+			<img src="/images09/zwnr.gif" style="width:51px;height:14px;border:0px;min-height:1px;" >
+			<a id="button1222" href="#this" onclick="popupAddLead({# $school.AreaId+0 #}, {# $school.CategoryId+0 #}, {# $school.LoginId+0 #}, 0);"><img src="/images09/wytj.gif" style="width:50px;height:14px;border:0px;min-height:1px;" ></a>
+			{# /if #}
+			</div>
+		  </div>
+
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+	  </div>
+
+		{#include file="right.htm"#}
+
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+
+</body>
+</html>
+<div style="DISPLAY: none"><script src="http://s4.cnzz.com/stat.php?id=2844363&web_id=2844363" language="JavaScript"></script></div>

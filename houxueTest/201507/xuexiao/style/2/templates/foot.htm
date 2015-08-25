@@ -1,0 +1,60 @@
+
+<div class="foot mt10">
+	<div class="tc"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $CompanyLabel #}首页</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm">{# $CompanyLabel #}介绍</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">培训课程</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/laoshi.htm">{# $CompanyLabel #}老师</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/huanjing.htm">{# $CompanyLabel #}环境</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xinwen.htm">{# $CompanyLabel #}新闻</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">学员评论</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">网上报名</a> | <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm">联系我们</a></div>
+    <div class="tc">Copyright 2007-{# $smarty.now|date_format:"%Y" #} &copy; <a href="http://www.houxue.com">厚学培训网</a> 版权所有 all right resevied  苏ICP备14012599号-1 </div>
+</div>
+
+
+<DIV id="float_tel" class="thidden" onmouseover="float_tel();">
+	<DIV class="float_tel_head">
+	<FORM action="/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" target=_self id="form1" name="frm_bottom" >
+		<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+		<input type="hidden" name="x_AreaId" value="{# $school.AreaId #}" />
+		<input type="hidden" name="x_CategoryId" value="{# $school.CategoryId #}" />
+		<input type="hidden" name="flag" value="msg" />
+		<input type="hidden" name="flag_sms" value="yes" />
+		<input type="hidden" name="flag_smsToLeaner" value="yes" />
+		<input type="hidden" name="flag_share" value="yes" />
+		<input type="hidden" name="forward" value="" />
+		<input type="hidden" name="alertText" value="预约留言成功" />
+
+		<INPUT onblur="if (value ==''){value=this.title}" id="x_Name" name="x_Name" class=tel401 onfocus="if (value ==this.title){value =''}" title="请输入您的姓名" value="请输入您的姓名" type=text >
+		<INPUT onblur="if (value ==''){value=this.title}" id="x_Phone" name="x_Phone" class=tel400 onfocus="if (value ==this.title){value =''}" title="请输入您的电话号码" value="请输入您的电话号码" type=text >
+		<INPUT class="btntel" value="立即报名" type="submit" name="">
+	</FORM>
+    <div class="gg20">{# $school.OrderAdTip #}</div>
+	</DIV>
+	<DIV class=clear></DIV>
+	<DIV id=float_tel_content class=float_tel_content>
+		<DIV class=float_tel_h>
+			<UL>
+			  <LI><SPAN>求学路上，我们陪伴您！</SPAN></LI>
+			  <LI>电话：<SPAN>{# if $course.Workphone#}{#$course.Workphone#}{#else#}{# $school.Workphone #}{#/if#}</SPAN></LI>
+
+			</UL>
+		</DIV>
+	</DIV>
+</DIV>
+<SCRIPT type=text/javascript>
+	var float_tel =  function(){
+	var box = document.getElementById("float_tel");
+	var head = document.getElementById("float_tel_head");
+	box.className = "thover";
+	box.onmouseout = function(){
+	box.className = "thidden";
+	}
+	}
+</SCRIPT>
+{# if $school.OnlineCallCode != "" #}{# $school.OnlineCallCode #}{# else #}{# $area.Path.1.OnlineCallCode #}{# /if #}
+{# $CONFIG.sitecountercode #}
+{# $area.Path.1.SiteCounterCode #}
+{# $school.CounterCode #}
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&img=5&pos=right" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+		var bds_config = {"bdTop":0};
+		document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->

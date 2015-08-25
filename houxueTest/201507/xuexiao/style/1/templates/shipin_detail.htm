@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $row.Title #}-视频展示-{# $school.ShortName #}</title>
+<meta name="keywords" content="{# $row.Title #}"/>
+<meta name="description" content="{# $row.Title #}"/>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+<!--head-->
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+<link type="text/css" rel="stylesheet" href="http://www.houxue.com/js/jquery/themes/base/jquery.ui.all.css">
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.tabs.min.js"></script>
+<style type="text/css">
+.right_tab{ word-break:break-all;}
+.right_tab .ui-state-active a, .right_tab .ui-state-active a:link, .right_tab .ui-state-active a:visited{color:#666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected{background:#65a6ed;padding-bottom:0px; position:relative;font-weight:bold;color:#666666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a{color:#fff;}
+
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover span{display:block;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a span{display:block;color:#777;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected span{ position:absolute; top:17px;left:8px;*top:14px;_top:14px;}
+.right_tab .a9_flash{background-color: #fcfcfc; width:498px; height: 180px; float: none;border:1px solid #ccc;}
+.right_tab .ui-tabs{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li{margin:0 0 0px 0;top:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li a{padding:0.13em 0em;_padding:0.13em 0em;width:72px; text-align:center;font-size:12px;color:#626262;}
+.right_tab .ui-widget-content{color:#555555;border:none;}
+.container .right_tab .ui-tabs .ui-tabs-panel{font-size:12px;padding-top:1.2em;margin-top:1.0em;border-top:1px dashed #ccc;width:730px;padding-left:0px;}
+.right_tab .ui-tabs-panel  li{padding-left: 0px;line-height:28px;font-size:0px;overflow:hidden;}
+
+.right_tab .ui-tabs-panel  li a{margin-right:6px;color:#4e86e3;font-size:12px;}
+.right_tab .ui-tabs-panel  li a:hover{color:#f60;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-bottom,  .right_tab.ui-corner-right, .right_tab .ui-corner-br{ border-radius:0px;}
+.right_tab .ui-widget-header{border:0px solid #dddddd;background:#fff;}
+.right_tab .ui-widget-content .bd{border:1px solid #dddddd;border-top:none;}
+.right_tab .ui-state-default, .right_tab .ui-widget-content .ui-state-default, .right_tab.ui-widget-header .ui-state-default{background:none;border-left:none;border-top:none;border-bottom:none;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-top, .right_tab  .ui-corner-right, .right_tab  .ui-corner-tr{border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;}
+.right_tab li span{display:inline-block;font-size:12px;color:#444444;width:60px;float:left;}
+
+#tabs-1 li span{width:40px;}
+.right_tab li .r_con{font-size:12px;color:#444444;float:left;width:655px;}
+.right_tab li .r_con a{margin-right:1px;}
+.right_tab .ui-tabs-panel a{color:#888;margin-right:10px;line-height:25px;}
+.hot_gg{width:890px;background:#efefef;margin-bottom:15px;min-height:60px;}
+.right_tab .jt_2{display:none;}
+.input-text{border: 1px solid #CCCCCC;height: 20px;width:200px;}
+#ajaxpost{background: none repeat scroll 0 0 #4D8BCE;border: medium none;border-radius: 0.2em;color: #FFFFFF;cursor: pointer;display: inline;font-family: "微软雅黑";font-size: 14px;font-weight: bold;height:25px;text-shadow: 0 1px 0 #666666;width:72px; margin-top: 3px;}
+</style>
+<div id="content">
+	{# include file="left.htm" #}
+    <div id="main">
+
+
+    	<div class="right_box1"><!--right_box1 start-->
+        	<div class="title_bg1">
+				<span class="fr">当前位置:首页 > 视频展示 > {# $row.Title #} </span>
+				<h2 class="right_title">
+				{# $school.Name #}
+				</h2>
+			</div>
+            <div class="box_con pd20">
+				<div class="detial_title"><h1><span class=""></span> <span class="f16">{# $row.Title #}</span></h1></div>
+                <div class="detial_info mt15">
+                	<div class="title"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/" class="mr6 f14">{# $school.ShortName #}</a><em class="c66">发布于{# $row.Dtt|date_format:"%Y-%m-%d %H:%S" #}</em></div>
+					<dl class="mt6">
+                    	<dt><span>类&nbsp;&nbsp;&nbsp;别：</span><span>{# $row.CategoryName #}</span></dt>
+                        <dd><span>地&nbsp;&nbsp;&nbsp;区：</span><span>{# $row.AreaName #}</span></dd>
+                        <dt><span>浏&nbsp;&nbsp;&nbsp;览：</span><span>{# $row.Click #}</span></dt>
+                    </dl>
+				</div>
+                <div class="detial_con mt15">
+                	<div class="title"><span>内容详情</span></div>
+					<div class="ml58 mt15">{#if $row.FlashUrl#}<p>
+	<embed align="middle" allowfullscreen="true" allowscriptaccess="always" height="400" quality="high" src="{#$row.FlashUrl#}" type="application/x-shockwave-flash" width="480"></embed></p>{#/if#}</div>
+
+
+			<div class="ml58 mt15 right_tab" id="watchWay" {#if $isPlay#}style="display:none;"{#/if#}>
+				<p style="color:red;">提示：收费视频需要通过授权号码和姓名，才能观看。</p>
+				<div id="tabs">
+						<div style="height:80px;text-align:center;border:1px dotted #CCCCCC;border-top:0;">
+							<form id="mainForm" method="post" action="">
+								<input type="hidden" name="flag" value="detail">
+								<input type="hidden" name="isgetauthloginid" value="1">
+								<p>授权号码：<input type="text" name="x_Cellphone" class="input-text"></p>
+								<p>授权姓名：<input type="text" name="x_Name" class="input-text"></p>
+								<p><input type="button" value="确定" id="ajaxpost"></p>
+							</form>
+						</div>
+				</div>
+			</div>
+
+			<div class="ml58 mt15" id="videoPlay"></div>
+			{#if $isPlay#}
+					<script type="text/javascript">
+						$(document).ready(function(){
+							setVideoPlayHtml('{#$swfplayer#}','{#$flashvars#}','{#$customParam#}');
+						});
+					</script>
+			{#/if#}
+
+                    <div class="mt15">&nbsp;&nbsp;&nbsp;&nbsp;{# $row.Content #}</div>
+                </div>
+            </div>
+
+      </div><!--right_box1 end-->
+
+
+</div>
+
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+	$("#ajaxpost").click(function(){
+		$.ajax({ 
+			url: '', 
+			data: $('#mainForm').serialize(), 
+			type: "post", 
+			cache : false, 
+			success: function(data){
+				try{var myObject = eval('(' + data + ')');}catch (e){alert(data);return;}
+				if(myObject["rtn"]=='ok') 
+				{
+					$("#watchWay").hide();
+					setVideoPlayHtml(myObject["swfplayer"],myObject["flashvars"],myObject["customParam"]);
+				}
+				else
+				{
+					alert(myObject["error_text"]);
+				}
+			} 
+		}); 
+	});
+});
+function setVideoPlayHtml(swfplayer,flashvars,customParam)
+{
+	var s= '<div style="width:500px; height:400px;">';
+		s+='<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="100%" id="VJTVPlayer" align="middle">';
+		s+='<param name="movie" value="'+swfplayer+'" />';
+		s+='<param name="quality" value="high" />';
+		s+='<param name="bgcolor" value="#000000" />';
+		s+='<param name="play" value="true" />';
+		s+='<param name="loop" value="true" />';
+		s+='<param name="wmode" value="window" />';
+		s+='<param name="scale" value="showall" />';
+		s+='<param name="menu" value="true" />';
+		s+='<param name="devicefont" value="false" />';
+		s+='<param name="salign" value="" />';
+		s+='<param name="allowScriptAccess" value="always" />';
+		s+='<param name="flashvars" value=\''+flashvars+'&customParam='+customParam+'\'>';
+		s+='<param name="allowFullScreen" value="true"/>';
+		s+='<!--[if !IE]>-->';
+		s+='<object type="application/x-shockwave-flash" data="'+swfplayer+'" width="100%" height="100%">';
+		s+='<param name="movie" value="'+swfplayer+'" />';
+		s+='<param name="quality" value="high" />';
+		s+='<param name="bgcolor" value="#000000" />';
+		s+='<param name="play" value="true" />';
+		s+='<param name="loop" value="true" />';
+		s+='<param name="wmode" value="window" />';
+		s+='<param name="scale" value="showall" />';
+		s+='<param name="menu" value="true" />';
+		s+='<param name="devicefont" value="false" />';
+		s+='<param name="salign" value="" />';
+		s+='<param name="allowScriptAccess" value="always" />';
+		s+='<param name="flashvars" value=\''+flashvars+'&customParam='+customParam+'\'>';
+		s+='<param name="allowFullScreen" value="true"/>';
+		s+='<!--<![endif]-->';
+		s+='<a href="http://www.adobe.com/go/getflash"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>';
+		s+='<!--[if !IE]>-->';
+		s+='</object>';
+		s+='<!--<![endif]-->';
+		s+='</object>';
+		s+='</div>';
+	$("#videoPlay").html(s);
+}
+function onVerifyComplete(rtn,text)
+{
+	if(rtn==1)
+	{
+
+	}
+	else
+	{
+		$("#watchWay").show();
+		$("#videoPlay").html('');
+		alert(text);	
+	}
+}
+//-->
+</script>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

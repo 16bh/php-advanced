@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.Name #}的评论</title>
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+
+      <div class="right_box4">
+   		<div class="title_bg "><span class="more">当前位置：首页> 学员点评</span>
+   		<h2 class="title1" >学员点评</h2>
+   		</div>
+        <div class="bd r_con_dp" >
+        	<ul class="pingjia_u1">
+            	<li>
+                	<div class="box4_left">
+                    	<div class="box4_left_con">
+                       		<div class="con_left">
+                           		<p class="fs25 fb pt10 tac">学员满意度</p>
+								<p class="tac c66">来自于 {# $CountComments.PeopleNums|default:0 #} 人点评</p>
+							</div>
+                          <div class="con_right pat4">{# $CountComments.AvgSatisfaction|floor #}%</div>
+                        </div>
+                    </div>
+                   
+                </li>
+
+				{# foreach key=rownum item=row from=$commentlist #}
+                <li class="pl_line"></li>
+				<li class="clear_li">
+					<div class="listleft fl">
+						<ul>
+							<li class="666">{# $row.Phone|truncate:7:"" #}****</li>
+							<li class="666">{# $row.Dtt|date_format:"%Y-%m-%d" #}</li>
+						</ul>
+					</div>
+					<div class="listright fr">
+						<ul>
+							<li class="c99">
+								<div class="w1">满意度<span class="red fb"> {# $row.Satisfaction #}%</span></div>
+								<div class="w1">
+									<p>学校环境：{# $row.Vote1|star2text #}</p>
+								</div>
+								<div class="w1">
+									<p>课程性价：{# $row.Vote2|star2text #}</p>
+								</div>
+								<div class="w1">
+									<p>老师教学：{# $row.Vote3|star2text #}</p>
+								</div>
+								<div class="w1">交通便利：{# $row.Vote4|star2text #}</div>
+								<div class="w2 c33">{# $row.Content #}</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				{# /foreach #}
+			</ul>
+        </div>
+
+      </div>
+	</div>
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

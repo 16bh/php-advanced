@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}的培训课程</title>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+<LINK media=screen href="/images-s/tablecloth.css" type=text/css rel=Stylesheet>
+<!--[if IE]><LINK media=screen href="/images-s/ie_hacks.css" type=text/css rel=Stylesheet><![endif]-->
+<script type="text/javascript" src="/images-s/tablecloth.js"></script>
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1><a href="http://www.houxue.com/xuexiao/20416/">{# $school.Name #}</a>课程列表</h1></div>
+		<div class="clear"></div>
+
+		<table cellspacing="0" cellpadding="0" style="font-size:12px;margin-left:20px;margin-top:35px;">
+			<tr>
+				<th style="width:70px;">课程类别</th>
+				<th style="width:200px;">课程名称</th>
+				<th style="width:130px;">开班时间</th>
+				<th style="width:65px;">学校价</th>
+				<th style="width:65px;">厚学价</th>
+			</tr>
+			{# foreach key=rownum item=row from=$SchoolCategory #}
+			{# foreach key=rownum1 item=row1 from=$row.courselist #}
+			<tr>
+				<th><a id="#cid{# $row.CategoryId #}" href="http://{# $row1.Domain #}.houxue.com/kecheng{# $row.CategoryId #}-0/" target=_blank title="{# $area.Path.1.AreaName #}{# $row.CategoryName #}培训课程">{# $row.CategoryName #}</a></th>
+				<td><a href="http://{# $row1.Domain  #}.houxue.com/kecheng-{# $row1.Id #}/" title="{# $row1.Name|strip_tags #}" target=_blank>{# $row1.Name #}</a>
+				{# if $row1.Recommend =='yes' #}
+					<span class="">&nbsp;<img class="pngtm" src="/images09/images_coursepage/tj.png" alt="推荐" align="abstop" /></span>
+				{# /if #}
+				</td>
+				<td>{# $row1.DT|mydtt:6 #}</td>
+    			<td>{# $row1.OrgPrice|myprice #}</td>
+     			<td>{# $row1.Price|myprice #}</td>
+			</tr>
+			{# /foreach #}
+			{# /foreach #}
+		</table>
+        <!--中间部分内容块结束-->
+
+	  </div>
+		{#include file="right.htm"#}
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+
+</body>
+</html>
+
+<div style="DISPLAY: none"><script src="http://s4.cnzz.com/stat.php?id=2844356&web_id=2844356" language="JavaScript"></script></div>

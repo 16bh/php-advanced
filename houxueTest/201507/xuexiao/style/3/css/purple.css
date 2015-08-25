@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*a9_flash_m*/
+.right_tab .ui-widget-header{border-bottom:1px solid #f594d8;border-left:none;border-right:none;border-top:none;}
+.right_tab .ui-widget-content .bd{border:1px solid #f594d8;border-top:none;}
+.right_tab .ui-state-default, .right_tab .ui-widget-content .ui-state-default, .right_tab.ui-widget-header .ui-state-default{border:1px dotted #F6DDF0;background:none;}
+.right_tab .ui-state-active, .right_tab .ui-widget-content .ui-state-active, .right_tab .ui-widget-header .ui-state-active{
+border:1px solid #f594d8;background:#ffffff;}
+
+/*边框颜色*/
+.bd{border:1px solid #f594d8;border-top:none;}
+.bd1{border:1px solid #f594d8;}
+.Contentbox{border:1px solid #f594d8; border-top:none;} 
+.Contentbox ul li{border-bottom:1px dotted #ccc;}
+.right_l .a9_flash{border:1px solid #f594d8;}
+.foot{border-top:2px solid #f594d8;}
+.container .left_box1 .con li{border-bottom:1px dashed #f594d8;}
+/*标题颜色 图片*/
+.container .title_bg{background:url(/xuexiao/style/2/images/purple_title_bg.jpg) repeat-x left top;color:#333;border-right:1px solid #e3a6ce;border-left:1px solid #e3a6ce; }
+/*.right_tab .ui-widget-header{color:#555555;background:url(/xuexiao/style/2/images/purple_title_bg.jpg) repeat-x scroll 50% 50% ;}*/
+
+/*导航推荐课程*/
+.container .green{color:#c95ba4;font-weight:bold;}
+.container .green_links:link{color:#c95ba4;text-decoration:none;}
+.container .green_links:visited{color:#c95ba4;text-decoration:none;}
+.container .green_links:hover{color:#ff6600;text-decoration:none;}
+
+/*导航更换*/
+.nav_box{border:1px solid #bf4094;border-bottom:none;background:url(/xuexiao/style/2/images/purple_nav_bg.jpg) repeat-x left top;height:41px;}
+.nav_box li{float:left;background:url(/xuexiao/style/2/images/purple_nav_line.jpg) no-repeat right center;}
+.nav_box li a{display:block;height:41px;line-height:41px;font-size:15px; font-family:"微软雅黑"; text-align:center;width:75px;color:#fff;}
+.nav_box li a:visited{color:#fff;}
+.nav_box li a:hover{background:url(/xuexiao/style/2/images/purple_nav_line.jpg) no-repeat #bf4094 right center;color:#fff;}
+
+/*分类部分样式*/
+.container .left_box1{border:1px solid #a10372;}
+.container .color_title_bg{background:#a10372;color:#fff; font-family:"微软雅黑";}
+.left_box1 .con li a{color:#a10372; text-decoration:none;font-size:14px; font-family:"微软雅黑"; font-weight:bold;}
+.left_box1 .con li a:hover{color:#f60;}
+.left_box1 .con li{background:url(/xuexiao/style/2/images/dian.jpg) no-repeat 95% center;}
+
+/*报名框颜色*/
+.right_box1 .lesson_right{border:1px dashed #bd4193;padding:6px 10px 2px 10px;background:#c95ba4;}
+.right_box1 .bm_color{background:#fff;border:1px solid #bd4193;padding:10px;}
+
+/*修改按钮的颜色*/
+.big_btn,.middle_btn,.small_btn{background:url(/xuexiao/style/2/images/purple_btn_all.png) no-repeat 0 0;}
+.big_btn{width:156px;height:38px;background-position:0 0;border:none;color:#fff;cursor:pointer;font-size:16px;font-weight:bold;}
+.middle_btn{width:83px;height:37px;background-position:0 -46px;border:none;color:#fff;font-size:14px;font-weight:bold; cursor:pointer;}
+.small_btn{width:97px;height:24px;background-position:0 -101px;border:none;color:#fff;cursor:pointer;}
+
+/*浮动广告*/
+#float_tel{Z-INDEX: 100; POSITION: fixed !important; MARGIN: auto auto auto -490px; WIDTH: 980px; BOTTOM: 0px !important; LEFT: 50%
+;_bottom:auto;_position: absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+.thover .float_tel_content {DISPLAY: block}
+.thidden .float_tel_content {DISPLAY: none}
+.float_tel_head {POSITION: relative; LINE-HEIGHT: 55px; WIDTH: 100%; BACKGROUND: url(/xuexiao/style/2/images/purple_botnav.gif); HEIGHT: 55px; CURSOR: pointer}
+.float_tel_head SPAN {POSITION: absolute; WIDTH: 10px; DISPLAY: block; HEIGHT: 40px; TOP: 0px}
+.float_tel_content UL {OVERFLOW: hidden}
+.float_tel_h {BACKGROUND: #fff; HEIGHT: 40px}
+.float_tel_h UL {OVERFLOW: hidden}
+.float_tel_h UL LI {BORDER-BOTTOM: medium none; TEXT-ALIGN: center; LINE-HEIGHT: 40px; FLOAT: left; HEIGHT: 40px; COLOR: #555; MARGIN-LEFT: 10px; FONT-SIZE: 15px; FONT-WEIGHT: bold}
+.float_tel_h UL LI SPAN {DISPLAY: inline; FLOAT: none; COLOR: #cc0000; FONT-SIZE: 17px}
+.btntel {BORDER:medium none; WIDTH: 85px; FONT-size:16px; font-weight:bold; font-family:"微软雅黑"; BACKGROUND: url(/xuexiao/style/2/images/btbtn.gif) no-repeat; FLOAT: left; HEIGHT: 31px; COLOR: #ffffff;}
+.float_tel_content {BORDER-LEFT: #c95ba4 1px solid; MARGIN-TOP: -2px; BACKGROUND: #fff; OVERFLOW: hidden; BORDER-RIGHT: #c95ba4 1px solid; PADDING-TOP: 2px}
+
+.logo .w1{width:565px;padding-left:125px;float:left; text-align:left;font-size:32px; padding-top:25px;height:35px;line-height:35px;background:url(../images/logo_p.jpg) no-repeat left 27px;background:url(../images/logo_p.jpg) no-repeat left 29px\9;*background:url(../images/logo_p.jpg) no-repeat left 29px;_background:url(../images/logo_p.jpg) no-repeat left 27px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}

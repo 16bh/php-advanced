@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-{# $CompanyLabel #}视频</title>
+<meta name="keywords" content="{# $school.ShortName #}{# $CompanyLabel #}视频"/>
+<meta name="description" content="{# $school.ShortName #}的最新视频"/>
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+      <div class="right_box1">
+   		<div class="title_bg "><span class="more">当前位置：{# $CompanyLabel #}首页> {# $CompanyLabel #}视频</span><h2 class="title1" >{# $CompanyLabel #}视频</h2></div>
+        <div class="bd r_con_info" >
+		{# foreach key=rownum item=row from=$List #}
+			<dl>
+				<dt>
+					<h3><span class="green pb5"> [{# $row.Dtt|date_format:"%Y-%m-%d" #}]</span> <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/{# $row.Id #}.htm" target=_blank>{# $row.Title #}</a></h3>
+				</dt>
+				<dd>{# $row.Content|strip_tags|truncateex:111:"utf-8":"":true #}...&nbsp; [ <a class="green_links" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/{# $row.Id #}.htm" target=_blank>详细>></a>]</dd>
+			</dl>
+        {# /foreach #}
+		</div>
+
+      </div>
+	</div>
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

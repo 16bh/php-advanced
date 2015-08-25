@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Comet demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="http://cdn.houxue.com/libs/jquery/1.11/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="content" style="font-size:16px;">The server time will be shown here</div>
+
+<script type="text/javascript">
+  //  var backend_url = "http://zuoxi.houxue.com/?w=EBD0A86D1789E47696F61FA3E831FA2A&c=18B4DD5CF1709713B6CD1A89A888D9C1&_=" + new Date().getTime();
+  document.domain = 'houxue.com';
+  var backend_url = './backend.php';
+ var comet = {
+  connection   : false,
+  iframediv    : false,
+
+  initialize: function() {
+    if (navigator.appVersion.indexOf("MSIE") != -1) {
+
+      // For IE browsers
+      comet.connection = new ActiveXObject("htmlfile");
+      comet.connection.open();
+      comet.connection.write("<html>");
+      comet.connection.write("<script>document.domain = '"+document.domain+"'");
+      comet.connection.write("</html>");
+      comet.connection.close();
+      comet.iframediv = comet.connection.createElement("div");
+      comet.connection.appendChild(comet.iframediv);
+      comet.connection.parentWindow.comet = comet;
+      comet.iframediv.innerHTML = "<iframe id='comet_iframe' src='"+ backend_url +"'></iframe>";
+
+    } else if (navigator.appVersion.indexOf("KHTML") != -1) {
+
+      // for KHTML browsers
+      comet.connection = document.createElement('iframe');
+      comet.connection.setAttribute('id',     'comet_iframe');
+      comet.connection.setAttribute('src',    backend_url);
+
+      comet.connection.style.position   = "absolute";
+      comet.connection.style.left       = comet.connection.style.top   = "-100px";
+      comet.connection.style.height     = comet.connection.style.width = "1px";
+      comet.connection.style.visibility = "hidden";
+
+      document.body.appendChild(comet.connection);
+
+    } else {
+
+      // For other browser (Firefox...)
+      comet.connection = document.createElement('iframe');
+      comet.connection.setAttribute('id',     'comet_iframe');
+
+      comet.connection.style.left   = comet.connection.style.top   = "-100px";
+      comet.connection.style. height     = comet.connection.style.width = "1px";
+      comet.connection.style.visibility = "hidden";
+      comet.connection.style.display    = 'none';
+
+      comet.iframediv = document.createElement('iframe');
+      comet.iframediv.setAttribute('src', backend_url);
+      comet.connection.appendChild(comet.iframediv);
+      document.body.appendChild(comet.connection);
+
+    }
+  },
+
+  // this function will be called from backend.php
+  printServerRev: function (time) {
+    document.getElementById('content').innerHTML = time;
+  },
+
+  onUnload: function() {
+    if (comet.connection) {
+      comet.connection = false; // release the iframe to prevent problems with IE when reloading the page
+    }
+  }
+}
+$(window).load(comet.initialize);
+$(window).unload(comet.onUnload);
+</script>
+
+</body>
+</html>

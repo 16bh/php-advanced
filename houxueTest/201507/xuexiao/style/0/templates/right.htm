@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/images-s/style.css"  type="" />
+<div  class="side" >
+				<div id="Revolution" class="revolution">
+				  <p class="info_t"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/"><strong>{# $school.Name #}</strong></a></p>
+				  <ul style="background:url(/images-s/back-bg.gif) repeat-y left top;">
+				  <li id="revolution1"><p>学校简称</p>
+				  <span><a href="http://{# $school.AreaId|getAreaDomain #}.houxue.com/xuexiao-{# $school.LoginId #}/"><strong>{# $school.ShortName #}</strong></a></span>
+				  </li>
+				  <li id="revolution9"><p>学校地址</p>
+				  <span>{# $school.Addr #}</span>
+				  </li>
+				  <li id="revolution5"><p>公交线路</p>
+				  <span>{# $school.Bus #}</span>
+				  </li>
+				  <li id="revolution6"><p>建校时间</p>
+				  <span>{# $school.CreateDt|truncate:4:"" #}年</span>
+				  </li>
+				  {# if $school.VoteCount > 0 #}
+				  <li id="revolution8"><p>学校评价</p>
+					  <span title='评价次数 {# $school.VoteCount #}  综合满意度 {# $school.Satisfaction #}%'>
+						  {# if $school.Satisfaction > 10 #}<div class="star1"></div>{# else #}<div class="star2"></div>{# /if #}
+						  {# if $school.Satisfaction > 30 #}<div class="star1"></div>{# else #}<div class="star2"></div>{# /if #}
+						  {# if $school.Satisfaction > 50 #}<div class="star1"></div>{# else #}<div class="star2"></div>{# /if #}
+						  {# if $school.Satisfaction > 70 #}<div class="star1"></div>{# else #}<div class="star2"></div>{# /if #}
+						  {# if $school.Satisfaction > 90 #}<div class="star1"></div>{# else #}<div class="star2"></div>{# /if #}
+					  </span>
+				  </li>
+				  {# /if #}
+				  <li id="revolution4"><p>厚学认证</p>
+				  <div  style="padding-top:6px;margin-left:60px;">
+				  {# if $school.Rz !=1 && $school.RealNameFlag !=1 #}<div><img src="/images-s/no_rz.gif" /></div>{# /if #}
+				  {# if $school.Rz ==1 #}<a href="http://www.houxue.com/vip/" target=_blank> <img src="http://www.houxue.com/images09/images_coursepage/rz.gif" /> </a>
+				  {# if $school.Rz ==2 #}<img src="http://www.houxue.com/images09/images_coursepage/rz.gif" />第{# $school.RzYears+1 #}年	{# /if #}
+				  {# else #}
+
+				  {# /if #}
+
+				  {# if $school.RealNameFlag ==1 #}
+					<img  src="/images/smrz_tg.gif" alt="该学校营业执照已认证"/>
+				  {# /if #}
+
+				  </div>
+				  </li>
+				  {# if $debug === 1 #}
+				  <li id="revolution7"><p>学校反馈</p>
+				  <div class="error">
+						<div class="error1">
+						<a href="#this" onclick="document.getElementById('b_submit').focus();document.getElementById('x_Name').focus();"><img src="http://www.houxue.com/images-s/b1.gif"></a></div>
+						<div class="error2">
+						<a href="#this" onclick="document.getElementById('b_submit').focus();document.getElementById('x_Name').focus();"><img src="http://www.houxue.com/images-s/b2.gif"></a></div>
+				  </div>
+				  </li>
+				  {# /if #}
+
+				  {# if $sublist.0.Id > 0 #}
+				  <li id="revolution2"><p>学校分校</p>
+				  <span>
+				  {# foreach key=rownum item=row from=$sublist #}
+				  <div>
+					<div><strong>分校{# $rownum+1 #}:{# $row.SubName #}</strong></div>
+					<div>地址:{# $row.AreaId|getAreaPathName #}{# $row.Addr #}</div>
+					{# if $row.Workphone != "" #}<div>电话:{# $row.Workphone #}</div>{# /if #}
+					{# if $row.Bus != "" #}<div>公交:{# $row.Bus #}</div>{# /if #}
+					{# if $row.Brief != "" #}<div>说明:{# $row.Brief #}</div>{# /if #}
+				  </div>
+				  {# /foreach #}
+				  </span>
+				  </li>
+				  {# /if #}
+
+				  </ul>
+				  <div class="revolution-b"></div>
+				 </div>
+                <div style="clear:both;"></div>
+				<script language="javascript" src="http://www.houxue.com/js/school-page10-inner1.js.php?id={# $school.LoginId #}"></script>
+	          </div>
+
+              <!--右侧结束-->

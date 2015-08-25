@@ -1,0 +1,30 @@
+<?php
+	//php脚本开始
+	//PHP返回客户端IP,还不错
+	function GetIP(){
+	if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
+	$ip = getenv("HTTP_CLIENT_IP");
+	else if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown"))
+	$ip = getenv("HTTP_X_FORWARDED_FOR");
+	else if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown"))
+	$ip = getenv("REMOTE_ADDR");
+	else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown"))
+	$ip = $_SERVER['REMOTE_ADDR'];
+	else
+	$ip = "unknown";
+	return($ip);
+	}
+	//如果是本地IP,将无法测试,如要测试,开启下面的代码就会返回我的IP
+	/**/
+	function GetIPs(){return '124.67.56.0';}
+	/**/
+	//远程城市数据返回点
+	$filename = "http://ip.taobao.com/service/getIpInfo.php?ip=".GetIPs();
+	//使用file_get_contents返回json数据,确认程序是否开启file_get_contents
+	$json = json_decode(file_get_contents($filename));
+	//转换编码，不然会乱码
+	$city=iconv("utf-8","gb2312",$json->data->city);
+	//打印城市
+
+	echo $city;
+	//到这里我们就可以使用SQL查询与数据库的城市进行匹配了,返回我们需要的城市

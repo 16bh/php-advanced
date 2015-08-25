@@ -1,0 +1,17 @@
+
+	{# if $school.BannerImageId > 0 #}<div style="width:980px;overflow:hidden;"><img src="/loadimage.php?id={# $school.BannerImageId #}" alt="{# $school.Name #}的图片" title="{# $school.Name #}的图片"/></div>{# /if #}
+	<div class="logo"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/"><strong>{# $school.Name #}</strong></a></div>
+	<div class="flag"><a href="http://www.houxue.com/">培训网</a>-<a href="http://{# $area.Domain #}.houxue.com" title="{# $area.Path.1.AreaName #}培训网">{# $area.Path.1.AreaName #}</a>-<a href="http://{# $area.Domain #}.houxue.com/xuexiao{# $category.Id #}-0/">{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训学校</a></div>
+	<div class="tab">
+	  <ul>
+	    <li class="selected"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/" title="{# $school.Name #}">学校首页</a></li>
+		<li><a href="kecheng.htm" title="">培训课程</a></li>
+		<li><a href="laoshi.htm" title="">培训老师</a></li>
+		<li><a href="huanjing.htm" title="">学校环境</a></li>
+		<li><a href="xinwen.htm" title="">学校新闻</a></li>
+		<li><a href="jieshao.htm" title="">学校介绍</a></li>
+		<li><a href="pingjia.htm" title="">学校评价</a></li>
+		<li><a href="baoming.htm" title="">培训报名</a></li>
+		<li class="notab"><a href="lianxi.htm" title="">联系方式</a></li>
+	  </ul>
+	</div>

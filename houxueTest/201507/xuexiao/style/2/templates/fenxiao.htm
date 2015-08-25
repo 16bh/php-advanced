@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $subschool.SubName #}_{# $school.ShortName #}_分校校区</title>
+<meta name="keywords" content="{# $school.ShortName #}{# $subschool.SubName #},{# $school.ShortName #}{# $subschool.SubName #}报名地址,{# $school.ShortName #}{# $subschool.SubName #}电话"/>
+<meta name="description" content="{# $school.ShortName #}{# $subschool.SubName #}的联系方式,报名地址,咨询电话和培训内容"/>
+{# include file="css.htm" #}
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<style type="text/css">#baidumap{height:300px; width:700px; border:1px solid gray;}</style>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+	  <div class="right_box1">
+        <div class="title_bg "><span class="more">当前位置：首页> 分校</span>
+            <h2 class="title1" > {# $school.Name #}-{# $subschool.SubName #}</h2>
+        </div>
+        <div class="bd r_con_info" >
+				<table border="1" cellpadding="2" cellspacing="0" class="xuexiao border_c mt10" bordercolor="#cccccc" >
+<tr>
+
+						<td width="64"><strong>地区</strong></td>
+		    <td width="605">{# $subschool.AreaId|getAreaPathName #}&nbsp;</td>
+				  </tr>
+					<tr>
+						<td><strong>分校名称</strong></td>
+					  <td class="green">{# $subschool.SubName #}&nbsp;</td>
+					</tr>
+					<tr>
+						<td><strong>联系人</strong></td>
+					  <td>{# $subschool.Linkman #}&nbsp;</td>
+					</tr>
+					<tr>
+						<td><strong>电话</strong></td>
+					  <td>{# $subschool.Workphone #}&nbsp;</td>
+					</tr>
+					<tr>
+						<td><strong>分校地址</strong></td>
+					  <td>{# $subschool.Addr #}&nbsp;</td>
+					</tr>
+					<tr>
+						<td><strong>公交线路</strong></td>
+					  <td>{# $subschool.Bus #}&nbsp;</td>
+					</tr>
+					<tr>
+						<td><strong>简介</strong></td>
+					  <td>{# $subschool.Brief #}&nbsp;</td>
+					</tr>
+				</table>
+		  {# if $subschool.BaiduMapPointLng > 0 && $subschool.BaiduMapPointLat > 0 #}<br />
+
+		  <div id="baidumap" class="mt10" title="{# $subschool.SubName #}所在地图位置"></div>
+				{# /if #}
+        </div>
+      </div>
+	</div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
+
+{# if $subschool.BaiduMapPointLng > 0 && $subschool.BaiduMapPointLat > 0 #}
+<script type="text/javascript">
+	var map = new BMap.Map("baidumap");
+	var mapPoint = new BMap.Point({# $subschool.BaiduMapPointLng #}, {# $subschool.BaiduMapPointLat #});
+	map.centerAndZoom(mapPoint, 13);
+	map.addControl(new BMap.NavigationControl());
+	map.enableScrollWheelZoom();
+	var mapMarker = new BMap.Marker(mapPoint);
+	mapLable = new BMap.Label("{# $subschool.SubName #}");
+	mapSize = new BMap.Size(18,0);
+	mapLable.setOffset(mapSize);
+	mapMarker.setLabel(mapLable);
+	mapMarker.setTitle("{# $subschool.SubName #}");
+	map.addOverlay(mapMarker);
+
+</script>
+{# /if #}

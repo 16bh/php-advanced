@@ -1,0 +1,125 @@
+<ul class="list_school fix">
+                    {%for value in list%}
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[{{value.AreaId}}]</span><a href="javascript:;">{{value.Subject}}</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：{{value.Answer}}</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ {{value.Dtt|date("Y-m-d H:i:s")}} ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                    {%endfor%}
+
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">沈阳加拿大留学费用大概需要多少？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">沈阳加拿大留学费用大概需要多少？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">沈阳加拿大留学费用大概需要多少？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">沈阳加拿大留学费用大概需要多少？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                    <li class="pt20 pb20 fix">
+                        <div class="news_introduce l w600">
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">沈阳加拿大留学费用大概需要多少？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">去加拿大游学大概需要多少钱？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">南京哪家留学服务办理的好？哪家办理加拿大留学？</a></p>
+                            <p class="f14"><span class="course_school pr10">[南京]</span><a href="javascript:;">无锡加拿大留学</a></p>
+                        </div>
+                        <div class="l w120">
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                            <p class="c9">已回答：19</p>
+                        </div>
+                        <div class="school_score r pr15">
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                            <p class="c9">[ 2015-01-13 09:28:39 ]</p>
+                        </div>
+                    </li>
+                </ul>

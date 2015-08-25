@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}网上报名</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="{# $school.Name #}网上报名,{# $school.ShortName #}网上报名"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1>{# $school.Name #}网上报名</h1></div>
+		<div class="clear"></div>
+
+		<div style="height:30px;">&nbsp;</div>
+
+		<div class="indexblock" >
+			<h2>{# $school.ShortName #}网上报名</h2>
+			<form action="" target="_self" method="post" onsubmit="return f_chkmsgform(this);">
+			<input type="hidden" name="id" value="{# $school.LoginId #}" />
+			<input type="hidden" name="flag" value="msg" />
+			<div class="index-blockcontent">
+				<ul>
+					<li><B>姓名:</B>&nbsp;&nbsp;<input type="text" id="x_Name" name="x_Name" size="25"/>&nbsp;&nbsp;请输入您的真实姓名</li>
+					<li><B>性别:</B>&nbsp;&nbsp;<input id="jointb" type="radio" name="x_Sex" checked="checked" value=1/>男</label> <label for="searchtb"><input id="searchtb"  type="radio" name="x_Sex" value=2/>女</label></li>
+					<li><B>电话:</B>&nbsp;&nbsp;<input type="text" id="x_Phone" name="x_Phone"  size="25"/>&nbsp;&nbsp;请输入您的手机号码</li>
+					<li><table cellpadding=0 cellspacing=0 border=0><tr><td style="padding-top:8px;" valign="top"><B>留言:</B>&nbsp;&nbsp;</td><td><textarea id="x_Content" name="x_Content" style="width:180px;height:64px;"></textarea></td></tr></table></li>
+					<div style="font-size:12px;text-align:center;margin-top:20px;">
+						<input type="image" src="/images-s/guest.gif" name="order_submit" value="报名" />
+					</div>
+				</ul>
+			</div>
+			</form>
+
+		    <div class="index-blockbottom"></div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		  <div class="booktitle">
+
+			{# foreach key=rownum item=row from=$orderlist #}
+			<div class="book">
+			<span class="bname"><B>{# if $row.Name != "" #}{# $row.Name|truncateex:1:"utf-8":"" #}**{# else #}{# $row.Phone|truncateex:6:"utf-8":"" #}*****{# /if #}</B></span>
+			<span>已经于</span>
+			<span class="bbook">{# $row.Dtt|date_format:"%Y-%m-%d" #}</span>
+			{# if $row.CourseName != "" #}
+			<span>报名参加</span>
+			<span><a href="http://{# $row.Domain #}.houxue.com/kecheng-{# $row.CourseId #}/">{# $row.CourseName #}</a></span>
+			<span>课程</span>
+			{# else #}
+			<span>报名</span>
+			<span><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a></span>
+			{# /if #}
+			</div>
+			{# /foreach #}
+
+		  </div>
+
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+	  </div>
+
+
+		{#include file="right.htm"#}
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+</body>
+</html>
+<div style="DISPLAY: none"><script src="http://s4.cnzz.com/stat.php?id=2844387&web_id=2844387" language="JavaScript"></script></div>

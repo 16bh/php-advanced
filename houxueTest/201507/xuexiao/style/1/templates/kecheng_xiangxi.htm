@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $course.Name #}</title>
+{# if $course.SeoNoindex == 'yes' #}
+<meta name="robots" content="noindex,nofollow" />
+{# /if #}
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.houxue.com/kecheng/{# $course.Id #}/">
+<link href="http://www.houxue.com/css/common_base.css" type="text/css" rel="stylesheet" />
+<link href="http://www.houxue.com/xuexiao/style/1/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" language="javascript" src="http://www.houxue.com/js/course_page.js"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+<body>
+{# include file="head.htm" #}
+<div id="content">
+	{# include file="left.htm" #}
+
+<!--main_begin-->
+    <div id="main">
+<!--right_box1-->
+    	<div class="right_box1">
+        	<h2 class="right_title"><span><img align="left" src="/xuexiao/style/1/images/js_left.png" alt=""/></span><span><img align="right" src="/xuexiao/style/1/images/js_right.png" alt=""/></span>
+        	<div class="title_bg">{# $school.Name #}在线报名</div>
+        	</h2>
+            <ul class="box_con">
+           	  <li>
+              	<div class="lesson_left">
+                	<ul>
+						<li>  <label > 学 校 价：</label><font><span class="fs14 red fb">{# $course.Price #}</span>元</font>                </li>
+						<li>  <label >开班日期：</label><font>{# $course.DT #} </font>                </li>
+						<li>  <label >总 课 时：</label><font>{# $course.Hour #}</font>                </li>
+						<li>   <label >上课时间：</label><font>{# $course.SKSJ #}</font>                </li>
+						<li>  <label >培训周期：</label><font>{# $course.PXZQ #}</font>                </li>
+						<li> <label >学校名称：</label><font><span class="fs14 red fb"><a class="blue" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a></span></font>  </li>
+						<li><label >授课地点：</label><font>{# $course.Addr #}</font></li>
+						<li>  <label >交通线路：</label><font>{# $school.Bus #}</font> </li>
+						{# if $debug == 1 #}<li><label >咨询热线：</label><font><span class="fs14 red fb">{# $school.Workphone #}</span></font> </li>{# /if #}
+                    </ul>
+                </div>
+				<div class="lesson_right">
+					{# if $course.OrderDisplayStyle == 0 #}
+                    <!--case1 begin-->
+                    <div>
+					<form name="frm_msg2" action="http://www.houxue.com/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" target=_top >
+					<input type="hidden" name="x_SchoolLoginId" value="{# $course.LoginId #}" />
+					<input type="hidden" value="8" name="x_SourceId">
+					<input type="hidden" name="x_CourseId" value="{# $course.Id #}" />
+					<input type="hidden" name="x_AreaId" value="{# $course.AreaId #}" />
+					<input type="hidden" name="x_CategoryId" value="{# $course.CategoryId #}" />
+					<input type="hidden" name="x_Money" value="{# $course.Price #}" />
+					<input type="hidden" name="flag" value="msg" />
+					<input type="hidden" name="forward" value="http://www.houxue.com/kecheng/{# $course.Id #}/">
+					<input type="hidden" name="alertText" value="预约留言成功">
+					<input type="hidden" name="flag_sms" value="yes">
+					<input type="hidden" name="flag_smsToLeaner" value="yes">
+					<input type="hidden" name="flag_share" value="yes">
+					<ul>
+                    	<li class="a_ly_1"></li>
+                        <li class="a_ly_2">
+                        	<div>
+                            	<div>
+                                    <p class="n_1">姓名：</p>
+                                    <p class="n_2"><input name="x_Name" id="x_Name" style="height:19px;border:1px solid #bbb;width:100px;" type="text" /></p>
+                                    <p class="n_1">性别：</p>
+                                    <p class="n_1"><input name="x_Sex" type="radio" value="1" checked="checked" /> 男</p>
+                                  <p class="n_1"><input name="x_Sex" type="radio" value="2" /> 女</p>
+                                </div>
+                               <div style="clear:both;">
+                                    <p class="n_1">手机：</p>
+                                    <p class="n_2"><input id="x_Phone" name="x_Phone" type="text" style="height:19px;border:1px solid #bbb;width:100px;" size="15" /></p>
+                                    <p class="n_1">QQ：</p>
+                                    <p class="n_1"><input id="x_QQ" name="x_QQ" type="text" style="height:19px;border:1px solid #bbb;width:90px;" size="15" /></p>
+                                </div>
+                                <div style="clear:both;">
+                                	<p class="n_1">内容：</p>
+                                    <p class="n_5">
+                                      <textarea name="x_Content"  id="x_Content"  style="border:1px solid #bbb;width:260px;height:50px;" cols="29" rows="2" id="textarea"></textarea>
+                                    </p>
+                               </div>
+                               <!--btn-->
+                               <div class="btn_bm"><input type="image" style="float:left;" title="在线报名" src="http://www.houxue.com/images09/images_coursepage/a_btn.gif" width="123" height="36" /></p></div>
+                               <div class="clear_line"></div>
+                          </div>
+                        </li>
+                        <li class="a_ly_3" style="clear:both;"><img src="http://www.houxue.com/images09/images_coursepage/a_con_bottom.gif" /></li>
+                        <li class="a_ly_4" style="clear:both;">
+							{# if $school.WorkphoneShow == 1 #}
+                        	<div>
+							<p class="ly_tel" style="word-break:break-all;">
+							咨询电话：
+							{# if $course.Workphone#}{#$course.Workphone#}{#else#}{# $school.Workphone #}{#/if#}
+							</p>
+							</div>
+							{# else #}
+							{# if $debug == 1 #}
+                        	<div>
+							<p class="ly_tel" style="word-break:break-all;">
+							<span id="s_schoolworkphone2" style="display:none;color:red;font-weight:bold;font-size:14px;">{# if $course.Workphone#}{#$course.Workphone#}{#else#}{# $school.Workphone #}{#/if#}</span>
+							<a id="a_schoolworkphone2" href="javascript:;" onclick="document.getElementById('s_schoolworkphone2').style.display='';document.getElementById('a_schoolworkphone2').style.display='none';var p=new Array();p['areaid']='{# $course.AreaId #}';p['categoryid']='{# $course.CategoryId #}';p['loginid']='{# $course.LoginId #}';p['type']='2';p['courseid']='{# $course.Id #}';p['item']='{# $course.Name #}';p['column']='Phone';p['expend']='0'; school_summery_log(p);"><font color="red">点击查看</font></a>
+							</p>
+							</div>
+							{# /if #}
+							{# /if #}
+
+							{# if $course.Promise != "" #}
+                            <div class="clear_line"></div>
+                            <div style="padding:0px 5px; width:340px; overflow:visible;">
+                            <span class="ly_ts">本课程特别提示：</span>
+                            <span style="color:#666;padding-left:15px; word-break:break-all; display:block;">{# $course.Promise|nl2br #}</span><div class="clear_line"></div>
+							</div>
+							{# /if #}
+
+                        </li>
+
+                        <li class="a_ly_5"><img src="http://www.houxue.com/images09/images_coursepage/a_bottom.gif" /></li>
+                    </ul>
+					</form>
+                    </div>
+                    <!--case1 end-->
+					{# /if #}
+
+
+					{# if $course.OrderDisplayStyle == 1 #}
+                    <!--case2-->
+               	  <div  style="clear:both; height:10px;overflow:hidden;"></div>
+                	<div>
+                    	<ul>
+                       	  <li class="case_2_top" >
+                           	  <div class="case_con">
+                               	  <ul class="box1">
+									<form name="frm_msg1" action="/course-page.php" method="post" onsubmit="return f_chkmsgform1(this);" target=_top>
+									<li class="w1">
+										<input type="hidden" name="id" value="{# $course.Id #}" />
+										<input type="hidden" name="flag" value="msg" />
+										<label>
+										<input type="text" class="input_con" id="x_Phone" name="x_Phone" value="请输入电话号码" onFocus="if (this.value=='请输入电话号码') this.value='';" onBlur="if (this.value=='') this.value='请输入电话号码';"/>
+										</label>
+									</li>
+									<li class="w2"><input type=image src="/images09/images_coursepage/case_2_btn.gif" width="97" height="35" /></li>
+									</form>
+									<li style="clear:both;"></li>
+                                  </ul>
+                            </div>
+                          </li>
+                          <li class="case_2_bg">
+                       		<div class="case_2_bg_con">
+                                	<div class="bg_con"><p class="case_2_notice "></p>本课程特别提示</div>
+                              <div class="bg_con1">{# $course.Promise|nl2br #}</div>
+                                </div>
+                          </li>
+                            <li class="case_2_bottom" style="overflow:hidden;font-size:0px;line-height:0px;"></li>
+                        </ul>
+                  </div>
+				  {# /if #}
+
+
+					{# if $course.OrderDisplayStyle == 2 #}
+                     <!--case3 begin-->
+                	<div  style="clear:both; height:10px;overflow:hidden;"></div>
+                	<div>
+                    	<ul>
+                       	  <li class="case_3_top"></li>
+                          <li class="case_3_btn"><p style="float:left; position:absolute;left:-5px;"><img src="/images09/images_coursepage/case3_btn_1.gif" /></p>
+                            <a href="{# $course.OrderLink #}" target=_blank><img src="/images09/images_coursepage/case3_btn_2.gif" /></a></li>
+                          <li class="case_2_bg pt55">
+                          		<div class="case_2_bg_con">
+                                	<div class="bg_con"><p class="case_2_notice "></p>本课程特别提示</div>
+                                    <div class="bg_con1">{# $course.Promise|nl2br #}</div>
+                                </div>
+                          </li>
+                            <li class="case_2_bottom" style="overflow:hidden;font-size:0px;line-height:0px;"></li>
+                        </ul>
+                  </div>
+                    <!--case3 end-->
+					{# /if #}
+                </div>
+              </li>
+             </ul>
+
+      </div>
+
+	{# if $school.DisplayAd != 'no' #}
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-7576374042341131";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		google_ad_format = "728x90_as";
+		google_ad_type = "text_image";
+		//-->
+		</script> <script type="text/javascript"
+		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+    {# /if #}
+
+<!--right_box1 拷贝-->
+        <div class="right_box1">
+        	<h2 class="right_title"><span><img align="left" src="/xuexiao/style/1/images/js_left.png" alt=""/></span><span><img align="right" src="/xuexiao/style/1/images/js_right.png" alt=""/></span>
+        		<div class="title_bg">课程详细介绍</div>
+        	</h2>
+            <ul class="box_con">
+           	  <li><h1 class="kc_h1 tac">{# $course.Name #}</h1>
+              <div class="fs14 ti">{# $course.Intro #}</div>
+              </li>
+            </ul>
+       </div>
+<!--right_box3 底部留言-->
+            <div class="b_ly">
+				<div class="b_top"><img src="/xuexiao/style/1/images/b_top.gif" width="693" alt=""/></div>
+              <div class="b_bg">
+               	<div class="b_con_left">
+                    <!--内部表单-->
+					<form name="frm_msg1" action="/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" target=_top >
+						<input type="hidden" name="id" value="{# $school.LoginId #}" />
+
+						<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+						<input type="hidden" value="9" name="x_SourceId">
+						<input type="hidden" name="x_CourseId" value="{# $course.Id #}" />
+						<input type="hidden" name="x_AreaId" value="{# $course.AreaId #}" />
+						<input type="hidden" name="x_CategoryId" value="{# $course.CategoryId #}" />
+						<input type="hidden" name="x_Money" value="{# $course.Price #}">
+						<input type="hidden" name="flag" value="msg" />
+						<input type="hidden" name="flag_sms" value="yes" />
+						<input type="hidden" name="flag_smsToLeaner" value="yes" />
+						<input type="hidden" name="flag_share" value="yes" />
+						<input type="hidden" name="forward" value="http://www.houxue.com/kecheng/{# $course.Id #}/" />
+						<input type="hidden" name="alertText" value="预约留言成功" />
+                        <div class="b_n_top"><img src="http://www.houxue.com/images09/images_coursepage/b_con_top.gif" alt=""/></div>
+
+                        <div class="b_n_bg">
+                        	<div>
+                                    <p class="n_1">姓名：</p>
+                                    <p class="n_2"><input name="x_Name" style="height:19px;border:1px solid #bbb;width:100px;" type="text" /></p>
+                                    <p class="n_1">性别：</p>
+                                    <p class="n_1"><input name="x_Sex" type="radio" value="1" checked="checked" />
+                                    男</p>
+                                  <p class="n_1"><input name="x_Sex" type="radio" value="2" /> 女</p>
+                          </div>
+                               <div style="clear:both;">
+                                    <p class="n_1">电话：</p>
+                                    <p class="n_5">
+									<input type="text" style="height:19px;border:1px solid #bbb;width:260px;" size="36" name="x_Phone" value=""/>
+									</p>
+                          </div>
+                                <div style="clear:both;">
+                                	<p class="n_1">内容：</p>
+                                    <p class="n_5">
+                                      <textarea name="x_Content"  style="border:1px solid #bbb;width:260px;height:50px;" cols="29" rows="2" ></textarea>
+                                    </p>
+                          </div>
+                               <div class="btn_bm"><input type="image" style="float:left;" title="在线报名" src="http://www.houxue.com/images09/images_coursepage/a_btn.gif" style="width:123px;height:36px;" /></div>
+                            <div class="clear_line"></div>
+                      </div>
+                      <div class="b_n_bottom"><img src="http://www.houxue.com/images09/images_coursepage/b_con_bottom.gif" alt=""/></div>
+					</form>
+                  <!--内部表单-->
+                  <!--给我留言按钮--><!--按钮结束-->
+                  </div>
+				  {# if $course.Promise != "" #}
+					<!--右边提示内容-->
+                    <div class="b_con_right">
+                   	<span class="ly_ts">本课程特别提示：</span>
+					{# $course.Promise #}
+					</div>
+                    <!--提示内容结束-->
+				  {# /if #}
+              </div>
+                <div class="b_bottom"><img src="http://www.houxue.com/images09/images_coursepage/b_bottom.gif" width="693" alt=""/></div>
+            </div>
+  </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

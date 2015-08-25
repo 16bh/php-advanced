@@ -1,0 +1,114 @@
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js" type="text/javascript" ></script>
+<script src="http://www.houxue.com/js/pub.js" language="JavaScript" type="text/javascript" ></script>
+{# if $school.WorkphoneToOrder === '0' #}
+<script src="http://www.houxue.com/js/float_workphone_0.js.php?loginid={# $school.LoginId #}" language="JavaScript" type="text/javascript" ></script>
+{# /if #}
+{# if $school.WorkphoneToOrder == 1 #}
+<script language="JavaScript">var msg_action="http://www.houxue.com/order_add.php",msg_schoolloginid="{# $school.LoginId #}",msg_areaid="{# $school.AreaId #}",msg_categoryid="{# $school.CategoryId #}";msg_forward="http://{# $school.Domain #}.houxue.com/xuexiao-{# $school.LoginId #}/";</script>
+<script src="http://www.houxue.com/js/float_order.js" language="JavaScript" type="text/javascript"></script>
+{# /if #}
+{# if $school.WorkphoneToOrder == 2 #}
+<script src="http://www.houxue.com/js/float_workphone.js.php?loginid={# $school.LoginId #}" language="JavaScript" type="text/javascript" ></script>
+{# /if #}
+{# if $school.WorkphoneToOrder == 3 #}
+<script src="/js/float_workphone_3.js.php?loginid={# $school.LoginId #}" language="JavaScript"></script>
+{# /if #}
+<script src="http://www.houxue.com/js/float_order_by_click_qq.js.php?loginid={# $school.LoginId #}" language="JavaScript" type="text/javascript"></script>
+<script language="javascript" src="/ajax/thread_school_summerylog.php?areaid={# $school.AreaId #}&categoryid={# $school.CategoryId #}&loginid={# $school.LoginId #}&type=1&courseid=0&item={# $school.Name|urlencode #}&column=Visit&Expend=0" type="text/javascript"></script>
+<script language="javascript" src="/ajax/thread_pageview.php?areaid={# $area.Id #}&item=School1" type="text/javascript"></script>
+<script src="http://www.houxue.com/js/jquery/jquery.min.js" type="text/javascript"></script>
+<!--header_begin-->
+
+<div class="header" >
+	<div class="top">
+	<div id="h_left">
+    <div class="logo">{# if $school.LogoImageId #}<img style="padding:1px;" src="http://www.houxue.com/loadimage.php?id={# $school.LogoImageId #}&w=84&h=60" alt="{# $school.Name #}" />{# else #}<img src="/images-s/school_logo_example.gif" height="63" width="86" />{# /if #}</div>
+    <h1>{# $school.ShortName #}</h1></div>
+    <div id="h_right">
+    	<ul>
+			{# if $debug == 1 #}
+        	<li class="tart bt66"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm"><span class="pa4">关于我们 </span></a>|<a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm"><span class="pa4"> 在线留言</span></a>|<a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm"><span class="pa4"> 联系方式</span></a>  </li>
+			{# /if #}
+
+            <li class="tart list mt6"><span style="float:right;"><a href="http://www.houxue.com">培训网</a><a href="http://list.houxue.com/search/school.html">学校</a><a href="http://list.houxue.com/search/course.html">课程</a><a href="http://list.houxue.com/search/teacher.html">名师</a><a href="http://www.houxue.com/news0-0/">资讯</a><a href="http://www.houxue.com/ask/list-0-0-0/">知道</a><a href="http://www.houxue.com/qiuxue/">求学</a><a href="http://www.houxue.com/ziliao/list-0.htm">资料</a><a href="http://www.houxue.com/shijuan/">试卷</a><a class="lasta" href="http://www.houxue.com/pxcd/list-0.htm">场地</a></span></li>
+            <li class="tart mt6">
+				<div style="float:right;"><a href="http://{# $area.Domain #}.houxue.com" title="{# $area.Path.1.AreaName #}培训网">{# $area.Path.1.AreaName #}培训网</a>-<a href="http://{# $area.Domain #}.houxue.com/xuexiao{# $category.Id #}-0/">{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训学校</a></div>
+
+				<!-- Baidu Button BEGIN -->
+				<div id="bdshare" class="bdshare_b" style="line-height: 12px;width:135px; "><img src="http://bdimg.share.baidu.com/static/images/type-button-3.jpg" />
+				</div>
+				<script type="text/javascript" id="bdshare_js" data="type=button" ></script>
+				<script type="text/javascript" id="bdshell_js"></script>
+				<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+				</script>
+				<!-- Baidu Button END -->
+
+			</li>
+      </ul>
+  </div>
+    </div>
+</div>
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+
+<!--nav_begin-->
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+	$("#dropdown").mouseenter(function(){
+	  $("#subnav").slideDown();
+	});
+	$("#dropdown").mouseleave(function(){
+	  $("#subnav").slideUp();
+	});
+});
+//-->
+</script>
+<div class="nav">
+	<div class="nav_fl"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/"><img src="/xuexiao/style/1/images/left_home.jpg" width="188" height="53" /></a></div>
+    <div class="nav_fr">
+    	<ul>
+        	<li>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/jieshao.htm">学校介绍</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/kecheng.htm">培训课程</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/laoshi.htm">学校老师</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/huanjing.htm">学校环境</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xinwen.htm">学校新闻</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">学员评论</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/bbs/list-0.htm">学校论坛</a></span><span class="w2"></span>
+			<span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/lianxi.htm">联系我们</a></span></li>
+            <li>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xxyp.htm">学习用品</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/qxzs-0.htm">求学招生</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/ziliao/list-0.htm">培训资料</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shijuan/list-0.htm">试卷中心</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/list-0.htm">视频展示</a></span><span class="w2"></span>
+            {# if $sublist.0.Id > 0 #}
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/xiaoqu.htm">分校校区</a></span><span class="w2"></span>
+            {# /if #}
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/youhuiquan/list-0.htm">优惠券</a></span><span class="w2"></span>
+            <span class="w1"><a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">报名留言</a></span>
+			</li>
+        </ul>
+    </div>
+
+</div>
+{# if $school.BannerImageId > 0 #}
+<!--banner_begin  width="958" height="175" -->
+<div class="banner">
+	<ul>
+		<li>
+
+		{# if $school.BannerImageLink != "" #}
+		<a href="{# $school.BannerImageLink #}"><img src="/loadimage.php?id={# $school.BannerImageId #}" alt="{# $school.Name #}"/></a>
+		{# else #}
+		<img src="/loadimage.php?id={# $school.BannerImageId #}" alt="{# $school.Name #}"/>
+		{# /if #}
+
+		<li>
+		<li class="ad"></li>
+	</ul>
+</div>
+{# /if #}

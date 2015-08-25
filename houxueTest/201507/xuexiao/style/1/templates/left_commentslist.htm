@@ -1,0 +1,40 @@
+
+		{# if $commentlist.0.Id > 0 #}
+         <div class="left_box2">
+			<div class="left_title"><span class="fr mr5 fs12"><a class="fs12" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">&gt;&gt;更多</a></span><h2>学员评论</h2></div>
+			<ul class="box_con">
+			 <div>
+			  {# if $commentlist.0.Id > 0 #}
+              <ul class="tt">
+                  <li class="c66"><a class="green" style="display:block; float:right;width:70px;" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">[我要评]</a>{# $commentlist.0.Dtt|date_format:"%m-%d" #} [{# $commentlist.0.Phone|truncate:7:"" #}****] 评价：			  </li>
+                  <li class="c99 bmblue" style="overflow:hidden;height:1%;">
+                      <p class="w1">学校环境：<span class="c66">{# $commentlist.0.Vote1|star2text #}</span></p>
+                      <p class="w1">课程性价：<span class="c66">{# $commentlist.0.Vote2|star2text #}</span></p>
+                    <p class="w1">老师教学：<span class="c66">{# $commentlist.0.Vote3|star2text #}</span></p>
+                    <p class="w1">交通便利：<span class="c66">{# $commentlist.0.Vote4|star2text #}</span></p>
+                </li>
+                  <li>
+                  <p class="c99">培训感受：</p>
+                  <p class="c66">{# $commentlist.0.Content #}</p>
+                  </li>
+              </ul>
+			  {# /if #}
+			  {# if $commentlist.1.Id > 0 #}
+              <ul>
+                  <li class="c66"><a style="display:block; float:right;width:70px;"class="green" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/pingjia.htm">[我要评]</a>{# $commentlist.1.Dtt|date_format:"%m-%d" #} [{# $commentlist.1.Phone|truncate:7:"" #}****] 评价：			  </li>
+                  <li class="c99 bmblue" style="overflow:hidden;height:1%;">
+                      <p class="w1">学校环境：<span class="c66">{# $commentlist.1.Vote1|star2text #}</span></p>
+                      <p class="w1">课程性价：<span class="c66">{# $commentlist.1.Vote2|star2text #}</span></p>
+                    <p class="w1">老师教学：<span class="c66">{# $commentlist.1.Vote3|star2text #}</span></p>
+                    <p class="w1">交通便利：<span class="c66">{# $commentlist.1.Vote4|star2text #}</span></p>
+                </li>
+                  <li>
+                  <p class="c99">培训感受：</p>
+                  <p class="c66">{# $commentlist.1.Content #}</p>
+                  </li>
+              </ul>
+			  {# /if #}
+              </div>
+			</ul>
+		</div>
+		{# /if #}

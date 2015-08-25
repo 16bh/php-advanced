@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-学校老师</title>
+<meta name="keywords" content="{# $school.ShortName #}老师，{# $school.ShortName #}师资力量"/>
+<meta name="description" content="{# $school.ShortName #}为您提供我校老师介绍，欢迎选择适合您的老师，并在参加培训后进行评价。"/>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+
+<div id="content">
+	{# include file="left.htm" #}
+
+    <div id="main">
+<!--right_box1-->
+    	<div class="right_box1">
+        	<h2 class="right_title"><span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span><span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+        	<div class="title_bg">名师介绍</div>
+        	</h2>
+            <ul class="box_con">
+			  {# foreach key=rownum item=row from=$teacherlist #}
+              <li class="bt06">
+              	 <div class="tea_left fl">{# if $row.FaceImageId > 0 #}<a href="http://www.houxue.com/laoshi/{# $row.Id #}/" target=_blank><img src="http://www.houxue.com/loadimage.php?id={# $row.FaceImageId #}" width="110" height="150" alt="{# $row.Name #}" title="{# $row.Name #}"/></a>{# else #}<img src="http://www.houxue.com/images/zwtx.gif" width=84 height=84>{# /if #}</div>
+                <div class="tea_right fr"><h3 class="fs14 pb10"><a href="http://www.houxue.com/laoshi/{# $row.Id #}/" target=_blank><strong class="red">{# $row.Name #}</strong></a></h3>
+                    <p>{# $row.Description|strip_tags|truncateex:280:"utf-8" #}</p>
+                 </div>
+              </li>
+			  {# /foreach #}
+          </ul>
+
+      </div>
+<!--right_box2-->
+<!--right_box3-->
+  </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

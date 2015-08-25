@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{# $school.Name #}的培训老师</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="{# $school.Name #}培训老师,{# $school.ShortName #}培训老师"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/images-s/style.css" type="text/css" media="all"  />
+</head>
+
+<body>
+<div id="outwrap" class="outwrap">
+  <div class="wrap">
+
+	{#include file="head.htm"#}
+
+	<div class="content clearfix">
+	  <div class="mainarea">
+	    <div style="margin-top:-15px;"><h1>{# $school.Name #}培训老师</h1></div>
+		<div class="clear"></div>
+
+		  <div class="schooltitle">
+
+			{# foreach key=rownum item=row from=$teacherlist #}
+			<div class="teacher">
+				<div class="teacherphoto"><a href="http://www.houxue.com/teacher/{# $row.Id #}/"><img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}" class="tphoto" title="{# $row.Name #}"></a></div>
+				<div class="teacherdes">
+					<a href="http://www.houxue.com/teacher/{# $row.Id #}/"><span class="tname"><B>{# $row.Name #}</B></span></a>
+					{# $row.Description|nl2br #}
+				</div>
+			</div>
+			<div class="clear"></div>
+			{# foreachelse #}
+
+				{# foreach key=rownum item=row from=$otherteacherlist #}
+
+				<div class="teacher">
+					<div class="teacherphoto">{# if $row.ImageId != 0 #}<a href="http://www.houxue.com/teacher/{# $row.Id #}/"><img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}" class="tphoto" title="{# $row.Name #}"></a>{# else #}<img src="http://www.houxue.com/images/zwtx.gif" class="tphoto">{# /if #}</div>
+					<div class="teacherdes">
+						<a href="http://www.houxue.com/teacher/{# $row.Id #}/"><span class="tname"><B>{# $row.Name #}</B></span></a>
+						{# $row.Description|nl2br #}
+					</div>
+				</div>
+				<div class="clear"></div>
+				{# /foreach #}
+
+			<div class="teacher"><img src="/images09/zwnr.gif" style="width:51px;height:14px;border:0px;" >
+			<a id="button1222" href="#this" onclick="popupAddLead({# $school.AreaId+0 #}, {# $school.CategoryId+0 #}, {# $school.LoginId+0 #}, 0);"><img src="/images09/wytj.gif" style="width:50px;height:14px;border:0px;" ></a></div>
+			{# /foreach #}
+
+		  </div>
+
+
+
+
+
+		<div class="clear"></div>
+        <!--中间部分内容块结束-->
+
+
+	  </div>
+
+
+		{#include file="right.htm"#}
+
+	</div>
+  </div>
+</div>
+
+{#include file="foot.htm"#}
+
+</body>
+</html>
+<div style="DISPLAY: none"><script src="http://s4.cnzz.com/stat.php?id=2844360&web_id=2844360" language="JavaScript"></script></div>

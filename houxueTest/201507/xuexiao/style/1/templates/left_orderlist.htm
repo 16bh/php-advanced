@@ -1,0 +1,52 @@
+
+		{# if $orderlist.0.Id > 0 #}
+		<div class="left_box2">
+			<div class="left_title"><span class="fr mr5 fs12"><a class="fs12" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/baoming.htm">&gt;&gt;更多</a></span><h2>培训学员</h2></div>
+			 <ul class="box_con">
+			 <div id="orderlist" style="overflow:hidden;height:200px;width:230px;" >
+			 {# foreach key=rownum item=row from=$orderlist #}
+
+			  <p class="bmblue" style="padding:2px 0px;">[{# $row.Dtt|date_format:"%Y-%m-%d" #}] {# if $row.Name != "" #}{# $row.Name|truncateex:1:"utf-8":"" #}**{# else #}{# $row.Phone|truncateex:6:"utf-8":"" #}*****{# /if #} 留言咨询了</p>
+			  <p  style="width:230px; white-space:normal;padding:2px 0px;">
+				{# if $row.CourseName != "" #}
+				<a class="blue1" href="http://www.houxue.com/kecheng/{# $row.CourseId #}/">{# $row.CourseName #}</a>
+				{# else #}
+				<a class="blue1" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a>
+				{# /if #}
+			  </p>
+			 {# /foreach #}
+			 </div>
+				<script type="text/javascript">
+				function Marquee(content, speed){
+				 this.speed = speed || 40; //default value
+				 this.content = content;
+				 this.content.innerHTML += this.content.innerHTML;
+				 this.content.scrollTop = 0;
+				 this.threadScroll = null;
+				}
+				Marquee.prototype= {
+				 start: function(){
+				   if(parseInt(this.content.scrollTop) >= (parseInt(this.content.scrollHeight) / 2) )
+				   this.content.scrollTop = 0;
+				  this.content.scrollTop++;
+				 },
+				 stop: function(){
+				  if (this.threadScroll != null){
+				   clearInterval(this.threadScroll);
+				   threadScroll = null;
+				  }
+				 },
+				 autoScroll: function(){
+				  var self = this;
+				  this.threadScroll = setInterval(function(){self.start()}, this.speed);
+				  this.content .onmousemove = function(){self.stop()};
+				  this.content .onmouseout = function(){self.autoScroll()};
+				 }
+				}
+
+				new Marquee(document.getElementById("orderlist")).autoScroll();
+				</script>
+			</ul>
+
+		</div>
+		{# /if #}

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}_分校校区</title>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<style type="text/css">#baidumap{height:300px; width:700px; border:1px solid gray;}</style>
+
+</head>
+
+<body>
+
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+	  <div class="right_box1">
+        <div class="title_bg "><span class="more">当前位置：首页> <a href="xiaoqu.htm">分校校区</a></span>
+            <h2 class="title1" > 分校校区</h2>
+        </div>
+        <div class="bd r_con_info" >
+				<table width="700" border="1" cellpadding="2" cellspacing="0" bordercolor="#cccccc" class="border_c mt10 xuexiao" >
+					<tr>
+						<td bgcolor="#f9f9f9">&nbsp;</td>
+						<td bgcolor="#f9f9f9"><strong>地区</strong></td>
+						<td bgcolor="#f9f9f9"><strong>分校名称</strong></td>
+						<td bgcolor="#f9f9f9"><strong>分校地址</strong></td>
+					</tr>
+					<tr>
+						<td class="green"><strong>学校总部</strong></td>
+						<td >{# $school.AreaId|getAreaPathName #}&nbsp;</td>
+						<td><a class="green_links" href="./">{# $school.ShortName #}</a>&nbsp;</td>
+						<td>{# $school.Addr #}</td>
+					</tr>
+					{# foreach key=rownum item=row from=$sublist #}
+					<tr>
+						<td height="21" class="green"><strong>分校{# $rownum+1 #}</strong></td>
+						<td>{# $row.AreaId|getAreaPathName #}&nbsp;</td>
+						<td><a class="green_links" href="fenxiao-{# $row.Id #}.htm" title="{# $school.Name #}-{# $row.SubName #}">{# $row.SubName #}</a>&nbsp;</td>
+						<td>{# $row.Addr #}&nbsp;</td>
+					</tr>
+					{# /foreach #}
+				</table><br />
+		  <div id="baidumap" title="分校地图" class="mt10"></div>
+        </div>
+      </div>
+	</div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
+
+<script type="text/javascript">
+	var map = new BMap.Map("baidumap");
+	var mapPoint = new BMap.Point({# $school.BaiduMapPointLng #}, {# $school.BaiduMapPointLat #});
+	map.centerAndZoom(mapPoint, 12);
+	map.addControl(new BMap.NavigationControl());
+	map.enableScrollWheelZoom();
+	var mapMarker = new BMap.Marker(mapPoint);
+	var mapLable = new BMap.Label("{# $school.ShortName #}");
+	var mapSize = new BMap.Size(18,0);
+	mapLable.setOffset(mapSize);
+	mapMarker.setLabel(mapLable);
+	mapMarker.setTitle("{# $school.Name #}");
+	map.addOverlay(mapMarker);
+
+{# foreach key=rownum item=row from=$sublist #}
+{# if $row.BaiduMapPointLng > 0 && $row.BaiduMapPointLat > 0 #}
+	var mapPoint = new BMap.Point({# $row.BaiduMapPointLng #}, {# $row.BaiduMapPointLat #});
+	var mapMarker = new BMap.Marker(mapPoint);
+	var mapLable = new BMap.Label("{# $row.SubName #}");
+	var mapSize = new BMap.Size(18,0);
+	mapLable.setOffset(mapSize);
+	mapMarker.setLabel(mapLable);
+	mapMarker.setTitle("{# $row.SubName #}");
+	map.addOverlay(mapMarker);
+
+{# /if #}
+{# /foreach #}
+</script>

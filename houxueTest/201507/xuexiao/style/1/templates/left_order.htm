@@ -1,0 +1,135 @@
+
+		<div class="left_box1">
+			<h2 class="left_title">{# $school.ShortName #}报名咨询</h2>
+			<ul class="box_con ">
+				<li class="tt">
+				<span class="  c33 left_tel">方式一：免费电话咨询</span>
+					{# if $area.Path.1.Workphone != "" && $school.WorkphoneShowArea == 1 #}
+						<span class="red1 pl25 pat4" id="s_workphone" style="font-size:16px;padding-top:2px;">{# $area.Path.1.Workphone #} </span>
+					{# else #}
+						{# if $school.WorkphoneShow == 1 #}
+							<span class="red1 pl25 pat4" id="s_workphone" style="font-size:16px;padding-top:2px;">{# $school.Workphone #} </span>
+						{# else #}
+							<span class="red1 pl25 pat4">
+							<a onclick="javascript:{# if $school.WorkphoneToOrder==='0' || $school.WorkphoneToOrder==2 || $school.WorkphoneToOrder==3 #}show_float_workphone();{# elseif $school.WorkphoneToOrder == 1 #}show_float_msg();{# else #}document.getElementById('s_workphone').style.display='';{# /if #}var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='Phone';p['expend']='0'; school_summery_log(p);" href="javascript:void(0);" id="a_workphone5"><img src="/xuexiao/style/1/images/tel_1.jpg" width="116" height="25" alt="查看{# $school.ShortName #}的报名电话"/></a>
+							</span>
+						{# /if #}
+					{# /if #}
+				</li>
+				<li class="tt">
+					<span class=" c33 left_tel" style="height:27px;" >
+                      <p style="float:left;">方式二：</p>
+                      <p style="float:left;">
+					  {# if $school.QQDisplayMode == 0 #}
+						<a href="javascript:show_float_order_by_click_qq();" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img src="http://www.houxue.com/images/qq_online.gif" border="0" alt="" /></a>
+					  {# /if #}
+					  {# if $school.QQDisplayMode == 1 #}
+						{# if $school.QQCallCode != "" #}
+							{# $school.QQCallCode #}
+						{# else #}
+							{# if $school.QQ != "" #}
+								<a href="tencent://message/?uin={# $school.QQ #}&Site=www.houxue.com&Menu=yes" onclick="javascript:var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='QQ';p['expend']='0'; school_summery_log(p);"><img   src="/xuexiao/style/1/images/qq_online.gif" alt='' /></a>
+							{# else #}
+							暂无
+							{# /if #}
+						{# /if #}
+					  {# /if #}
+					  </p>
+                      <p style="clear:both;"></p>
+                    </span>
+				</li>
+                {#if $mpAuth.WeiXin_QRCode_8CM_ImageId#}
+                <li class="tt" style="height:76px;">
+					<span class=" c33 left_tel" style="height:27px;" >
+                      <p style="float:left;">方式三：</p>
+                      <p style="float:left;">
+					  <img  style="width:75px; height:75px;" src="http://www.houxue.com/loadimage.php?id={#$mpAuth.WeiXin_QRCode_8CM_ImageId#}">
+					  </p>
+                      <p style="float:left;margin-left:10px;">
+                      			用微信<br />
+                              扫一扫<br />
+                            加官网<br /></p>
+                      <p style="clear:both;"></p>
+                    </span>
+				</li>
+                {#/if#}
+				<li style="overflow:hidden;height:1%;">
+                    <form action="/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" id="frm_left_order" >
+
+					<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+					<input type="hidden" name="x_SourceId" value="5">
+					<input type="hidden" name="x_AreaId" value="{# $school.AreaId #}" />
+					<input type="hidden" name="x_CategoryId" value="{# $school.CategoryId #}" />
+					<input type="hidden" name="flag" value="msg" />
+					<input type="hidden" name="flag_sms" value="yes" />
+					<input type="hidden" name="flag_smsToLeaner" value="yes" />
+					<input type="hidden" name="flag_share" value="yes" />
+					<input type="hidden" name="forward" value="" />
+					<input type="hidden" name="alertText" value="预约留言成功" />
+
+					<span class="c33 left_tel ">方式三：留言咨询</span>
+					<div class="w1">姓名：</div>
+					<div class="w2"><label><input name="x_Name" id="x_Name" style="width:140px;height:20px;" type="text" size="20" /></label></div>
+					<div  style="clear:both;"></div>
+					<div class="w1">电话：</div>
+					<div class="w2"><input style="width:140px;height:20px;" type="text" id="x_Phone" name="x_Phone" size="20" /></div>
+					<div  style="clear:both;"></div>
+					<div class="w1">QQ：</div>
+					<div class="w2"><input style="width:140px;height:20px;" type="text" id="x_QQ" name="x_QQ" size="20" /></div>
+					<div  style="clear:both;"></div>
+		{#if $prepareTextList#}
+			{# foreach key=rownum item=row from=$prepareTextList #}
+						<div class="w1">{# $row.Name #}：</div>
+						<div class="w2">
+						{#if $row.TypeId==1#}
+							<select id="selectprepareText_{# $row.Id #}" type="select">
+							{# foreach key=rownum item=row1 from=$row.T_Content #}
+								<option value="{# $row.Name #}：{# $row1.Text #}">{# $row1.Text #}</option>
+							{# /foreach #}
+							</select>
+						{#/if#}
+						{#if $row.TypeId==2#}					
+							{# foreach key=rownum item=row1 from=$row.T_Content #}
+								<p><input type="radio" value="{# $row.Name #}：{# $row1.Text #}" id="selectprepareText_{# $row.Id #}_{# $row1.Id #}" name="selectprepareText_{# $row.Id #}"> {# $row1.Text #}</p>
+							{# /foreach #}
+						{#/if#}
+						{#if $row.TypeId==3#}					
+							{# foreach key=rownum item=row1 from=$row.T_Content #}
+								<p><input type="checkbox" value="{# $row.Name #}：{# $row1.Text #}" id="selectprepareText_{# $row.Id #}_{# $row1.Id #}"> {# $row1.Text #}</p>
+							{# /foreach #}
+						{#/if#}
+						</div>
+						<div class="clear"></div>
+			{# /foreach #}
+		{#/if#}			<script type="text/javascript">
+							function set_x_Content()
+							{
+								var str = $("#x_Contents").val();
+								$("[id^='selectprepareText_']").each(function(){
+									if($(this).attr('type')=="select") str += "|" + $(this).val();
+									if($(this).attr('type')=="radio" && $(this).attr("checked")) str += "|" + $(this).val();
+									if($(this).attr('type')=="checkbox" && $(this).attr("checked")) str += "|" + $(this).val();
+								});
+								$("#x_Content").val(str);
+							}
+							$(document).ready(function(){
+								$("[id^='selectprepareText_']").click(function(){
+									set_x_Content();
+								});
+								$("#x_Contents").keyup(function(){
+									set_x_Content();
+								});
+							}); 
+						</script>
+					<input type="hidden" id="x_Content" name="x_Content" value="" />
+					<div class="w1">内容：</div>
+					<div class="w2"><label><textarea style="width:140px;height:60px;" id="x_Contents" cols="45" rows="5"></textarea></label></div>
+					<div  style="clear:both;"></div>
+					<div class="w1" style="padding-left:70px;"><input type="image" src="/xuexiao/style/1/images/left_btn_1.gif" /></div>
+					<div  style="clear:both;"></div>
+                    <input type="hidden" name="id" value="{# $school.LoginId #}" />
+					<input type="hidden"  name="flag" value="msg" />
+                    </form>
+				</li>
+			</ul>
+	  </div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-学习用品-{# $row.Title #}</title>
+<meta name="keywords" content="{# $school.ShortName #}"/>
+<meta name="description" content="{# $school.ShortName #}"/>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+<!--head-->
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+<div id="content">
+	{# include file="left.htm" #}
+    <div id="main">
+<!--right_box1-->
+    	<div class="right_box1">
+        	<div class="title_bg1">
+            <span class="fr">当前位置:首页 > 学习用品 > {# $row.Title #} </span>
+            <h2 class="right_title">
+        	{# $school.Name #}
+        	</h2></div>
+            <div class="box_con pd20">
+				<div class="detial_title"><h1><span class="xxyp_{# if $row.SDFlag=='supply' #}sale{# else #}buy{# /if #} pngtm"></span><span class="f16">{# $row.Title #}</span></h1></div>
+                <div class="detial_info mt15">
+                	<div class="title"><a href="#" class="mr6 f14">{# $school.ShortName #}</a><em class="c66">发布于{# $row.Dtt|date_format:"%Y-%m-%d %H:%S" #}</em></div>					<dl class="mt6">
+                    	<dt><span>价&nbsp;&nbsp;&nbsp;格：</span><span>{# $row.Price #}元</span></dt>
+                        <dd><span>新&nbsp;&nbsp;&nbsp;旧：</span><span>{# $row.DegreeContent #}</span></dd>
+                        <dt><span>城&nbsp;&nbsp;&nbsp;市：</span><span>{# $school.AreaName #}</span></dt>
+                        <dd><span>联系方式：</span><span><a onclick="javascript:{# if $school.WorkphoneToOrder === '0' #}show_float_workphone();{# elseif $school.WorkphoneToOrder == 1 #}show_float_msg();{# elseif $school.WorkphoneToOrder == 2 #}show_float_workphone();{# else #}document.getElementById('s_workphone1').style.display='';{# /if #}var p=new Array();p['areaid']='{# $school.AreaId #}';p['categoryid']='{# $school.CategoryId #}';p['loginid']='{# $school.LoginId #}';p['type']='1';p['courseid']='0';p['item']='{# $school.Name #}';p['column']='Phone';p['expend']='0'; school_summery_log(p);" href="javascript:void(0);"><img width="116" height="25" alt="" src="/xuexiao/style/1/images/tel_1.jpg"></a></span></dd>
+                    </dl>
+              </div>
+                <div class="detial_con mt15">
+                	<div class="title"><span>详细内容</span></div>
+                    <div class="mt15">&nbsp;&nbsp;&nbsp;&nbsp;{# $row.Content #}</div>
+                </div>
+            </div>
+
+      </div>
+	{# if $school.DisplayAd != 'no' #}
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-7576374042341131";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		google_ad_format = "728x90_as";
+		google_ad_type = "text_image";
+		//-->
+		</script> <script type="text/javascript"
+		  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+    {# /if #}
+  </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

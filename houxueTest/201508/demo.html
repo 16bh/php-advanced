@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title></title>
+	<meta charset='utf-8'>
+</head>
+<body>
+	<script src="http://cdn.houxue.com/libs/jquery/1.8/jquery.min.js"></script>
+	<script type="text/javascript">
+	alert(123);
+		$("input[id^='username']").keydown(function (event) {
+			
+	        var code = parseInt(event.keyCode);
+	    });
+		
+		/**字符长度验证*/
+		function betweenLength(str, _min, _max) {
+		    return (str.length >= _min && str.length <= _max);
+		}
+
+
+		function checkLength(str){
+	       var len;
+	       var len0;
+	       Len=str.replace(/(\r\n)$/gm,'').split(''),len=len0=Len.length;
+	       for(o in Len)
+	       {
+	            if(Len[o].charCodeAt(0)>256)
+	            {
+	              len++;
+	            }
+	        }
+	        alert(len + "字节");
+	        alert(len0 + "字符");	        
+	    }
+	</script>
+<input type="text" name="username" id="username" />
+<span id='msg'></span>
+</body>
+</html>

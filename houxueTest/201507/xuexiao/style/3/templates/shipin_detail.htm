@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $row.Title #}_{# $school.ShortName #}</title>
+<meta name="keywords" content="{# $school.ShortName #}{# $subschool.SubName #},{# $school.ShortName #}{# $subschool.SubName #}报名地址,{# $school.ShortName #}{# $subschool.SubName #}电话"/>
+<meta name="description" content="{# $school.ShortName #}{# $subschool.SubName #}的联系方式,报名地址,咨询电话和培训内容"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<link type="text/css" rel="stylesheet" href="http://www.houxue.com/js/jquery/themes/base/jquery.ui.all.css">
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.tabs.min.js"></script>
+<style type="text/css">
+.right_tab{ word-break:break-all;}
+.right_tab .ui-state-active a, .right_tab .ui-state-active a:link, .right_tab .ui-state-active a:visited{color:#666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected{background:#65a6ed;padding-bottom:0px; position:relative;font-weight:bold;color:#666666;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a{color:#fff;}
+
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover span{display:block;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected a span{display:block;color:#777;}
+.right_tab .ui-tabs .ui-tabs-nav li.ui-tabs-selected span{ position:absolute; top:17px;left:8px;*top:14px;_top:14px;}
+.right_tab .a9_flash{background-color: #fcfcfc; width:498px; height: 180px; float: none;border:1px solid #ccc;}
+.right_tab .ui-tabs{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav{padding:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li{margin:0 0 0px 0;top:0px;}
+.right_tab .ui-tabs .ui-tabs-nav li a{padding:0.13em 0em;_padding:0.13em 0em;width:72px; text-align:center;font-size:12px;color:#626262;}
+.right_tab .ui-widget-content{color:#555555;border:none;}
+.container .right_tab .ui-tabs .ui-tabs-panel{font-size:12px;padding-top:1.2em;margin-top:1.0em;border-top:1px dashed #ccc;width:730px;padding-left:0px;}
+.right_tab .ui-tabs-panel  li{padding-left: 0px;line-height:28px;font-size:0px;overflow:hidden;}
+
+.right_tab .ui-tabs-panel  li a{margin-right:6px;color:#4e86e3;font-size:12px;}
+.right_tab .ui-tabs-panel  li a:hover{color:#f60;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-bottom,  .right_tab.ui-corner-right, .right_tab .ui-corner-br{ border-radius:0px;}
+.right_tab .ui-widget-header{border:0px solid #dddddd;background:#fff;}
+.right_tab .ui-widget-content .bd{border:1px solid #dddddd;border-top:none;}
+.right_tab .ui-state-default, .right_tab .ui-widget-content .ui-state-default, .right_tab.ui-widget-header .ui-state-default{background:none;border-left:none;border-top:none;border-bottom:none;}
+.right_tab .ui-corner-all, .right_tab .ui-corner-top, .right_tab  .ui-corner-right, .right_tab  .ui-corner-tr{border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;}
+.right_tab li span{display:inline-block;font-size:12px;color:#444444;width:60px;float:left;}
+
+#tabs-1 li span{width:40px;}
+.right_tab li .r_con{font-size:12px;color:#444444;float:left;width:655px;}
+.right_tab li .r_con a{margin-right:1px;}
+.right_tab .ui-tabs-panel a{color:#888;margin-right:10px;line-height:25px;}
+.hot_gg{width:890px;background:#efefef;margin-bottom:15px;min-height:60px;}
+.right_tab .jt_2{display:none;}
+.input-text{border: 1px solid #CCCCCC;height: 20px;width:200px;}
+#ajaxpost{background: none repeat scroll 0 0 #4D8BCE;border: medium none;border-radius: 0.2em;color: #FFFFFF;cursor: pointer;display: inline;font-family: "微软雅黑";font-size: 14px;font-weight: bold;height:25px;text-shadow: 0 1px 0 #666666;width:72px; margin-top: 3px;}
+</style>
+</head>
+
+<body>
+
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+	  <div class="right_box1">
+        <div class="title_bg "><span class="more">当前位置：首页> 培训视频 > {# $row.Title #}</span>
+            <h2 class="title1" > {# $school.Name #}</h2>
+        </div>
+        <div class="bd r_con_info" >
+			<div class="news_detail" >
+<!--新闻标题-->
+            <div class="news_detail_t ">
+            	<h1 class="ffw">{# $row.Title #}</h1>
+                <p><span>来源：{# $school.Name #}</span><span>点击量：[{# $row.Click+1 #}]</span><span>发布时间：{# $row.Dtt|date_format:"%Y-%m-%d" #}</span></p>
+            </div>
+			{#if $row.FlashUrl#}
+			<div class="ml58 mt15">
+				<p>
+					<embed align="middle" allowfullscreen="true" allowscriptaccess="always" height="400" quality="high" src="{#$row.FlashUrl#}" type="application/x-shockwave-flash" width="480"></embed>
+				</p>
+				<a href="{#$row.FlashUrl#}" target=_blank>{#$row.FlashUrl#}</a>
+			</div>
+			{#/if#}
+
+			<div class="ml58 mt15 right_tab" id="watchWay" {#if $isPlay#}style="display:none;"{#/if#}>
+				<p style="color:red;">提示：收费视频需要通过授权号码和姓名，才能观看。 </p>
+				<div id="tabs">
+						<div style="height:80px;text-align:center;border:1px dotted #CCCCCC;border-top:0;">
+							<form id="mainForm" method="post" action="">
+								<input type="hidden" name="flag" value="detail">
+								<input type="hidden" name="isgetauthloginid" value="1">
+								<p>授权号码：<input type="text" name="x_Cellphone" class="input-text"></p>
+								<p>授权姓名：<input type="text" name="x_Name" class="input-text"></p>
+								<p><input type="button" value="确定" id="ajaxpost"></p>
+							</form>
+						</div>
+				</div>
+			</div>
+
+			<div class="ml58 mt15" id="videoPlay"></div>
+			{#if $isPlay#}
+					<script type="text/javascript">
+						$(document).ready(function(){
+							setVideoPlayHtml('{#$swfplayer#}','{#$flashvars#}','{#$customParam#}','{#$row.T_Video.Height#}','{#$row.T_Video.Width#}');
+						});
+					</script>
+			{#/if#}
+
+			<div class="news_detail_con mt15">
+                <p> {# $row.Content #}</p>
+			</div>
+
+
+		    </div>
+
+        </div>
+      </div>
+	</div>
+</div>
+
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+	$("#ajaxpost").click(function(){
+		$.ajax({
+			url: '',
+			data: $('#mainForm').serialize(),
+			type: "post",
+			cache : false,
+			success: function(data){
+				try{var myObject = eval('(' + data + ')');}catch (e){alert(data);return;}
+				if(myObject["rtn"]=='ok')
+				{
+					$("#watchWay").hide();
+					setVideoPlayHtml(myObject["swfplayer"],myObject["flashvars"],myObject["customParam"]);
+				}
+				else
+				{
+					alert(myObject["error_text"]);
+				}
+			}
+		});
+	});
+});
+function setVideoPlayHtml(swfplayer,flashvars,customParam,height,width)
+{
+	if(!arguments[3])	height=400;
+	if(!arguments[4])	width=500;
+	var Theight=400;
+	var Twidth=width*400/height;
+	if(Twidth>700)
+	{
+		Twidth=700;
+		Theight=height*700/width;
+	}
+	var s= '<div style="width:'+Twidth+'px; height:'+Theight+'px;">';
+		s+='<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="100%" id="VJTVPlayer" align="middle">';
+		s+='<param name="movie" value="'+swfplayer+'" />';
+		s+='<param name="quality" value="high" />';
+		s+='<param name="bgcolor" value="#000000" />';
+		s+='<param name="play" value="true" />';
+		s+='<param name="loop" value="true" />';
+		s+='<param name="wmode" value="window" />';
+		s+='<param name="scale" value="showall" />';
+		s+='<param name="menu" value="true" />';
+		s+='<param name="devicefont" value="false" />';
+		s+='<param name="salign" value="" />';
+		s+='<param name="allowScriptAccess" value="always" />';
+		s+='<param name="flashvars" value=\''+flashvars+'&customParam='+customParam+'\'>';
+		s+='<param name="allowFullScreen" value="true"/>';
+		s+='<!--[if !IE]>-->';
+		s+='<object type="application/x-shockwave-flash" data="'+swfplayer+'" width="100%" height="100%">';
+		s+='<param name="movie" value="'+swfplayer+'" />';
+		s+='<param name="quality" value="high" />';
+		s+='<param name="bgcolor" value="#000000" />';
+		s+='<param name="play" value="true" />';
+		s+='<param name="loop" value="true" />';
+		s+='<param name="wmode" value="window" />';
+		s+='<param name="scale" value="showall" />';
+		s+='<param name="menu" value="true" />';
+		s+='<param name="devicefont" value="false" />';
+		s+='<param name="salign" value="" />';
+		s+='<param name="allowScriptAccess" value="always" />';
+		s+='<param name="flashvars" value=\''+flashvars+'&customParam='+customParam+'\'>';
+		s+='<param name="allowFullScreen" value="true"/>';
+		s+='<!--<![endif]-->';
+		s+='<a href="http://www.adobe.com/go/getflash"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>';
+		s+='<!--[if !IE]>-->';
+		s+='</object>';
+		s+='<!--<![endif]-->';
+		s+='</object>';
+		s+='</div>';
+	$("#videoPlay").html(s);
+}
+function onVerifyComplete(rtn,text)
+{
+	if(rtn==1)
+	{
+
+	}
+	else
+	{
+		$("#watchWay").show();
+		$("#videoPlay").html('');
+		alert(text);
+	}
+}
+//-->
+</script>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

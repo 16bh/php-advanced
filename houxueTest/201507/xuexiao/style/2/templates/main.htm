@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# if $school.SeoTitle == "" #}{# $school.ShortName #}-{# $CompanyLabel #}首页{# else #}{# $school.SeoTitle #}{# /if #}</title>
+<style type="text/css">#baidumap{height:174px; width:268px;}</style>
+<meta name="keywords" content="{# $school.ShortName #},{# $school.Name #},{# $area.Path.1.AreaName #}{# $category.CategoryName #}培训{# $CompanyLabel #}"/>
+<meta name="description" content="{# $school.ShortName #}首页为您提供{# $school.Name #}（简称{# $school.ShortName #}）的简要介绍，人气课程推荐，学员评论，{# $CompanyLabel #}名师，{# $CompanyLabel #}环境等信息。"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=http://m.houxue.com/xuexiao/{# $school.LoginId #}/">
+{# include file="css.htm" #}
+<link type="text/css" rel="stylesheet" href="http://www.houxue.com/js/jquery/themes/base/jquery.ui.all.css">
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/ui/minified/jquery.ui.tabs.min.js"></script>
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js" type="text/javascript" ></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt8">
+	{# include file="left.htm" #}
+    <div class="right">
+      <div class="right_box1 clear_float">
+      	<div class="right_l">
+			<div class="right_img">
+				<div id="a9_flash" class="a9_flash ui-tabs ui-widget ui-widget-content ui-corner-all">
+				<div id="fragment-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">{# if $school.AlternativeImageId1 == 0 #}请在管理员后台设定学校轮展图1{# /if #}<img src="/images/blank.gif" psrc="/loadimage.php?id={# $school.AlternativeImageId1 #}" width="500" height="180"/></div>
+				<div id="fragment-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">{# if $school.AlternativeImageId2 == 0 #}请在管理员后台设定学校轮展图2{# /if #}<img src="/images/blank.gif" psrc="/loadimage.php?id={# $school.AlternativeImageId2 #}" width="500" height="180"/></div>
+				<div id="fragment-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">{# if $school.AlternativeImageId3 == "" #}请在管理员后台设定学校轮展图3{# /if #}<img src="/images/blank.gif" psrc="/loadimage.php?id={# $school.AlternativeImageId3 #}" width="500" height="180"/></div>
+				<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" >
+				<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#fragment-1"><span>1</span></a></li>
+				<li class="ui-state-default ui-corner-top"><a href="#fragment-2"><span>2</span></a></li>
+				<li class="ui-state-default ui-corner-top"><a href="#fragment-3"><span>3</span></a></li>
+				</ul>
+		 	 </div>
+            </div>
+            <div class="right_tab">
+                <div id="a9_flash_m" class="a9_flash_m ui-tabs ui-widget ui-widget-content ui-corner-all mt10 clear">
+                    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all title_bg" >
+                    <li class="ui-state-default ui-corner-top"><a href="#fragment-1">培训学员</a></li>
+                    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#fragment-2">学校简介</a></li>
+                    </ul>
+                    <div id="fragment-1" class="bd h140 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                    		<ul>
+								{# foreach key=rownum item=row from=$orderlist #}
+								{# if $rownum < 5 #}
+								<Li>
+									{# if $row.Name != "" #}{# $row.Name|truncateex:1:"utf-8":"" #}**{# else #}{# $row.Phone|truncateex:6:"utf-8":"" #}*****{# /if #}
+									已经于
+									{# $row.Dtt|date_format:"%Y-%m-%d" #}
+									报名
+									{# if $row.CourseName != "" #}
+										<a class="green_links" href="http://www.houxue.com/kecheng/{# $row.CourseId #}/">{# $row.CourseName #}</a>
+										{# else #}
+										<a class="green_links" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a>
+									{# /if #}
+								</Li>
+								{# /if #}
+								{# /foreach #}
+							</ul>
+					</div>
+                    <div id="fragment-2" class="bd h140 ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                    	{# $school.Intro|strip_tags|truncateex:200:"utf-8":"...":true|nl2br #}
+                    </div>
+                 </div>
+			</div>
+	    </div>
+      	<div class="right_r ">
+        	<div class="right_tab">
+                <div id="a9_flash_r" class="a9_flash_m ui-tabs ui-widget ui-widget-content ui-corner-all">
+                    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all title_bg h26" >
+                    <li class="ui-state-default ui-corner-top"><a href="#fragment-1">推荐课程</a></li>
+                    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#fragment-2">新闻动态</a></li>
+                    </ul>
+                    <div id="fragment-1" class="bd h130 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        <ul>
+                            {# foreach key=rownum item=row from=$courselist_recommend #}
+                            <li><a title="{# $row.Name #}" href="http://www.houxue.com/kecheng/{# $row.Id #}/" target="_blank">{# $row.Name #}</a></li>
+                            {# /foreach #}
+                        </ul>
+					</div>
+                    <div id="fragment-2" class="bd h130 ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                    	<ul>
+                            {# foreach key=rownum item=row from=$newslist #}
+                            {# if $rownum < 5 #}
+                            <li><a href="http://www.houxue.com/news-{# $row.Id #}/" target=_blank>{# $row.Title|truncateex:17:"utf-8":"":true #}</a></li>
+                            {# /if #}
+                            {# /foreach #}
+                		</ul>
+                    </div>
+                 </div>
+			</div>
+            <div id="baidumap" class="mt10 clear bd1" title="{# $school.Name #}地图位置"></div>
+       	</div>
+       </div>
+      <div class="right_box2  clear">
+		{# foreach key=rownum item=row from=$SchoolCategory #}
+		{#if $row.courselist.0.Id#}
+   		<div class="title_bg mt10"><h2 class="title2" >{# $row.CategoryName #}培训课程</h2></div>
+        <div class="table_w">
+              <table width="100%" border="1" cellspacing="0" cellpadding="0" class="border_c " bordercolor="#cccccc">
+                <tr>
+                  <th scope="col" class="w1">班级名称</th>
+                  <th scope="col" class="w2">开课时间</th>
+                  <th scope="col" class="w3">课程价格</th>
+                  <th scope="col" class="w4">人气</th>
+                  <th scope="col" class="w5">在线报名</th>
+                </tr>
+				{# foreach key=rownum1 item=row1 from=$row.courselist #}
+                <tr>
+                  <td class="w1"><a href="http://www.houxue.com/kecheng/{# $row1.Id #}/">{# $row1.Name|truncateex:20:"utf-8":"" #}</a></td>
+                  <td class="w2">{# $row1.DT #}</td>
+                  <td class="w3 green" >¥{# $row1.Price|floor #}</td>
+                  <td class="w4">{# $row1.Visit #}</td>
+                  <td class="w5"><input  onclick="document.location='/kecheng/{# $row1.Id #}/';" name="" value="查看详情" class="small_btn" type="button" /></td>
+                </tr>
+				{# /foreach #}
+              </table>
+         </div>
+		 {#/if#}
+		 {# /foreach #}
+      </div>
+    </div>
+</div>
+
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	$(document).ready(function(){
+		try{
+			$("#a9_flash").tabs({
+				event: 'mouseover'
+			});
+			$("#a9_flash_m").tabs({
+				});
+			$("#a9_flash_r").tabs({
+				});
+			$("#a9_flash").tabs( "rotate" , 3000, false);
+		}catch(e){}
+
+		$("#a9_flash img").each(function (p)
+		{
+			$(this).attr("src", $(this).attr("psrc"));
+		});
+
+        //$("#scrollDiv").Scroll({line:1,speed:500,timer:3000});
+
+
+		{# if $school.BaiduMapPointLng > 0 && $school.BaiduMapPointLat > 0 #}
+			var map = new BMap.Map("baidumap");
+			var mapPoint = new BMap.Point({# $school.BaiduMapPointLng #}, {# $school.BaiduMapPointLat #});
+			map.centerAndZoom(mapPoint, 12);
+			map.enableScrollWheelZoom();
+			var mapMarker = new BMap.Marker(mapPoint);
+			var mapLable = new BMap.Label("{# $school.ShortName #}");
+			var mapSize = new BMap.Size(18,0);
+			mapLable.setOffset(mapSize);
+			mapMarker.setLabel(mapLable);
+			mapMarker.setTitle("{# $school.Name #}");
+			map.addOverlay(mapMarker);
+
+			{# foreach key=rownum item=row from=$sublist #}
+			{# if $row.BaiduMapPointLng > 0 && $row.BaiduMapPointLat > 0 #}
+				var mapPoint = new BMap.Point({# $row.BaiduMapPointLng #}, {# $row.BaiduMapPointLat #});
+				var mapMarker = new BMap.Marker(mapPoint);
+				var mapLable = new BMap.Label("{# $row.SubName #}");
+				var mapSize = new BMap.Size(18,0);
+				mapLable.setOffset(mapSize);
+				mapMarker.setLabel(mapLable);
+				mapMarker.setTitle("{# $row.SubName #}");
+				map.addOverlay(mapMarker);
+
+			{# /if #}
+			{# /foreach #}
+		{# else #}
+			$("#baidumap").html("请进入学校管理后台-学校管理-地图,设定学校的地图位置信息.<BR><BR><a href='http://www.houxue.com/sa/s_m_baidumap.php' target=_blank>进入修改</a>");
+		{# /if #}
+
+	});
+//-->
+</SCRIPT>

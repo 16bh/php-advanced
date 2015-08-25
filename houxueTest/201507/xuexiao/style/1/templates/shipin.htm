@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>视频展示-{# $school.ShortName #}</title>
+<meta name="keywords" content="{# $school.ShortName #}视频展示"/>
+<meta name="description" content="{# $school.ShortName #}的最新视频展示"/>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+<!--head-->
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">//(function(w){if(w.screen.availWidth>=1280)document.body.className='wrap_1280';})(window);</script>
+{# include file="head.htm" #}
+<div id="content">
+	{# include file="left.htm" #}
+    <div id="main">
+
+
+    	<div class="right_box1"><!--right_box1 start-->
+        	<h2 class="right_title"><span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span><span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+        	<div class="title_bg">视频展示</div>
+        	</h2>
+            <div class="box_con">
+				<div class="xxyp_top">
+							<span class="w1 c55">标题</span>
+							<span class="w2 c55">地区</span>
+							<span class="w2 c55">分类</span>
+							<span class="w3 c55">发布时间</span>
+				</div>
+				<div class="xxyp_con">
+					<dl>
+	{# foreach key=rownum item=row from=$List name=foo#}
+		{# if $smarty.foreach.foo.index % 2 == 0 #}
+						<dt>
+							<span class="w1"><span class=""></span> <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/{# $row.Id #}.htm">{# $row.Title #}</a></span>
+							<span class="w2">{# $row.AreaName #}</span>
+							<span class="w2">{# $row.CategoryName #}</span>
+							<span class="w3">{# $row.Dtt|date_format:"%Y-%m-%d" #}</span>
+						</dt>
+		{# else #}
+						<dd>
+							<span class="w1"><span class=""></span> <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/shipin/{# $row.Id #}.htm">{# $row.Title #}</a></span>
+							<span class="w2">{# $row.AreaName #}</span>
+							<span class="w2">{# $row.CategoryName #}</span>
+							<span class="w3">{# $row.Dtt|date_format:"%Y-%m-%d" #}</span>
+						</dd>
+		{# /if #}
+	{# /foreach #}
+					</dl>
+				</div>
+				<div class="qxzs_page">
+				  {#pager rowcount=$pager.rowcount_all show='page' limit=$pager.limit txt_prev="上一页" txt_next="下一页" posvar=$pager.posvar forwardvars=$pager.forwardvars shift=$pager.shift txt_pos=$pager.txt_pos  txt_first=$pager.L_MORE class_num="pager_class_num" class_numon="pager_class_numon" class_text="f1"#}
+				</div>
+			</div>
+
+		</div><!--right_box1 end-->
+
+
+</div>
+{# include file="foot.htm" #}
+    {# 'PCStat'|get_common_config #}
+</body>
+</html>

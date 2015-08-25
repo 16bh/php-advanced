@@ -1,0 +1,12 @@
+	<div class="bottom" >
+		<div class="copyright">Copyright © 2007-{# $smarty.now|date_format:"%Y" #} <a href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/"><strong>{# $school.Name #}</strong></a> 版权所有</div>
+        <iframe src="http://www.houxue.com/school-page10-footer.htm" width="900" height="110" scrolling="no" frameborder="0"></iframe>
+	</div>
+	<div style="display:none;">{# $area.Path.1.SiteCounterCode #}</div>
+
+<script type="text/javascript" language="javascript" src="http://www.houxue.com/js/school-page.js"></script>
+<script language="javascript" src="http://www.houxue.com/js/pub.js"></script>
+<script language="javascript" src="/ajax/thread_school_summerylog.php?areaid={# $school.AreaId #}&categoryid={# $school.CategoryId #}&loginid={# $school.LoginId #}&type=1&courseid=0&item={# $school.Name|urlencode #}&column=Visit&Expend=0"></script>
+{#$CONFIG.sitecountercode#}
+{# $area.SiteCounterCode #}
+<script language="javascript" src="/ajax/thread_pageview.php?areaid={# $area.Id #}&item=School"></script>

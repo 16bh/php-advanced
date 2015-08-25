@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-学校环境</title>
+<meta name="keywords" content="{# $school.ShortName #}环境"/>
+<meta name="description" content="{# $school.ShortName #}的学校环境图片"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+{# include file="head.htm" #}
+<div class="container mt10">
+  <div >
+
+	<div class="right_box1">
+		<div class="title_bg "><span class="more">当前位置：首页> 环境展示</span>
+		  <h2 class="title1" >环境展示</h2>
+		</div>
+		<div class="bd r_con_env" >
+		{# foreach key=rownum item=row from=$envlist #}
+			<span class="w1"><img src="http://www.houxue.com/loadimage.php?id={# $row.ImageId #}&w=290&h=181" /></span>
+		{# /foreach #}
+		</div>
+	</div>
+  </div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

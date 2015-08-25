@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var num1 = 20, num2 = 3, name="chenxi";
+
+	function multipy () {
+				return num1 * num2;
+			}		
+	multipy();
+
+	function getScore () {
+		var num1 = 2,
+		num2 = 3;
+		function add () {
+			return name + "scored" + (num1 + num2);
+		}
+		return add();
+	}
+
+	window.onload = getScore();
+</script>
+</body>
+</html>

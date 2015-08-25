@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}-网上报名</title>
+<meta name="keywords" content="{# $school.ShortName #}报名"/>
+<meta name="description" content="{# $school.ShortName #}为您提供网上报名通道，网上报名方便快捷，价格优惠！"/>
+{# 'PCHead'|get_common_config #}
+{# include file="css.htm" #}
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<script language="javascript" src="http://www.houxue.com/xuexiao/js/xuexiao.js"></script>
+</head>
+
+<body>
+
+{# include file="head.htm" #}
+<div class="container mt10">
+	{# include file="left.htm" #}
+	<div class="right">
+	  <div class="right_box1">
+        <div class="title_bg "><span class="more">当前位置：首页> 网上报名</span>
+            <h2 class="title1" > 网上报名</h2>
+        </div>
+	    <div class="con_wsbm bd">
+          <div  class="b_wsbm">
+			<form action="/order_add.php" method="post" onsubmit="return f_chkmsgform(this);" >
+
+			<input type="hidden" name="x_SchoolLoginId" value="{# $school.LoginId #}" />
+			<input type="hidden" name="x_AreaId" value="{# $school.AreaId #}" />
+			<input type="hidden" name="x_CategoryId" value="{# $school.CategoryId #}" />
+			<input type="hidden" name="flag" value="msg" />
+			<input type="hidden" name="flag_sms" value="yes">
+			<input type="hidden" name="flag_smsToLeaner" value="yes">
+			<input type="hidden" name="forward" value="">
+			<input type="hidden" name="alertText" value="预约留言成功">
+              <div class="b_n_bg">
+                <div>
+                  <p class="n_1">姓名：</p>
+                  <p class="n_2">
+                    <input type="text" class="b_input_name" id="x_Name" name="x_Name" />
+                    <span class="cf60">*</span></p>
+                  <p class="n_1">性别：</p>
+                  <p class="n_1">
+                    <input type="radio"  checked="checked" value="1" name="x_Sex" />
+                    男</p>
+                  <p class="n_1">
+                    <input type="radio" value="2" name="x_Sex" />
+                    女</p>
+                </div>
+                <div class="clear">
+                  <p class="n_1">电话：</p>
+                  <p class="n_5">
+                    <input type="text" value="" name="x_Phone" id="x_Phone" size="36" class="b_input_tel"  />
+                    <span class="cf60"> *</span> <span class="fs14">请输入您的手机号码</span> </p>
+                </div>
+                <div class="clear">
+                  <p class="n_1">内容：</p>
+                  <p class="n_5">
+                    <textarea rows="2" cols="29" class="b_input_con"  id="x_Content" name="x_Content"></textarea>
+                  </p>
+                </div>
+                <div class="clear"></div>
+                <div class="btn_bm">
+                  <input width="123" type="image" height="36" src="http://www.houxue.com/images09/images_coursepage/a_btn.gif" title="在线报名" class="fl" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="right_box2 mt10">
+        <div class="title_bg ">
+            <h2 class="title1" > 最新报名信息</h2>
+        </div>
+        <div class="bd ">
+       	  <ul class="wsbm_info">
+			{# foreach key=rownum item=row from=$orderlist #}
+				<li>{# if $row.Name != "" #}{# $row.Name|truncateex:1:"utf-8":"" #}**{# else #}{# $row.Phone|truncateex:6:"utf-8":"" #}*****{# /if #} 已经于 {# $row.Dtt|date_format:"%Y-%m-%d" #}
+				{# if $row.CourseName != "" #}
+				 报名参加
+				 <a href="http://{# $row.Domain #}.houxue.com/kecheng-{# $row.CourseId #}/">{# $row.CourseName #}</a>
+				 课程
+				{# else #}
+				 报名
+				 <a class="green_links" href="http://www.houxue.com/xuexiao/{# $school.LoginId #}/">{# $school.Name #}</a>
+				{# /if #}
+				</li>
+
+			{# /foreach #}
+          </ul>
+
+        </div>
+
+      </div>
+	</div>
+</div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>

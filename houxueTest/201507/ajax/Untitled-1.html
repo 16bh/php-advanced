@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>   
+  <script type="text/javascript"> 
+    window.onload = function(){            
+		Highlight();
+	}
+     
+      // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+	function addOne(obj){
+		var tbody = document.getElementById('table').lastChild;
+		var tr = document.createElement('tr');
+		
+		var td = document.createElement('td');
+		td.innerHTML = "<input type='text' />";
+		tr.appendChild(td);
+		
+		var td = document.createElement('td');
+		td.innerHTML = "<input type='text' />";
+		tr.appendChild(td);
+		
+		var td = document.createElement('td');
+		td.innerHTML = "<a href='javascript:;' onclick='deleteRow(this)'>删除</a>";
+		tr.appendChild(td);
+		
+		tbody.appendChild(tr);
+		Highlight();
+	}
+     
+    		
+   	 
+     // 创建删除函数
+     function deleteRow(obj)
+     {
+	 var tbody = document.getElementById('table').lastChild;
+	 var tr = obj.parentNode.parentNode;
+	 tbody.removeChild(tr);
+     }
+     
+     function Highlight() {
+       var tbody = document.getElementById("table").lastChild;
+       trs = tbody.getElementsByTagName('tr');
+       for (var i = 1; i < trs.length; i++) {
+           trs[i].onmouseover = function(){
+             this.style.backgroundColor="#000";
+           }
+           trs[i].onmouseout = function () {
+             this.style.backgroundColor="#fff";
+           }
+       }
+     }
+
+
+  </script> 
+ </head> 
+ <body> 
+	   <table border="1" width="50%" id="table">
+	   <tr>
+		<th>学号</th>
+		<th>姓名</th>
+		<th>操作</th>
+	   </tr>  
+
+	   <tr>
+		<td>xh001</td>
+		<td>王小明</td>
+		<td><a href="javascript:javascript:void(0);" onclick="deleteRow(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+	   </tr>
+
+	   <tr>
+		<td>xh002</td>
+		<td>刘小芳</td>
+		<td><a href="javascript:javascript:void(0);" onclick="deleteRow(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+	   </tr>  
+
+	   </table>
+	   <input type="button" value="添加一行" onclick="addOne()"  />   <!--在添加按钮上添加点击事件  -->
+ </body>
+</html>

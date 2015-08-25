@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{# $school.ShortName #}的论坛</title>
+<meta name="keywords" content="{# $school.ShortName #}论坛"/>
+<meta name="description" content="{# $school.ShortName #}的论坛"/>
+<script type="text/javascript" src="http://www.houxue.com/js/jquery/jquery.min.js"></script>
+<link href="http://www.houxue.com/xuexiao/style/{# $school.DisplayStyle #}/style.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="http://www.houxue.com/js/swfupload/swfupload.css"/>
+<!--[if IE 6]>
+<script src="http://www.houxue.com/sa/images/png.js" ></script>
+<script type="text/javascript"> DD_belatedPNG.fix('.pngtm');</script> <![endif]-->
+<!--head-->
+<style type="text/css">
+<!--
+#previewImg{width:620px;list-style:none;}
+#previewImg li{list-style:none;width:102px;float:left;margin-left: 3px;}
+.PreviewImageBox{width:100px;height:75px;border:1px solid #FF8400;text-align: center;}
+.PreviewImageDelBox{text-align:center;font-size:12px;}
+-->
+</style>
+    {# 'PCHead'|get_common_config #}
+</head>
+
+<body>
+<script type="text/javascript">
+<!--
+function f_chkform()
+{
+	if( jQuery("#x_Subject").val() == "" )
+	{
+		alert("帖子标题不能为空");
+		jQuery("#x_Subject").focus();
+		return false;
+	}
+	if( jQuery("#x_Content").val() == "" )
+	{
+		alert("帖子内容不能为空");
+		jQuery("#x_Content").focus();
+		return false;
+	}
+}
+//-->
+</script>
+{# include file="head.htm" #}
+<div id="content" style=" overflow:visible;">
+	 <div id="main" style="width:980px;" >
+
+	   <div class="right_box1"><!--right_box1 start-->
+        	<h2 class="right_title" style="position:relative;"><span><img align="left" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_left.png" /></span><span><img align="right" src="/xuexiao/style/{# $school.DisplayStyle #}/images/js_right.png" /></span>
+        	<div class="title_bg" ><img style="position:absolute;top:-3px;" src="/xuexiao/style/1/images/bbs_title.jpg" width="110" height="34" /></div>
+        	</h2>
+            <div class="box_con" style="padding-left:100px;padding-top:50px;">
+ <form action="http://www.houxue.com/xuexiao/{#$school.LoginId#}/bbs/{#$bbsBoard.Id#}/addsave.htm" name="frm_1" method="post" onsubmit="return f_chkform();">
+            	<ul class="bbs_add">
+                	<li>
+						<span class="w1 vt">标题：</span>
+						<span class="vt"><input class="w2" name="x_Subject" id="x_Subject" type="text" />
+                		</span><span> &nbsp;可输入35个字</span>
+					</li>
+                    <li class="mt10">
+						<span class="w1" style="vertical-align:top;">帖子内容：</span>
+						<span class="vt">
+							<textarea  name="x_Content" class="input1" id="x_Content" style="width:560px;height:210px;"></textarea>
+
+						</span>
+					</li>
+                    <li style="padding-left:110px;margin-top:13px;">
+						<div style="width:620px;overflow: hidden;">
+							<ul id="previewImg">
+								<li id="PreviewImage_li_id_add">
+									<div class="PreviewImageBox" style="border: 1px dotted #FF8400;"><div style="width:27px;height:28px;padding-left:36px;padding-top:23px;"><span id="spanButtonPlaceHolder"></span></div></div>
+									<div class="PreviewImageDelBox">&nbsp;</div>
+								</li>
+							{# if $debug == 1 #}
+								<li id="PreviewImage_li_id_{#$row.Id#}">
+									<div class="PreviewImageBox"><img src="http://www.houxue.com/loadimage.php?id={#$row.ImageId#}&w=100&h=75"></div>
+									<div class="PreviewImageDelBox"><a href="javascript:void(0);" onclick="delOnePreviewById({#$row.Id#})">删除</a></div>
+								</li>
+							{# /if #}
+							</ul>
+						</div>
+						<input type="hidden" name="StudyMaterial_Image" id="StudyMaterial_Image">
+						<font style="font-size:12px;color:red;">注意：总共最多上传 5 张图片 </font>
+						<div id="divStatus" style="display:none;">0 Files Uploaded</div>
+						<div class="fieldset flash" id="fsUploadProgress"></div>
+						
+						<input id="btnCancel" type="button" value="Cancel All Uploads" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;display:none;" />
+
+					</li>
+                    <li style="padding-left:110px;margin-top:13px;">
+						<span><input type="image" src="/xuexiao/style/1/images/bbs_btn.jpg"></span>
+					</li>
+                </ul>
+</form>
+         </div>
+
+<script type="text/javascript" src="http://www.houxue.com/js/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="http://www.houxue.com/js/swfupload/handlers.js"></script>
+<script type="text/javascript">
+var allow_file_upload_num={#$allow_file_upload_num#};
+
+var swfu;
+
+var settings = {
+	flash_url : "/js/swfupload/swfupload.swf",
+	upload_url: "image.htm",
+	post_params: {"flag" : "uploadimg", "PHPSESSID" : "{# $session_id #}"},
+	file_size_limit : "2048",
+	file_types : "*.jpg;*.jpeg;*.gif;*.png",
+	file_types_description : "Images Files",
+	file_upload_limit : {#$allow_file_upload_num#},
+	file_queue_limit : 0,
+	custom_settings : {
+		progressTarget : "fsUploadProgress",
+		cancelButtonId : "btnCancel"
+	},
+	debug: false,
+	// Button settings
+	button_placeholder_id: "spanButtonPlaceHolder",
+	button_image_url: "/xuexiao/style/1/images/bbsimageadd.gif",
+	button_width: "27",
+	button_height: "28",
+	button_cursor : SWFUpload.CURSOR.HAND,
+	button_text: '',
+	button_text_style: ".theFont { font-size: 16; }",
+	button_text_left_padding: 12,
+	button_text_top_padding: 3,
+	// The event handler functions are defined in handlers.js
+	//file_queued_handler : fileQueued,
+	file_queue_error_handler : fileQueueError2,
+	file_dialog_complete_handler : fileDialogComplete2,
+	upload_start_handler : uploadStart,
+	upload_progress_handler : uploadProgress,
+	upload_error_handler : uploadError,
+	upload_success_handler : uploadSuccess2,
+	upload_complete_handler : uploadComplete,
+	queue_complete_handler : queueComplete	// Queue plugin event
+};
+
+function fileQueueError2(file, errorCode, message) {
+	try {
+		var progress = new FileProgress(file, this.customSettings.progressTarget);
+		progress.setError();
+		progress.toggleCancel(false);
+
+		switch (errorCode) {
+		case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
+			progress.setStatus("File is too big.");
+			this.debug("Error Code: File too big, File name: " + file.name + ", File size: " + file.size + ", Message: " + message);
+			break;
+		case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
+			progress.setStatus("Cannot upload Zero Byte files.");
+			this.debug("Error Code: Zero byte file, File name: " + file.name + ", File size: " + file.size + ", Message: " + message);
+			break;
+		case SWFUpload.QUEUE_ERROR.INVALID_FILETYPE:
+			progress.setStatus("Invalid File Type.");
+			this.debug("Error Code: Invalid File Type, File name: " + file.name + ", File size: " + file.size + ", Message: " + message);
+			break;
+		default:
+			if (file !== null) {
+				progress.setStatus("Unhandled Error");
+			}
+			this.debug("Error Code: " + errorCode + ", File name: " + file.name + ", File size: " + file.size + ", Message: " + message);
+			break;
+		}
+	} catch (ex) {
+        this.debug(ex);
+    }
+}
+function fileDialogComplete2(numFilesSelected, numFilesQueued) {
+	try {
+		if(numFilesSelected > allow_file_upload_num) {
+			alert("上传失败，图片已经达到上限 5");
+			this.cancelQueue();
+			return;
+		}
+		if (numFilesSelected > 0) {
+			document.getElementById(this.customSettings.cancelButtonId).disabled = false;
+		}
+		this.startUpload();
+	} catch (ex)  {
+        this.debug(ex);
+	}
+}
+
+function uploadSuccess2(file, serverData) {
+	try {
+		var progress = new FileProgress(file, this.customSettings.progressTarget);
+			if(serverData)
+			{
+				allow_file_upload_num=allow_file_upload_num-1;
+				swfu.setFileUploadLimit(allow_file_upload_num);
+
+				var stats = swfu.getStats();
+				stats.successful_uploads=0;
+				swfu.setStats(stats);
+
+				addOnePreviewImage(serverData);
+
+				progress.setComplete();
+				progress.setStatus("上传完成");
+				progress.toggleCancel(false);
+			}
+	} catch (ex) {
+		this.debug(ex);
+	}
+}
+swfu = new SWFUpload(settings);
+
+
+function addOnePreviewImage(imageid)
+{
+	$("#PreviewImage_li_id_add").before('<li id="PreviewImage_li_imageid_'+imageid+'"><div class="PreviewImageBox"><img src="http://www.houxue.com/loadimage.php?id='+imageid+'&w=100&h=75"></div><div class="PreviewImageDelBox"><a href="javascript:void(0);" onclick="delOnePreviewByImageId('+imageid+')">删除</a></div></li>');
+	$("#StudyMaterial_Image").val($("#StudyMaterial_Image").val()+','+imageid);
+}
+function delOnePreviewByImageId(imageid)
+{
+	if(confirm("确定要删除这个图片嘛？"))
+	{
+		$("#PreviewImage_li_imageid_"+imageid).remove();
+		var str=$("#StudyMaterial_Image").val();
+		var newstr=str.replace(imageid,"");
+		$("#StudyMaterial_Image").val(newstr);
+
+		allow_file_upload_num=allow_file_upload_num+1;
+		swfu.setFileUploadLimit(allow_file_upload_num);
+	}
+}
+function delOnePreviewById(id)
+{
+	if(confirm("确定要删除这个图片嘛？"))
+	{
+		$.ajax({
+			url: 'image.htm',
+			data: 'flag=delOnePreviewById&id='+id,
+			type: "post",
+			cache : false,
+			success: function(data){
+				if(data=='ok')
+				{
+					$("#PreviewImage_li_id_"+id).remove();
+
+					allow_file_upload_num=allow_file_upload_num+1;
+					swfu.setFileUploadLimit(allow_file_upload_num);
+				}
+			}
+		});
+	}
+}
+</script>
+            <!--right_box1 end-->
+            </div>
+	 </div>
+            </div>
+{# include file="foot.htm" #}
+{# 'PCStat'|get_common_config #}
+</body>
+</html>
